@@ -30,7 +30,7 @@
 #figmaSlide7 .s7-panel{position:relative;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.045);backdrop-filter:blur(10px);border-radius:34px;overflow:hidden;padding:38px;opacity:0;transform:translateY(46px) scale(.985);filter:blur(14px)}
 #figmaSlide7 .s7-panel:before{content:"";position:absolute;inset:0;border-radius:34px;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,0) 40%)}
 #figmaSlide7 .s7-panel-old{box-shadow:0 0 0 1px rgba(255,255,255,.04),0 36px 80px rgba(0,0,0,.25)}
-#figmaSlide7 .s7-panel-new{border-color:rgba(0,217,0,.34);box-shadow:0 0 34px rgba(0,217,0,.12),0 36px 80px rgba(0,0,0,.25)}
+#figmaSlide7 .s7-panel-new{border-color:rgba(72,255,255,.34);box-shadow:0 0 34px rgba(0,217,0,.12),0 36px 80px rgba(0,0,0,.25)}
 #figmaSlide7 .s7-label{font-size:30px;line-height:1.05;font-weight:600;color:#fff;margin-bottom:30px}
 #figmaSlide7 .s7-label small{display:block;margin-top:9px;font-size:22px;font-weight:300;color:rgba(255,255,255,.58)}
 #figmaSlide7 .s7-waterfall{position:absolute;left:38px;right:38px;top:150px;height:255px}
@@ -40,12 +40,12 @@
 #figmaSlide7 .wf-lag:after{content:"стек уже изменился";position:absolute;right:0;top:24px;font-size:22px;color:#ffb0aa;white-space:nowrap;opacity:0;transform:translateY(10px)}
 #figmaSlide7 .wf-agent{position:absolute;left:28px;top:333px;font-size:34px;font-weight:600;letter-spacing:-.8px;color:#fff;opacity:0;transform:translateX(-24px);filter:blur(8px)}
 #figmaSlide7 .wf-agent span{color:#ff786f;text-shadow:0 0 18px rgba(255,95,86,.45)}
-#figmaSlide7 .s7-loop{position:absolute;left:74px;top:146px;width:640px;height:245px;border-radius:145px;border:5px solid rgba(0,217,0,.25);box-shadow:inset 0 0 34px rgba(0,217,0,.08),0 0 34px rgba(0,217,0,.14);opacity:0;transform:scale(.86);filter:blur(9px)}
+#figmaSlide7 .s7-loop{position:absolute;left:74px;top:146px;width:640px;height:245px;border-radius:145px;border:5px solid rgba(72,255,255,.25);box-shadow:inset 0 0 34px rgba(0,217,0,.08),0 0 34px rgba(0,217,0,.14);opacity:0;transform:scale(.86);filter:blur(9px)}
 #figmaSlide7 .s7-loop:before{content:"";position:absolute;left:20px;top:20px;width:590px;height:195px;border-radius:120px;border:2px dashed rgba(66,227,180,.45)}
 #figmaSlide7 .loop-dot{position:absolute;width:68px;height:68px;border-radius:50%;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);box-shadow:0 0 0 10px rgba(0,217,0,.15),0 0 38px rgba(66,227,180,.55);left:58px;top:88px;opacity:0}
 #figmaSlide7 .loop-card{position:absolute;min-width:146px;padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.07);border:1px solid rgba(66,227,180,.28);font-size:21px;line-height:1.08;text-align:center;color:#fff;opacity:0;transform:scale(.9);filter:blur(8px)}
 #figmaSlide7 .lc1{left:24px;top:20px}.lc2{left:248px;top:2px}.lc3{right:20px;top:88px}.lc4{left:226px;bottom:0}.lc5{left:8px;bottom:54px}
-#figmaSlide7 .s7-principle{position:absolute;left:38px;right:38px;bottom:34px;border-radius:24px;padding:24px 28px;background:rgba(0,217,0,.08);border-left:4px solid #00d900;font-size:28px;line-height:1.1;font-weight:300;color:rgba(255,255,255,.86);opacity:0;transform:translateY(22px);filter:blur(8px)}
+#figmaSlide7 .s7-principle{position:absolute;left:38px;right:38px;bottom:34px;border-radius:24px;padding:24px 28px;background:rgba(0,217,0,.08);border-left:4px solid #48ffff;font-size:28px;line-height:1.1;font-weight:300;color:rgba(255,255,255,.86);opacity:0;transform:translateY(22px);filter:blur(8px)}
 #figmaSlide7 .s7-principle strong{font-weight:600;color:#fff}
 #figmaSlide7.show .s7-title{animation:s7In .75s cubic-bezier(.16,1,.3,1) .12s forwards}
 #figmaSlide7.show .s7-sub{animation:s7In .75s cubic-bezier(.16,1,.3,1) .34s forwards}

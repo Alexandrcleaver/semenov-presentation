@@ -157,7 +157,7 @@
 #pdfSlide22 .ee-roi-card{min-height:380px;background:transparent;border:0;border-top:2px solid rgba(66,227,180,.5);border-radius:0;padding:36px 16px 18px}
 #pdfSlide22 .ee-roi-card .ee-kicker{font-size:28px;color:#9bd8be;font-weight:500;margin-bottom:34px}
 #pdfSlide22 .ee-roi-card .ee-copy{font-size:39px;line-height:1.24;letter-spacing:-1px}
-#pdfSlide22 .ee-roi-card:last-child{border-top-color:#00d900}
+#pdfSlide22 .ee-roi-card:last-child{border-top-color:#48ffff}
 #pdfSlide22 .ee-roi-card:last-child .ee-copy{color:#b5f6d5}
 #pdfSlide22 .ee-roi-insight{margin-top:48px!important;padding:31px 38px!important;border:0!important;border-radius:22px!important;background:linear-gradient(110deg,rgba(66,227,180,.12),rgba(66,227,180,.022))!important;font-size:31px!important;line-height:1.3!important}
 @media(prefers-reduced-motion:reduce){#pdfSlide10,#pdfSlide11,#pdfSlide12,#pdfSlide13,#pdfSlide14,#pdfSlide15,#pdfSlide16,#pdfSlide17,#pdfSlide18,#pdfSlide19,#pdfSlide20,#pdfSlide21,#pdfSlide22{transition:none!important}}

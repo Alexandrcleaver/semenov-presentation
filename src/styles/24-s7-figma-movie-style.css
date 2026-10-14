@@ -5,7 +5,7 @@
 #figmaSlide7 .s7-simple{opacity:1!important;transition:none}
 #figmaSlide7 .s7-theses{left:176.14px;top:381px;width:783.855px;height:auto;gap:0;justify-content:flex-start}
 #figmaSlide7 .s7-thesis-2{font-size:96px;line-height:1.1;letter-spacing:-2.4px;font-weight:600;color:#fff;white-space:normal}
-#figmaSlide7 .s7-meme{left:960px;top:316.6px;width:838.574px;height:474.224px;border-radius:32px;border:8px solid #00d900;box-sizing:border-box;box-shadow:none;background:#0c1118;isolation:isolate}
+#figmaSlide7 .s7-meme{left:960px;top:316.6px;width:838.574px;height:474.224px;border-radius:32px;border:8px solid #48ffff;box-sizing:border-box;box-shadow:none;background:#0c1118;isolation:isolate}
 #figmaSlide7 .s7-meme img{position:absolute;inset:0;width:100%;height:100%;z-index:1;object-fit:cover;object-position:center center}
 #figmaSlide7.show .s7-thesis-2{animation:s7SimpleTextIn .95s cubic-bezier(.16,1,.3,1) .18s forwards}
 #figmaSlide7.show .s7-meme{animation:s7SimpleMemeIn 1.05s cubic-bezier(.16,1,.3,1) .52s forwards}

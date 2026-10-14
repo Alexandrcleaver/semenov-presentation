@@ -66,7 +66,7 @@
 #figmaSlide5 .s4-frame{position:absolute;left:101px;top:69px;width:1718px;height:941px}
 #figmaSlide5 .s4-num{position:absolute;left:65.85px;top:316.1px;width:952.799px;margin:0;font-size:197.557px;line-height:.95;font-weight:600;letter-spacing:-6px;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);-webkit-background-clip:text;background-clip:text;color:transparent}
 #figmaSlide5 .s4-label{position:absolute;left:65.85px;top:515.9px;color:#fff;font-weight:300;font-size:98.778px;line-height:1.1;white-space:nowrap;letter-spacing:-2px}
-#figmaSlide5 .s4-wiki{position:absolute;width:337px;height:754px;box-sizing:border-box;border:12px solid #00d900;border-radius:24px;overflow:hidden;box-shadow:0 0 19.574px #6eb840;background:#101820}
+#figmaSlide5 .s4-wiki{position:absolute;width:337px;height:754px;box-sizing:border-box;border:12px solid #48ffff;border-radius:24px;overflow:hidden;box-shadow:0 0 19.574px #6eb840;background:#101820}
 #figmaSlide5 .s4-wiki img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;pointer-events:none}
 #figmaSlide5 .s4-wiki.w1{left:1042.37px;top:129.04px;z-index:3}
 #figmaSlide5 .s4-wiki.w2{left:1132.96px;top:158.32px;z-index:2}
@@ -102,14 +102,14 @@
 #figmaSlide6 .s6-era{display:none}
 #figmaSlide6 .s6-era.spring{left:120px} #figmaSlide6 .s6-era.summer{left:1420px} #figmaSlide6 .s6-era.autumn{left:2720px}
 #figmaSlide6 .s6-node{position:absolute;left:var(--x);top:350px;width:0;height:0;opacity:0;will-change:opacity,transform,filter;transform:scale(.82);filter:blur(7px)}
-#figmaSlide6 .s6-dot{position:absolute;left:-18px;top:-18px;width:36px;height:36px;border-radius:50%;background:#0c1118;border:8px solid #00d900;box-sizing:border-box;box-shadow:0 0 24px rgba(0,217,0,.7)}
+#figmaSlide6 .s6-dot{position:absolute;left:-18px;top:-18px;width:36px;height:36px;border-radius:50%;background:#0c1118;border:8px solid #48ffff;box-sizing:border-box;box-shadow:0 0 24px rgba(0,217,0,.7)}
 #figmaSlide6 .s6-stem{position:absolute;left:-2px;width:4px;height:96px;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);box-shadow:0 0 12px rgba(0,217,0,.35)}
 #figmaSlide6 .s6-node.up .s6-stem{bottom:18px} #figmaSlide6 .s6-node.down .s6-stem{top:18px}
 #figmaSlide6 .s6-date{position:absolute;left:-94px;width:188px;padding:9px 10px;border-radius:8px;text-align:center;font-size:23px;line-height:1;font-weight:300;color:#fff;background:rgba(12,17,24,.86);box-shadow:0 0 4px rgba(255,255,255,.25);white-space:nowrap}
 #figmaSlide6 .s6-node.up .s6-date{top:39px} #figmaSlide6 .s6-node.down .s6-date{bottom:38px}
 #figmaSlide6 .s6-card{position:absolute;width:360px;min-height:132px;padding:24px 26px;box-sizing:border-box;background:rgba(255,255,255,.05);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-#figmaSlide6 .s6-node.up .s6-card{left:-180px;bottom:114px;border-bottom:4px solid #00d900}
-#figmaSlide6 .s6-node.down .s6-card{left:-180px;top:114px;border-top:4px solid #00d900}
+#figmaSlide6 .s6-node.up .s6-card{left:-180px;bottom:114px;border-bottom:4px solid #48ffff}
+#figmaSlide6 .s6-node.down .s6-card{left:-180px;top:114px;border-top:4px solid #48ffff}
 #figmaSlide6 .s6-card.wide{width:410px}.s6-node.up .s6-card.wide,.s6-node.down .s6-card.wide{left:-205px}
 #figmaSlide6 .s6-card-title{font-size:32px;line-height:1.0;font-weight:600;letter-spacing:-.7px;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);-webkit-background-clip:text;background-clip:text;color:transparent}
 #figmaSlide6 .s6-card-text{margin-top:11px;font-size:22px;line-height:1.16;font-weight:300;color:rgba(255,255,255,.88)}
