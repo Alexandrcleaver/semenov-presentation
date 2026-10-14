@@ -1,0 +1,217 @@
+[
+  {
+    "number": 1,
+    "id": null,
+    "path": "src/styles/01-base-global.css"
+  },
+  {
+    "number": 2,
+    "id": null,
+    "path": "src/styles/02-glow-position.css"
+  },
+  {
+    "number": 3,
+    "id": null,
+    "path": "src/styles/03-glow-hide-pseudo.css"
+  },
+  {
+    "number": 4,
+    "id": null,
+    "path": "src/styles/04-glow-inactive.css"
+  },
+  {
+    "number": 5,
+    "id": null,
+    "path": "src/styles/05-glow-svg.css"
+  },
+  {
+    "number": 6,
+    "id": null,
+    "path": "src/styles/06-glow-strength.css"
+  },
+  {
+    "number": 7,
+    "id": "cover-style",
+    "path": "src/styles/07-cover-style.css"
+  },
+  {
+    "number": 8,
+    "id": "cover-fonts",
+    "path": "src/styles/08-cover-fonts.css"
+  },
+  {
+    "number": 9,
+    "id": "coauthor-transition-style",
+    "path": "src/styles/09-coauthor-transition-style.css"
+  },
+  {
+    "number": 10,
+    "id": "figma-slide2-style",
+    "path": "src/styles/10-figma-slide2-style.css"
+  },
+  {
+    "number": 11,
+    "id": "figma-slides34-style",
+    "path": "src/styles/11-figma-slides34-style.css"
+  },
+  {
+    "number": 12,
+    "id": "slide7-simple-152-896",
+    "path": "src/styles/12-slide7-simple-152-896.css"
+  },
+  {
+    "number": 13,
+    "id": "rag-reauthed-style",
+    "path": "src/styles/13-rag-reauthed-style.css"
+  },
+  {
+    "number": 14,
+    "id": "cinematic-hero-titles-8-22",
+    "path": "src/styles/14-cinematic-hero-titles-8-22.css"
+  },
+  {
+    "number": 15,
+    "id": "v8-fullsite-parent-styling",
+    "path": "src/styles/15-v8-fullsite-parent-styling.css"
+  },
+  {
+    "number": 16,
+    "id": "v8-new-story-intro-css",
+    "path": "src/styles/16-v8-new-story-intro-css.css"
+  },
+  {
+    "number": 17,
+    "id": "rag-borderless-and-no-number",
+    "path": "src/styles/17-rag-borderless-and-no-number.css"
+  },
+  {
+    "number": 18,
+    "id": "v8-sdd-cinematic-spec",
+    "path": "src/styles/18-v8-sdd-cinematic-spec.css"
+  },
+  {
+    "number": 19,
+    "id": "presenter-ui-css",
+    "path": "src/styles/19-presenter-ui-css.css"
+  },
+  {
+    "number": 20,
+    "id": "rag-architecture-reorder-css",
+    "path": "src/styles/20-rag-architecture-reorder-css.css"
+  },
+  {
+    "number": 21,
+    "id": "rag-refined-original-theme-10-22",
+    "path": "src/styles/21-rag-refined-original-theme-10-22.css"
+  },
+  {
+    "number": 22,
+    "id": "aist-evolution-style",
+    "path": "src/styles/22-aist-evolution-style.css"
+  },
+  {
+    "number": 23,
+    "id": "evolution-story-polish",
+    "path": "src/styles/23-evolution-story-polish.css"
+  },
+  {
+    "number": 24,
+    "id": "s7-figma-movie-style",
+    "path": "src/styles/24-s7-figma-movie-style.css"
+  },
+  {
+    "number": 25,
+    "id": "ev2-storytelling-style",
+    "path": "src/styles/25-ev2-storytelling-style.css"
+  },
+  {
+    "number": 26,
+    "id": "layout-audit-fixes-2026-10-12",
+    "path": "src/styles/26-layout-audit-fixes-2026-10-12.css"
+  },
+  {
+    "number": 27,
+    "id": "slide8-editorial-simplify",
+    "path": "src/styles/27-slide8-editorial-simplify.css"
+  },
+  {
+    "number": 28,
+    "id": "konspektus-practice-style",
+    "path": "src/styles/28-konspektus-practice-style.css"
+  },
+  {
+    "number": 29,
+    "id": "semenov-29-closing-style",
+    "path": "src/styles/29-semenov-29-closing-style.css"
+  },
+  {
+    "number": 30,
+    "id": "sergei-overrides-oct12",
+    "path": "src/styles/30-sergei-overrides-oct12.css"
+  },
+  {
+    "number": 31,
+    "id": "coverBookVideoStyles",
+    "path": "src/styles/31-coverBookVideoStyles.css"
+  },
+  {
+    "number": 32,
+    "id": "reliability-sharpness-fix",
+    "path": "src/styles/32-reliability-sharpness-fix.css"
+  },
+  {
+    "number": 33,
+    "id": "instant-slide-content-fix",
+    "path": "src/styles/33-instant-slide-content-fix.css"
+  },
+  {
+    "number": 34,
+    "id": "final-scan-ready-layout",
+    "path": "src/styles/34-final-scan-ready-layout.css"
+  },
+  {
+    "number": 35,
+    "id": "catwin-final-layout-fix",
+    "path": "src/styles/35-catwin-final-layout-fix.css"
+  },
+  {
+    "number": 36,
+    "id": "speaker-qr-mirror-konspektus",
+    "path": "src/styles/36-speaker-qr-mirror-konspektus.css"
+  },
+  {
+    "number": 37,
+    "id": "storytelling-chapter-2026-10-13",
+    "path": "src/styles/37-storytelling-chapter-2026-10-13.css"
+  },
+  {
+    "number": 38,
+    "id": "storytelling-layout-corrections",
+    "path": "src/styles/38-storytelling-layout-corrections.css"
+  },
+  {
+    "number": 39,
+    "id": "storytelling-quality-pass",
+    "path": "src/styles/39-storytelling-quality-pass.css"
+  },
+  {
+    "number": 40,
+    "id": "storytelling-fix-tools-grid",
+    "path": "src/styles/40-storytelling-fix-tools-grid.css"
+  },
+  {
+    "number": 41,
+    "id": "storytelling-motion-final",
+    "path": "src/styles/41-storytelling-motion-final.css"
+  },
+  {
+    "number": 42,
+    "id": null,
+    "path": "src/styles/42-debug-panel.css"
+  },
+  {
+    "number": 43,
+    "id": "slide-visual-polish",
+    "path": "src/styles/43-slide-visual-polish.css"
+  }
+]

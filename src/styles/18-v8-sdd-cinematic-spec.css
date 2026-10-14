@@ -1,0 +1,50 @@
+
+/* Slide 10: editorial SDD explanation, no repeated three-card summary. */
+#pdfSlide8 .v8-sdd-intro{position:absolute;inset:0;z-index:14;visibility:hidden;opacity:0;pointer-events:none;background:#0c1118;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:26px;transform:translateY(26px);filter:blur(12px);transition:opacity .65s,transform .8s cubic-bezier(.16,1,.3,1),filter .65s,visibility .65s}
+#pdfSlide8.v8-sdd-intro-on.show .v8-sdd-intro{visibility:visible;opacity:1;transform:none;filter:none}
+#pdfSlide8 .sdd10-eyebrow{color:#74b79e;font:500 23px/1 SB,Arial;letter-spacing:3px}
+#pdfSlide8 .v8-sdd-intro h2{color:#fff;font:300 130px/.99 SB,Arial;letter-spacing:-5px;margin:0}
+#pdfSlide8 .v8-sdd-intro h2 span{font-weight:600;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);-webkit-background-clip:text;background-clip:text;color:transparent}
+#pdfSlide8 .v8-sdd-intro p{font:300 34px/1.32 SB,Arial;color:#abbfb7;margin:14px 0 0}
+#pdfSlide8 .v8-sdd-scene{position:absolute;inset:0;z-index:14;background:#0c1118;color:white;visibility:hidden;opacity:0;transform:translateY(22px);filter:blur(12px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .8s,filter .7s,visibility .8s;pointer-events:none;font-family:SB,Arial,sans-serif;overflow:hidden}
+#pdfSlide8.show.v8-sdd-scene-on .v8-sdd-scene{visibility:visible;opacity:1;transform:none;filter:none}
+#pdfSlide8.show.v8-sdd-scene-on .v8-intro-panel,#pdfSlide8.show.v8-sdd-intro-on .v8-intro-panel{opacity:0;visibility:hidden}
+#pdfSlide8 .sdd10-header{position:absolute;top:120px;left:133px;right:133px;min-height:190px}
+#pdfSlide8 .sdd10-approach{font-size:23px;font-weight:500;color:#7bbaa3;letter-spacing:1.7px}
+#pdfSlide8 .sdd10-title{font:300 79px/1.04 SB,Arial;letter-spacing:-2.7px;margin:30px 0 0;position:absolute;left:0;top:40px;right:0;opacity:0;transform:translateY(24px);filter:blur(9px);transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1),filter .5s}
+#pdfSlide8 .sdd10-title em,#pdfSlide8 .sdd10-big em,#pdfSlide8 .v8-sdd-conclusion h2 em{font-style:normal;color:#42e3b4;font-weight:600}
+#pdfSlide8.v8-sdd-md-on .sdd10-title-md,#pdfSlide8.v8-sdd-process-on .sdd10-title-process,#pdfSlide8.v8-sdd-later-on .sdd10-title-later{opacity:1;transform:none;filter:none}
+#pdfSlide8 .sdd10-layout{position:absolute;left:133px;right:133px;top:345px;bottom:150px;display:grid;grid-template-columns:1.28fr .85fr;gap:93px;align-items:stretch}
+#pdfSlide8 .sdd10-editor{background:#121c22;border:1px solid rgba(145,199,174,.21);border-radius:20px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.17);display:flex;flex-direction:column}
+#pdfSlide8 .sdd10-editorbar{height:78px;background:#1a272b;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;padding:0 28px;gap:13px;box-sizing:border-box;font-size:27px}
+#pdfSlide8 .sdd10-fileicon{display:flex;align-items:center;justify-content:center;width:35px;height:39px;border:1px solid rgba(66,227,180,.48);border-radius:5px;color:#42e3b4;font-weight:600}
+#pdfSlide8 .sdd10-saved{display:flex;align-items:center;gap:10px;margin-left:auto;font-size:19px;color:#88bfa7}
+#pdfSlide8 .sdd10-dot{width:10px;height:10px;border-radius:50%;background:#42e3b4}
+#pdfSlide8 .sdd10-code{padding:41px 38px 30px;display:flex;flex-direction:column;gap:6px;font:26px/1.26 ui-monospace,Consolas,monospace;letter-spacing:-.65px;min-width:0}
+#pdfSlide8 .sdd10-line{white-space:nowrap;overflow:hidden;text-overflow:clip;opacity:0;transform:translateY(12px)}
+#pdfSlide8 .sdd10-line span{color:#4ce9b5}
+#pdfSlide8 .sdd10-blank{height:18px;line-height:1}
+#pdfSlide8.v8-sdd-scene-on .sdd10-line{animation:sdd10ShowLine .55s cubic-bezier(.16,1,.3,1) calc(.13s + var(--i)*.085s) both}
+@keyframes sdd10ShowLine{to{opacity:1;transform:none}}
+#pdfSlide8 .sdd10-explanation{position:relative;min-width:0;display:flex;align-items:center}
+#pdfSlide8 .sdd10-state{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:24px;opacity:0;visibility:hidden;transform:translateX(36px);filter:blur(9px);transition:opacity .48s cubic-bezier(.16,1,.3,1),transform .62s cubic-bezier(.16,1,.3,1),filter .48s,visibility .5s}
+#pdfSlide8.v8-sdd-md-on .sdd10-state-md,#pdfSlide8.v8-sdd-process-on .sdd10-state-process,#pdfSlide8.v8-sdd-later-on .sdd10-state-later{opacity:1;visibility:visible;transform:none;filter:none}
+#pdfSlide8 .sdd10-big{font:300 71px/1.05 SB,Arial;letter-spacing:-2px;margin:0;color:#fff}
+#pdfSlide8 .sdd10-small{font-size:30px;line-height:1.32;color:#b1c6bc;font-weight:300;margin:0;max-width:510px}
+#pdfSlide8 .sdd10-message{font:300 26px/1.23 SB,Arial;padding:18px 24px;border-left:3px solid rgba(255,255,255,.23);background:rgba(255,255,255,.028);border-radius:7px;color:#e9f6ee}
+#pdfSlide8 .sdd10-message span{display:block;font:500 18px/1 SB,Arial;letter-spacing:1px;color:#819c90;margin-bottom:11px}
+#pdfSlide8 .sdd10-answer{border-left-color:#42e3b4;background:rgba(66,227,180,.065)}
+#pdfSlide8 .sdd10-answer span{color:#42e3b4}
+#pdfSlide8 .v8-sdd-conclusion{position:absolute;inset:0;z-index:7;background:#0c1118;box-sizing:border-box;visibility:hidden;opacity:0;transform:translateY(24px);filter:blur(11px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .75s,filter .6s,visibility .75s;padding:140px 133px 110px}
+#pdfSlide8.v8-sdd-conclusion-on .v8-sdd-conclusion{visibility:visible;opacity:1;transform:none;filter:none}
+#pdfSlide8 .sdd10-end-overline{font:500 23px/1 SB,Arial;letter-spacing:2px;color:#81b39e;margin:0 0 25px}
+#pdfSlide8 .v8-sdd-conclusion h2{font:300 96px/1.08 SB,Arial;letter-spacing:-3.6px;margin:0 0 110px}
+#pdfSlide8 .sdd10-comparison{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+#pdfSlide8 .sdd10-side{padding:0 0 0 30px;border-left:3px solid #72817b}
+#pdfSlide8 .sdd10-good{border-left-color:#42e3b4}
+#pdfSlide8 .sdd10-side span{display:block;font:500 22px/1 SB,Arial;letter-spacing:2px;color:#a9b6b1;margin-bottom:27px}
+#pdfSlide8 .sdd10-good span{color:#42e3b4}
+#pdfSlide8 .sdd10-side strong{font:500 56px/1.1 SB,Arial;letter-spacing:-1.6px;display:block;color:#fff}
+#pdfSlide8 .sdd10-side p{font:300 29px/1.35 SB,Arial;color:#bdcac3;margin:22px 0 0;max-width:640px}
+#pdfSlide8.v8-sdd-intro-on #v8FullChatWebsite,#pdfSlide8.v8-sdd-scene-on #v8FullChatWebsite,#pdfSlide8.v8-sdd-intro-on .v8-narrative,#pdfSlide8.v8-sdd-scene-on .v8-narrative{opacity:0;visibility:hidden}
+@media(prefers-reduced-motion:reduce){#pdfSlide8 .sdd10-line{opacity:1;transform:none;animation:none!important}}

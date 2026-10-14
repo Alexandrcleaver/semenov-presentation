@@ -1,0 +1,6 @@
+import fs from 'node:fs';import path from 'node:path';import {dependency} from './runtime.mjs';
+const directory=process.argv[2];if(!directory)throw Error('Usage: node scripts/regression/contact-sheets.mjs <run-directory>');
+const files=fs.readdirSync(directory).filter(f=>f.endsWith('.png')&&!f.includes('.diff.')&&!f.startsWith('sheet-')).sort();
+const sharp=dependency('sharp'),width=640,height=360,labelHeight=30;
+for(let start=0;start<files.length;start+=8){const entries=files.slice(start,start+8),layers=[];for(let i=0;i<entries.length;i++){const left=(i%2)*width,top=Math.floor(i/2)*(height+labelHeight);layers.push({input:await sharp(path.join(directory,entries[i])).resize(width,height).png().toBuffer(),left,top:top+labelHeight});const text=entries[i].replaceAll('&','&amp;').replaceAll('<','&lt;');layers.push({input:Buffer.from(`<svg width="640" height="30"><rect width="640" height="30" fill="#222"/><text x="10" y="22" fill="white" font-size="17" font-family="Arial">${text}</text></svg>`),left,top});}await sharp({create:{width:width*2,height:Math.ceil(entries.length/2)*(height+labelHeight),channels:4,background:'#111'}}).composite(layers).png().toFile(path.join(directory,`sheet-${String(start/8+1).padStart(2,'0')}.png`));}
+console.log('Contact sheets:',Math.ceil(files.length/8),'for',files.length,'screenshots');

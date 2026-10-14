@@ -1,0 +1,4 @@
+/* Existing alpha WebM introduces the Konspektus demo on slide 35. */
+#pdfSlide23 .ee-header h2{max-width:calc(100% - 350px)!important;}
+#pdfSlide23 .konspektus-book-intro{position:absolute;right:0;top:-18px;width:330px;height:186px;pointer-events:none;background:transparent;}
+#pdfSlide23 .cover-book-video{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;background:transparent;}

@@ -1,0 +1,15 @@
+
+/* Fine tuning of source technique labels and screenshot readability */
+.pdfRestSlide.story-tech.story-layers .ee-layer-node,
+.pdfRestSlide.story-tech.story-layers .ee-layer:nth-child(even) .ee-layer-node {
+ display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;
+ text-align:center!important;word-break:normal!important;overflow-wrap:break-word!important;
+}
+.pdfRestSlide.story-tech.story-layers .ee-layer-node small{
+ display:block!important;align-self:stretch!important;max-width:100%!important;text-align:center!important;
+ font-size:18px!important;line-height:1.24!important;
+}
+/* Edge captions on the diagram must not jump outside the content area. */
+.story-tech.story-flow .ee-pipe .ee-pipe-node:not(:last-child)::after{display:none!important;}
+/* Divider line is a visual cue, not an extra block title. */
+.story-tech.story-stack .ee-block{margin-bottom:13px!important;}

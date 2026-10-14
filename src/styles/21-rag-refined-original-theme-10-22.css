@@ -1,0 +1,191 @@
+
+/* Enterprise RAG slides 10–22 — harmonised with the original dark-tech keynote. */
+/* Scope deliberately excludes original scenes, the animated comparison (8) and speedometer (9). */
+.pdfRestSlide.ee-slide:is(#pdfSlide10,#pdfSlide11,#pdfSlide12,#pdfSlide13,#pdfSlide14,#pdfSlide15,#pdfSlide16,#pdfSlide17,#pdfSlide18,#pdfSlide19,#pdfSlide20,#pdfSlide21,#pdfSlide22){
+ --rag-white:#f7fffc;--rag-muted:#a7b9b3;--rag-green:#00d900;--rag-teal:#42e3b4;
+ background:radial-gradient(ellipse 1100px 360px at 47% 117%,rgba(25,168,99,.16),transparent 72%),#0c1118;
+}
+.pdfRestSlide.ee-slide:is(#pdfSlide10,#pdfSlide11,#pdfSlide12,#pdfSlide13,#pdfSlide14,#pdfSlide15,#pdfSlide16,#pdfSlide17,#pdfSlide18,#pdfSlide19,#pdfSlide20,#pdfSlide21,#pdfSlide22) .pdf-stage{
+ left:104px;top:62px;width:1712px;height:962px;
+}
+.pdfRestSlide.ee-slide:is(#pdfSlide10,#pdfSlide11,#pdfSlide12,#pdfSlide13,#pdfSlide14,#pdfSlide15,#pdfSlide16,#pdfSlide17,#pdfSlide18,#pdfSlide19,#pdfSlide20,#pdfSlide21,#pdfSlide22) .ee-canvas{
+ padding:54px 40px 44px!important;background:transparent!important;overflow:visible;
+}
+.pdfRestSlide.ee-slide:is(#pdfSlide10,#pdfSlide11,#pdfSlide12,#pdfSlide13,#pdfSlide14,#pdfSlide15,#pdfSlide16,#pdfSlide17,#pdfSlide18,#pdfSlide19,#pdfSlide20,#pdfSlide21,#pdfSlide22) .ee-header{
+ margin-bottom:35px;max-width:1580px;
+}
+.pdfRestSlide.ee-slide:is(#pdfSlide10,#pdfSlide11,#pdfSlide12,#pdfSlide13,#pdfSlide14,#pdfSlide15,#pdfSlide16,#pdfSlide17,#pdfSlide18,#pdfSlide19,#pdfSlide20,#pdfSlide21,#pdfSlide22) .ee-header h2{
+ max-width:1550px;font-size:76px;line-height:1.03;letter-spacing:-2.9px;font-weight:300;
+}
+.pdfRestSlide.ee-slide:is(#pdfSlide10,#pdfSlide11,#pdfSlide12,#pdfSlide13,#pdfSlide14,#pdfSlide15,#pdfSlide16,#pdfSlide17,#pdfSlide18,#pdfSlide19,#pdfSlide20,#pdfSlide21,#pdfSlide22) .ee-header .ee-gradient{
+ font-weight:600;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);-webkit-background-clip:text;background-clip:text;
+}
+.pdfRestSlide.ee-slide:is(#pdfSlide10,#pdfSlide11,#pdfSlide12,#pdfSlide13,#pdfSlide14,#pdfSlide15,#pdfSlide16,#pdfSlide17,#pdfSlide18,#pdfSlide19,#pdfSlide20,#pdfSlide21,#pdfSlide22) .ee-content{height:calc(100% - 158px);}
+.pdfRestSlide.ee-slide:is(#pdfSlide10,#pdfSlide11,#pdfSlide12,#pdfSlide13,#pdfSlide14,#pdfSlide15,#pdfSlide16,#pdfSlide17,#pdfSlide18,#pdfSlide19,#pdfSlide20,#pdfSlide21,#pdfSlide22) .ee-card,
+.pdfRestSlide.ee-slide:is(#pdfSlide10,#pdfSlide11,#pdfSlide12,#pdfSlide13,#pdfSlide14,#pdfSlide15,#pdfSlide16,#pdfSlide17,#pdfSlide18,#pdfSlide19,#pdfSlide20,#pdfSlide21,#pdfSlide22) .ee-block{
+ background:linear-gradient(142deg,rgba(255,255,255,.045),rgba(255,255,255,.018));
+ border:1px solid rgba(194,240,220,.10);border-radius:23px;box-shadow:inset 0 1px 0 rgba(255,255,255,.02);
+}
+.pdfRestSlide.ee-slide:is(#pdfSlide10,#pdfSlide11,#pdfSlide12,#pdfSlide13,#pdfSlide14,#pdfSlide15,#pdfSlide16,#pdfSlide17,#pdfSlide18,#pdfSlide19,#pdfSlide20,#pdfSlide21,#pdfSlide22) .ee-kicker{color:#96e9c2;letter-spacing:-.5px;font-size:26px;font-weight:500;}
+.pdfRestSlide.ee-slide:is(#pdfSlide10,#pdfSlide11,#pdfSlide12,#pdfSlide13,#pdfSlide14,#pdfSlide15,#pdfSlide16,#pdfSlide17,#pdfSlide18,#pdfSlide19,#pdfSlide20,#pdfSlide21,#pdfSlide22) .ee-copy{font-size:28px;line-height:1.36;}
+.pdfRestSlide.ee-slide:is(#pdfSlide10,#pdfSlide11,#pdfSlide12,#pdfSlide13,#pdfSlide14,#pdfSlide15,#pdfSlide16,#pdfSlide17,#pdfSlide18,#pdfSlide19,#pdfSlide20,#pdfSlide21,#pdfSlide22) .ee-block-body{font-size:27px;line-height:1.36;}
+/* 10: large editorial rows for each failure/mitigation, not four dashboard tiles */
+#pdfSlide10 .ee-traps{gap:18px;grid-template-rows:repeat(2,1fr)}
+#pdfSlide10 .ee-trap{padding:20px 5px 10px;position:relative}
+#pdfSlide10 .ee-trap + .ee-trap{border-top:1px solid rgba(255,255,255,.09);padding-top:42px}
+#pdfSlide10 .ee-trap h3{font-size:43px;font-weight:300;line-height:1.1;margin-bottom:23px;letter-spacing:-.8px}
+#pdfSlide10 .ee-trap h3 span{font-size:49px;margin-right:22px;font-weight:600;color:#42e3b4}
+#pdfSlide10 .ee-trap h3 small{font-size:25px;color:#859b95}
+#pdfSlide10 .ee-trap-flow{height:auto;min-height:205px;grid-template-columns:1fr 78px 1fr;gap:22px;align-items:center}
+#pdfSlide10 .ee-trap-sym,#pdfSlide10 .ee-trap-cure{min-height:190px;padding:31px 34px;background:rgba(255,255,255,.024);border:0;border-radius:20px;box-sizing:border-box}
+#pdfSlide10 .ee-trap-sym{border-left:3px solid rgba(255,145,151,.48)}
+#pdfSlide10 .ee-trap-cure{border-left:3px solid #42e3b4;background:linear-gradient(120deg,rgba(66,227,180,.085),rgba(66,227,180,.018))}
+#pdfSlide10 .ee-trap-flow b{font-size:25px}
+#pdfSlide10 .ee-trap-flow p{font-size:30px;line-height:1.31;margin-top:15px}
+#pdfSlide10 .ee-trap-arrow{font-size:68px;color:#42e3b4}
+/* 11: file is the hero, supporting thesis are clean annotations */
+#pdfSlide11 .ee-prd-lead{font-size:38px;line-height:1.24;margin:0 0 28px;color:#c0d1ca}
+#pdfSlide11 .ee-prd-lead strong{font-weight:500;color:#fff}
+#pdfSlide11 .ee-prd-layout{height:calc(100% - 105px);grid-template-columns:1.14fr .9fr;gap:56px}
+#pdfSlide11 .ee-prd-sheet{min-height:520px;margin:0;background:linear-gradient(145deg,rgba(18,37,38,.7),rgba(12,17,24,.5));border:1px solid rgba(66,227,180,.34);border-radius:26px;padding:130px 54px 45px;box-shadow:0 34px 90px rgba(0,0,0,.25)}
+#pdfSlide11 .ee-prd-tab{left:0;top:0;border:0;border-bottom:1px solid rgba(66,227,180,.25);border-radius:25px 0 19px 0;background:rgba(66,227,180,.12);font:500 30px/1.2 monospace;padding:23px 35px}
+#pdfSlide11 .ee-code-lines{gap:27px}
+#pdfSlide11 .ee-code-lines span{height:15px;background:linear-gradient(90deg,#1a5751,#2b4440);border-radius:5px}
+#pdfSlide11 .ee-prd-points{gap:6px}
+#pdfSlide11 .ee-prd-c{border:0;border-bottom:1px solid rgba(255,255,255,.12);border-radius:0;background:transparent;padding:25px 12px 26px}
+#pdfSlide11 .ee-prd-c:last-child{border-bottom:0}
+#pdfSlide11 .ee-prd-c .ee-kicker{font-size:30px;margin:0 0 13px}
+#pdfSlide11 .ee-prd-c .ee-copy{font-size:29px}
+/* 12: ADR resembles a focused product UI panel. */
+#pdfSlide12 .ee-adr-sub{font-size:29px;margin:-6px 0 27px;color:#b9c8c3}
+#pdfSlide12 .ee-adr-layout{gap:33px;height:476px;grid-template-columns:.96fr 1.04fr}
+#pdfSlide12 .ee-adr-table,#pdfSlide12 .ee-adr-detail{background:rgba(255,255,255,.022);border:1px solid rgba(255,255,255,.085);border-radius:19px}
+#pdfSlide12 .ee-adr-table>div{min-height:99px;font-size:21px}
+#pdfSlide12 .ee-adr-table>.ee-table-header{font-size:19px;color:#9de6ca}
+#pdfSlide12 .ee-adr-detail{padding:26px 32px}
+#pdfSlide12 .ee-detail-title{font-size:29px;margin:0 0 16px}
+#pdfSlide12 .ee-decision{font-size:22px;padding:13px 3px;grid-template-columns:147px 1fr}
+#pdfSlide12 .ee-decision b{font-size:20px}
+#pdfSlide12 .ee-adr-bot{margin-top:24px;gap:34px}
+#pdfSlide12 .ee-adr-bot>div{padding:22px 9px 15px;background:none;border:0;border-top:1px solid rgba(255,255,255,.17);border-radius:0;font-size:25px}
+#pdfSlide12 .ee-adr-bot b{font-size:29px;margin-bottom:12px}
+/* 13: simplify layered catalogue with open horizontal bands. */
+#pdfSlide13 .ee-layers{gap:11px;height:100%}
+#pdfSlide13 .ee-layer{padding:12px 12px 12px 0;background:transparent;border:0;border-bottom:1px solid rgba(255,255,255,.12);border-radius:0;grid-template-columns:235px 1fr}
+#pdfSlide13 .ee-layer-name{font-size:31px;font-weight:500;color:#8eeac4}
+#pdfSlide13 .ee-layer-nodes{gap:12px}
+#pdfSlide13 .ee-layer-node,#pdfSlide13 .ee-layer:nth-child(even) .ee-layer-node{font-size:22px;line-height:1.14;min-height:96px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);border-radius:16px}
+#pdfSlide13 .ee-layer-node small{font-size:16px}
+#pdfSlide13 .ee-layer:last-child{border-bottom:0}
+/* 14: two large symmetrical propositions, subtle divider rather than dashboard panels */
+#pdfSlide14 .ee-verify-grid{grid-template-columns:1fr 76px 1fr;gap:22px}
+#pdfSlide14 .ee-verify-side{padding:42px 34px 36px;background:transparent;border:0;border-top:2px solid rgba(66,227,180,.5);border-radius:0}
+#pdfSlide14 .ee-verify-side:last-child{border-color:rgba(102,178,230,.55)}
+#pdfSlide14 .ee-verify-kicker{font-size:30px;margin-bottom:54px}
+#pdfSlide14 .ee-verify-name{font-size:56px;font-weight:500;line-height:1.03;letter-spacing:-1.8px}
+#pdfSlide14 .ee-verify-alias{font-size:25px;margin-top:14px}
+#pdfSlide14 .ee-verify-info{font-size:30px;line-height:1.33;margin-top:50px;padding-top:28px}
+#pdfSlide14 .ee-verify-separator{border-left:1px solid rgba(66,227,180,.35);font-size:22px;letter-spacing:1px}
+/* 15: emphasize central architecture + visual ReAct ring. */
+#pdfSlide15 .ee-stack-layout{gap:72px;grid-template-columns:.94fr 1.06fr}
+#pdfSlide15 .ee-stack-left>.ee-block{padding:27px 25px;border-color:transparent;background:rgba(255,255,255,.036);border-radius:22px}
+#pdfSlide15 .ee-stack-left>.ee-block .ee-block-label{font-size:42px}
+#pdfSlide15 .ee-stack-left>.ee-block .ee-block-body{font-size:27px}
+#pdfSlide15 .ee-stack-link{color:#42e3b4;font-size:38px;line-height:55px}
+#pdfSlide15 .ee-stack-bottom{gap:15px}
+#pdfSlide15 .ee-stack-bottom .ee-block{padding:20px 23px;background:rgba(66,227,180,.048)}
+#pdfSlide15 .ee-react{border:0;border-radius:0;padding:26px 10px;text-align:center;background:transparent}
+#pdfSlide15 .ee-react-title{font-size:39px}
+#pdfSlide15 .ee-react-node{background:#132b2c;border:1px solid rgba(66,227,180,.55);border-radius:19px;font-size:29px;padding:19px 22px}
+#pdfSlide15 .ee-ring{border:10px dashed rgba(66,227,180,.37)}
+#pdfSlide15 .ee-react-foot{font-size:28px;line-height:1.3}
+/* 16: sequence reads as a connected process, not five equally loud cards. */
+#pdfSlide16 .ee-pipe{height:505px;margin-top:48px;gap:17px}
+#pdfSlide16 .ee-pipe-node,#pdfSlide16 .ee-pipe-node.tone-blue{padding:32px 21px;background:linear-gradient(155deg,rgba(66,227,180,.056),rgba(255,255,255,.017));border:0;border-top:3px solid rgba(66,227,180,.65);border-radius:0 0 23px 23px}
+#pdfSlide16 .ee-pipe-node.tone-blue{border-top-color:rgba(109,177,230,.68);background:rgba(92,136,179,.048)}
+#pdfSlide16 .ee-pipe-label{font-size:36px;line-height:1.08;margin-bottom:25px;padding-bottom:24px}
+#pdfSlide16 .ee-pipe-copy{font-size:27px;line-height:1.3}
+#pdfSlide16 .ee-pipe-node:not(:last-child):after{font-size:50px;top:49%;color:#8bf2c7}
+#pdfSlide16 .ee-pipe-tag{font-size:34px;margin:38px auto 0;color:#b2ebce}
+/* 17: retain a product-like code explorer, visually foreground the orchestrator. */
+#pdfSlide17 .ee-explore-layout{gap:70px}
+#pdfSlide17 .ee-explorer{border:1px solid rgba(89,178,181,.27);border-radius:23px;background:linear-gradient(150deg,rgba(23,44,49,.8),rgba(12,17,24,.46))}
+#pdfSlide17 .ee-terminal-bar{background:rgba(66,227,180,.085)}
+#pdfSlide17 .ee-tree{font-size:22px;line-height:1.24}
+#pdfSlide17 .ee-explore-foot{font-size:25px}
+#pdfSlide17 .ee-orchestration{padding-top:53px}
+#pdfSlide17 .ee-orchestrator-main{font-size:38px;background:rgba(66,227,180,.13);border-color:rgba(66,227,180,.52)}
+#pdfSlide17 .ee-workers>div{font-size:23px;background:rgba(66,227,180,.055)}
+#pdfSlide17 .ee-orchestrator-note{border:0;border-top:1px solid rgba(255,255,255,.14);font-size:27px;line-height:1.35;margin-top:36px}
+/* 18: clear journey from real PII to protected AI and back. */
+#pdfSlide18 .ee-pii-flow{margin-top:100px;height:243px;gap:10px}
+#pdfSlide18 .ee-pii-item{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.13);border-radius:20px}
+#pdfSlide18 .ee-pii-item b{font-size:28px}
+#pdfSlide18 .ee-pii-item small{font-size:24px}
+#pdfSlide18 .ee-pii-cloud{border:2px solid rgba(66,227,180,.67);background:radial-gradient(circle,rgba(66,227,180,.2),rgba(66,227,180,.06));border-radius:110px;box-shadow:0 0 60px rgba(66,227,180,.12)}
+#pdfSlide18 .ee-connector{color:#42e3b4;font-size:48px}
+#pdfSlide18 .ee-pii-descriptions{gap:20px;margin-top:66px}
+#pdfSlide18 .ee-pii-descriptions .ee-card{min-height:197px;background:transparent;border:0;border-top:1px solid rgba(255,255,255,.17);border-radius:0;padding:27px 10px}
+#pdfSlide18 .ee-pii-descriptions .ee-kicker{font-size:29px}
+#pdfSlide18 .ee-pii-descriptions .ee-copy{font-size:27px}
+/* 19: isolation diagram as a cinematic inset nested space */
+#pdfSlide19 .ee-sandbox{gap:88px;grid-template-columns:1fr .98fr}
+#pdfSlide19 .ee-isol-level{border:1px solid rgba(66,227,180,.42);background:rgba(66,227,180,.025);border-radius:24px}
+#pdfSlide19 .ee-isol-level>label{font-size:32px}
+#pdfSlide19 .l4{background:rgba(66,227,180,.12);border-color:rgba(66,227,180,.9)}
+#pdfSlide19 .ee-bridge{color:#9aebcd}
+#pdfSlide19 .ee-toolstack{gap:12px}
+#pdfSlide19 .ee-toolstack .ee-block{border:0;border-bottom:1px solid rgba(255,255,255,.12);border-radius:0;background:transparent;padding:30px 16px}
+#pdfSlide19 .ee-toolstack .ee-block-label{font-size:35px;margin-bottom:15px}
+#pdfSlide19 .ee-toolstack .ee-block-body{font-size:28px}
+/* 20: let RAG product UI dominate, separate observations without thick cards. */
+#pdfSlide20 .ee-observe{gap:28px;grid-template-rows:1fr 255px}
+#pdfSlide20 .ee-ragui{width:1040px;padding:31px 41px;border-color:rgba(84,200,167,.33);border-radius:26px;background:linear-gradient(150deg,rgba(20,48,49,.82),rgba(19,33,43,.5))}
+#pdfSlide20 .ee-ui-name{font-size:35px;color:#a7e9d0}
+#pdfSlide20 .ee-ui-chat{font-size:31px;line-height:1.34}
+#pdfSlide20 .ee-ui-caption{font-size:25px;margin-top:26px}
+#pdfSlide20 .ee-observe-bottom{gap:39px}
+#pdfSlide20 .ee-observe-bottom .ee-block{padding:30px 16px;background:transparent;border:0;border-top:1px solid rgba(255,255,255,.14);border-radius:0}
+#pdfSlide20 .ee-observe-bottom .ee-block-label{font-size:32px}
+#pdfSlide20 .ee-observe-bottom .ee-block-body{font-size:25px}
+/* 21: clear diagonal division and asymmetric type. */
+#pdfSlide21 .ee-delegation{height:540px;border:0;border-radius:0;background:linear-gradient(122deg,rgba(93,136,197,.08) 0%,rgba(17,28,39,.1) 50%,rgba(66,227,180,.05) 100%)}
+#pdfSlide21 .ee-delegate-label{font-size:43px!important;letter-spacing:-1.5px}
+#pdfSlide21 .ee-delegate-conclusion{font-size:35px!important;line-height:1.23;margin-top:36px}
+/* 22: ROI cards read as four large editorial figures; -60% remains prominent. */
+#pdfSlide22 .ee-roi-grid{margin-top:70px;gap:18px}
+#pdfSlide22 .ee-roi-card{min-height:380px;background:transparent;border:0;border-top:2px solid rgba(66,227,180,.5);border-radius:0;padding:36px 16px 18px}
+#pdfSlide22 .ee-roi-card .ee-kicker{font-size:28px;color:#9bd8be;font-weight:500;margin-bottom:34px}
+#pdfSlide22 .ee-roi-card .ee-copy{font-size:39px;line-height:1.24;letter-spacing:-1px}
+#pdfSlide22 .ee-roi-card:last-child{border-top-color:#00d900}
+#pdfSlide22 .ee-roi-card:last-child .ee-copy{color:#b5f6d5}
+#pdfSlide22 .ee-roi-insight{margin-top:48px!important;padding:31px 38px!important;border:0!important;border-radius:22px!important;background:linear-gradient(110deg,rgba(66,227,180,.12),rgba(66,227,180,.022))!important;font-size:31px!important;line-height:1.3!important}
+@media(prefers-reduced-motion:reduce){#pdfSlide10,#pdfSlide11,#pdfSlide12,#pdfSlide13,#pdfSlide14,#pdfSlide15,#pdfSlide16,#pdfSlide17,#pdfSlide18,#pdfSlide19,#pdfSlide20,#pdfSlide21,#pdfSlide22{transition:none!important}}
+/* Final space and visual alignment adjustments. */
+#pdfSlide13 .ee-layer-node,#pdfSlide13 .ee-layer:nth-child(even) .ee-layer-node{min-height:82px}
+#pdfSlide13 .ee-layers{gap:5px}
+#pdfSlide19 .ee-toolstack .ee-block{padding:23px 16px}
+#pdfSlide19 .ee-toolstack .ee-block-body{font-size:26px}
+/* Slide 10 in the final slide order is the Discovery speedometer.
+   Keep the already-approved speedometer geometry and animation intact. */
+#pdfSlide9 .ee-canvas{padding:54px 58px 45px!important}
+#pdfSlide9 .ee-header h2{font-size:75px;max-width:1490px;letter-spacing:-2.5px;line-height:1.06}
+#pdfSlide9 .ee-discovery{border:0;background:transparent;padding:16px 20px 5px}
+#pdfSlide9 .ee-speedo-note{background:transparent;border:0;border-left:2px solid rgba(66,227,180,.6);border-radius:0;padding-left:25px}
+#pdfSlide9 .ee-three{margin-top:26px;gap:25px}
+#pdfSlide9 .ee-three .ee-card{min-height:225px;border:0;border-top:1px solid rgba(255,255,255,.14);border-radius:0;background:transparent;padding:26px 20px}
+#pdfSlide9 .ee-three .ee-kicker{font-size:30px;font-weight:500}
+#pdfSlide9 .ee-three .ee-copy{font-size:28px;line-height:1.33}
+/* The row catalogue and isolation text need an extra 44px breathing room above the controller. */
+#pdfSlide13 .ee-content,#pdfSlide19 .ee-content{height:calc(100% - 202px)}
+#pdfSlide13 .ee-layer{min-height:0;padding:4px 8px 4px 0}
+#pdfSlide13 .ee-layer-node,#pdfSlide13 .ee-layer:nth-child(even) .ee-layer-node{min-height:65px;padding:4px 6px;font-size:19px;line-height:1.1}
+#pdfSlide13 .ee-layer-name{font-size:29px}
+#pdfSlide13 .ee-layer-node small{font-size:15px}
+#pdfSlide19 .ee-toolstack{grid-template-rows:repeat(3,minmax(0,1fr));height:610px}
+#pdfSlide19 .ee-toolstack .ee-block{padding:15px 14px;min-height:0}
+#pdfSlide19 .ee-toolstack .ee-block-label{font-size:32px;margin-bottom:11px}
+#pdfSlide19 .ee-toolstack .ee-block-body{font-size:24px;line-height:1.3}
+#pdfSlide13 .ee-layers{grid-template-rows:repeat(5,minmax(0,1fr));height:100%}
+#pdfSlide13 .ee-layer-node small{display:block;margin-top:4px;font-size:15px;line-height:1.14;color:#91a6a2}
+

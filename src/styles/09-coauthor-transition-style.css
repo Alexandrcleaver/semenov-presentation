@@ -1,0 +1,24 @@
+
+#description{z-index:9;transform:translateY(0) scale(.988);opacity:0;filter:blur(34px);pointer-events:none;transition:opacity 1180ms cubic-bezier(.22,1,.36,1),filter 1350ms ease,transform 1350ms cubic-bezier(.22,1,.36,1);will-change:opacity,filter,transform}
+#description.in{transform:translateY(0) scale(1);opacity:1;filter:blur(0);pointer-events:auto}
+#final.drop-out{transform:translateY(112%) scale(.992)!important;opacity:1!important;filter:blur(7px)!important;transition:transform 1320ms cubic-bezier(.22,1,.36,1),filter 1150ms ease!important;will-change:transform,filter}#chatSlide{position:absolute;inset:0;width:1920px;height:1080px;border:0;background:#0c1118;z-index:10;transform:scale(.992);opacity:0;filter:blur(24px);pointer-events:none;transition:transform 980ms cubic-bezier(.22,1,.36,1),opacity 820ms ease,filter 940ms ease;will-change:transform,opacity,filter}#chatSlide.in{transform:scale(1);opacity:1;filter:blur(0);pointer-events:auto}#description.blur-away{opacity:0!important;filter:blur(28px)!important;transform:translateY(0) scale(.996)!important;transition:opacity 820ms ease,filter 980ms ease,transform 980ms cubic-bezier(.22,1,.36,1)!important}
+
+#memeSlide6{position:absolute;inset:0;width:1920px;height:1080px;z-index:30;background:#0c1118;opacity:0;transform:translateY(32px) scale(.985);filter:blur(22px);pointer-events:none;transition:opacity 900ms ease,transform 1100ms cubic-bezier(.22,1,.36,1),filter 1000ms ease;will-change:opacity,transform,filter;overflow:hidden}
+#memeSlide6.in{opacity:1;transform:none;filter:blur(0);pointer-events:auto}
+#memeSlide6.out{opacity:0;transform:translateX(-90px) scale(.992);filter:blur(20px);pointer-events:none}
+#memeSlide6 .memeCrop{position:absolute;left:276.3px;top:158.3px;width:1367.5px;height:763.4px;overflow:hidden;border-radius:51px}
+#memeSlide6 .memeCrop img{position:absolute;left:-276.3px;top:-158.3px;width:1920px;height:1080px;max-width:none;display:block}
+#chatSlide.slide5-away{opacity:0!important;transform:translateX(-120px) scale(.985)!important;filter:blur(22px)!important;pointer-events:none!important}
+/* Manual click-controlled timeline state */
+#figmaSlide6.manual .s6-head,#figmaSlide6.manual .s6-range,#figmaSlide6.manual .s6-start{opacity:1;transform:none;filter:none;transition:opacity .55s ease,transform .7s cubic-bezier(.16,1,.3,1),filter .55s ease}
+#figmaSlide6.manual .s6-era{opacity:.62;transition:opacity .45s ease}
+#figmaSlide6.manual .s6-era.active{opacity:1;color:#fff;text-shadow:0 0 18px rgba(66,227,180,.55)}
+#figmaSlide6.manual .s6-track{transform:translateX(var(--s6-pan,0px));transition:transform 1100ms cubic-bezier(.22,1,.36,1)}
+#figmaSlide6.manual .s6-line-fill{transform:scaleX(var(--s6-progress,0));transition:transform 950ms cubic-bezier(.22,1,.36,1)}
+#figmaSlide6.manual .s6-runner{opacity:1;transform:translateX(var(--s6-runner-x,0px));transition:transform 950ms cubic-bezier(.22,1,.36,1),opacity .45s ease}
+#figmaSlide6.manual .s6-node.revealed{opacity:1;transform:scale(1) translateY(0);filter:blur(0);transition:opacity .7s ease,transform .82s cubic-bezier(.16,1,.3,1),filter .7s ease}
+#figmaSlide6.manual .s6-node.active .s6-dot{background:#baffcc;box-shadow:0 0 0 10px rgba(0,217,0,.22),0 0 40px #42e3b4}
+#figmaSlide6.manual .s6-node.active .s6-card{background:rgba(255,255,255,.075);box-shadow:0 0 26px rgba(0,217,0,.13)}
+#figmaSlide6.manual .s6-final.visible{opacity:1;transform:none;transition:opacity .65s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+#figmaSlide6.manual .s6-range{min-width:220px;text-align:center}
+

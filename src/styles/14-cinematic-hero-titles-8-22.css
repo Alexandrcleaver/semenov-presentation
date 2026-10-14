@@ -1,0 +1,40 @@
+
+
+/* Cinematic hero-to-layout motion for PDF-recreated slides 8–22.
+   One and the same h2 physically moves from a centered, large hero position
+   to the upper-left heading slot. All main content waits for its arrival. */
+.pdfRestSlide.ee-slide .ee-eyebrow{display:none!important}
+.pdfRestSlide.ee-slide .ee-header{position:relative;z-index:8;margin-bottom:18px;transform-origin:0 0;will-change:transform,opacity,filter}
+.pdfRestSlide.ee-slide .ee-header h2{max-width:1090px;font-size:57px;line-height:1.07;letter-spacing:-1.65px;overflow-wrap:normal}
+.pdfRestSlide.ee-slide .ee-header.ee-reveal{opacity:0;transform:none;filter:none}
+.pdfRestSlide.ee-slide .ee-content{opacity:0;will-change:opacity}
+.pdfRestSlide.ee-slide .ee-index{opacity:0}
+.pdfRestSlide.ee-slide.show .ee-header.ee-reveal{
+ animation:eeHeroDock 3.15s linear both!important;
+}
+@keyframes eeHeroDock{
+ 0%{opacity:0;transform:translate(var(--hero-dx,0px),var(--hero-dy,280px)) scale(var(--hero-scale,1.5));filter:blur(22px)}
+ 13%{opacity:1;transform:translate(var(--hero-dx,0px),var(--hero-dy,280px)) scale(var(--hero-scale,1.5));filter:blur(0)}
+ 41%{opacity:1;transform:translate(var(--hero-dx,0px),var(--hero-dy,280px)) scale(var(--hero-scale,1.5));filter:blur(0);animation-timing-function:cubic-bezier(.16,1,.3,1)}
+ 88%,100%{opacity:1;transform:translate(0,0) scale(1);filter:blur(0)}
+}
+.pdfRestSlide.ee-slide.show .ee-content{animation:eeContentAfterHero .78s cubic-bezier(.16,1,.3,1) 2.68s both}
+.pdfRestSlide.ee-slide.show .ee-index{animation:eeContentAfterHero .5s ease 3.1s both}
+@keyframes eeContentAfterHero{from{opacity:0}to{opacity:1}}
+.pdfRestSlide.ee-slide.show .ee-content .ee-reveal{
+ animation-delay:calc(2.77s + var(--d,0ms));
+}
+/* Never reveal a new heading before its main hero presentation. */
+.pdfRestSlide.ee-slide:not(.show) .ee-header,
+.pdfRestSlide.ee-slide:not(.show) .ee-content{opacity:0}
+/* Keep the other slide effects, e.g. the ReAct loop, from visually leaking
+   during the hero title hold; parent .ee-content owns visibility. */
+@media(prefers-reduced-motion:reduce){
+ .pdfRestSlide.ee-slide.show .ee-header.ee-reveal,
+ .pdfRestSlide.ee-slide.show .ee-content,
+ .pdfRestSlide.ee-slide.show .ee-index,
+ .pdfRestSlide.ee-slide.show .ee-content .ee-reveal{
+  animation:none!important;opacity:1!important;transform:none!important;filter:none!important
+ }
+}
+

@@ -1,0 +1,63 @@
+
+/* Practical SDD closing chapter: original screenshots from the attached Konspektus UX audit. */
+.pdfRestSlide.ee-slide.kx-section .ee-canvas{padding:0!important;background:#0c1118!important;box-shadow:none!important;border:0!important;border-radius:0!important}
+.pdfRestSlide.ee-slide.kx-section .ee-header{position:absolute;left:112px;top:100px;margin:0;z-index:9;max-width:1600px}
+.pdfRestSlide.ee-slide.kx-section .ee-header h2{max-width:1550px;font-size:76px;line-height:1.01;letter-spacing:-2.6px;font-weight:300}
+.pdfRestSlide.ee-slide.kx-section .ee-content{position:absolute;top:272px;left:112px;right:112px;bottom:104px;height:auto;min-height:0;overflow:visible}
+.kx-chapter{font:500 24px SB,Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#6acda9;margin-bottom:20px}
+.kx-two{width:100%;height:100%;display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.kx-shot{position:relative;overflow:hidden;border:1px solid rgba(174,234,210,.14);border-radius:20px;background:#f1f3f6;box-shadow:0 25px 74px rgba(0,0,0,.32);display:flex;align-items:center;justify-content:center}
+.kx-shot img{display:block;width:100%;height:100%;object-fit:contain;object-position:center center}
+.kx-shine{position:absolute;left:-60px;top:3%;width:160px;height:85%;background:linear-gradient(90deg,transparent,rgba(100,239,187,.13),transparent);filter:blur(30px);pointer-events:none}
+.kx-eyebrow{font-size:23px;letter-spacing:.2em;text-transform:uppercase;color:#60ceaa;margin:0 0 25px}
+.kx-large{font-weight:300;font-size:67px;line-height:1.08;letter-spacing:-2px;color:#fff;margin:0}
+.kx-large strong{font-weight:600;color:#9befcf}
+.kx-notes{display:flex;flex-direction:column;gap:22px;margin-top:39px}
+.kx-note{font-size:30px;line-height:1.27;color:#e1ebe7;padding-left:24px;border-left:3px solid rgba(66,227,180,.5)}
+.kx-label{display:block;font-size:22px;color:#65d9ab;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.kx-screen-title{position:absolute;top:26px;left:28px;font-size:20px;color:#bccfc6;background:rgba(12,17,24,.75);padding:9px 16px;border-radius:40px;z-index:2}
+.kx-doc-window{background:rgba(16,28,32,.8);border:1px solid rgba(66,227,180,.2);border-radius:18px;box-shadow:0 30px 90px rgba(0,0,0,.2);overflow:hidden;height:100%;min-width:0}
+.kx-filebar{height:70px;display:flex;align-items:center;gap:15px;padding:0 24px;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(77,146,125,.08);font:500 24px ui-monospace,Consolas,monospace;color:#b5f6d4}
+.kx-filebar:before{content:'●  ●  ●';font-size:14px;letter-spacing:3px;color:rgba(255,255,255,.3);margin-right:24px}
+.kx-doc-lines{padding:30px 33px;font:25px/1.65 ui-monospace,Consolas,monospace;color:#dfeae5}
+.kx-doc-lines b{color:#7dd8b5;font-weight:600}
+.kx-doc-lines em{color:#b0bcc0;font-style:normal}
+.kx-doc-lines .accent{color:#9ce8c9}
+.kx-doc-lines .line{white-space:pre-wrap;display:block}
+.kx-doc-caption{font-size:22px;line-height:1.35;color:#a2b8af;margin-top:22px}
+.kx-bottom-rail{position:absolute;bottom:3px;left:0;right:0;display:flex;gap:22px;align-items:center;color:#93c8b0;font-size:22px}
+.kx-bottom-rail i{height:1px;flex:1;background:linear-gradient(90deg,#42e3b4,transparent)}
+/* Slide 25 */
+#pdfSlide23 .ee-content{top:267px;bottom:125px}
+#pdfSlide23 .kx-two{grid-template-columns:1.08fr .92fr;gap:42px}
+#pdfSlide23 .kx-shot{height:560px}
+#pdfSlide23 .kx-visual{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;gap:18px}
+#pdfSlide23 .kx-visual .kx-caption{color:#b9c9c1;font-size:24px;line-height:1.32}
+/* Slide 26 */
+#pdfSlide24 .ee-content{top:268px;bottom:120px}
+#pdfSlide24 .kx-two{grid-template-columns:.6fr 1.4fr;gap:65px}
+#pdfSlide24 .kx-shot{height:650px}
+#pdfSlide24 .kx-large{font-size:62px}
+#pdfSlide24 .kx-notes{gap:30px}
+/* Slide 27 */
+#pdfSlide25 .ee-content{top:265px;bottom:113px}
+#pdfSlide25 .kx-two{grid-template-columns:1.35fr .65fr;gap:55px}
+#pdfSlide25 .kx-shot{height:670px}
+#pdfSlide25 .kx-large{font-size:65px}
+#pdfSlide25 .kx-notes{gap:28px}
+/* Slide 28 */
+#pdfSlide26 .ee-header{top:120px}
+#pdfSlide26 .ee-header h2{font-size:86px}
+#pdfSlide26 .ee-content{top:290px;bottom:135px}
+#pdfSlide26 .kx-cta{display:grid;grid-template-columns:.95fr 1.05fr;gap:94px;height:100%;align-items:center}
+#pdfSlide26 .kx-cta-text{font-size:37px;line-height:1.29;color:#d6e9e0;max-width:690px}
+#pdfSlide26 .kx-cta-text strong{color:#fff}
+#pdfSlide26 .kx-cta .kx-link{display:block;margin-top:36px;font-size:30px;color:#82e8c0;text-decoration:none;word-break:break-word}
+#pdfSlide26 .kx-cta .kx-link:hover{text-decoration:underline}
+#pdfSlide26 .kx-qr-wrap{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px}
+#pdfSlide26 .kx-qr-link{display:block;background:#fff;padding:26px;border-radius:27px;box-shadow:0 0 0 2px rgba(66,227,180,.4),0 0 70px rgba(66,227,180,.14);transition:transform .24s;position:relative;z-index:2}
+#pdfSlide26 .kx-qr-link:hover{transform:scale(1.03)}
+#pdfSlide26 .kx-qr-link img{width:392px;height:392px;image-rendering:pixelated;display:block}
+#pdfSlide26 .kx-qr-under{font-size:24px;letter-spacing:.04em;color:#99d8be}
+/* Preserve the original big-title-then-shrink animation pattern. */
+@media(prefers-reduced-motion:reduce){.kx-section .ee-content{opacity:1!important;animation:none!important}}

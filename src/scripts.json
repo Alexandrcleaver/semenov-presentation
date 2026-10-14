@@ -1,0 +1,52 @@
+[
+  {
+    "number": 1,
+    "id": null,
+    "path": "src/scripts/01-main-player.js"
+  },
+  {
+    "number": 2,
+    "id": null,
+    "path": "src/scripts/02-stage-debug.js"
+  },
+  {
+    "number": 3,
+    "id": "figma-slide2-video-control",
+    "path": "src/scripts/03-figma-slide2-video-control.js"
+  },
+  {
+    "number": 4,
+    "id": "cinematic-title-measure",
+    "path": "src/scripts/04-cinematic-title-measure.js"
+  },
+  {
+    "number": 5,
+    "id": "v8-fullsite-parent-runtime",
+    "path": "src/scripts/05-v8-fullsite-parent-runtime.js"
+  },
+  {
+    "number": 6,
+    "id": "presenter-ui-script",
+    "path": "src/scripts/06-presenter-ui-script.js"
+  },
+  {
+    "number": 7,
+    "id": "s7-figma-movie-runtime",
+    "path": "src/scripts/07-s7-figma-movie-runtime.js"
+  },
+  {
+    "number": 8,
+    "id": "konspektus-link-controls",
+    "path": "src/scripts/08-konspektus-link-controls.js"
+  },
+  {
+    "number": 9,
+    "id": "semenov29-link-controls",
+    "path": "src/scripts/09-semenov29-link-controls.js"
+  },
+  {
+    "number": 10,
+    "id": "coverBookVideoLifecycle",
+    "path": "src/scripts/10-coverBookVideoLifecycle.js"
+  }
+]

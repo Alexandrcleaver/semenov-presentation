@@ -1,0 +1,36 @@
+/* Scoped visual changes: slides 12, 38, 39 only. */
+#pdfSlide9 .ee-speedometer{margin-bottom:125px!important;}
+#pdfSlide9 .ee-speedo-center{top:calc(100% + 8px)!important;transform:translateX(-50%)!important;}
+#pdfSlide9 .ee-speedo-needle line{stroke-width:6;filter:drop-shadow(0 0 2px rgba(66,227,180,.3));}
+/* Both sweeps share progress p: arc offset=100*(1-p), needle angle=-180+180*p. */
+#pdfSlide9{--gauge-duration:3.8s;--gauge-easing:cubic-bezier(.45,0,.55,1);--gauge-delay:3.05s;}
+#pdfSlide9 .ee-gauge-active{stroke-linecap:butt;}
+#pdfSlide9.show .ee-gauge-active{animation:eeGaugeSweep var(--gauge-duration) var(--gauge-easing) var(--gauge-delay) both!important;}
+#pdfSlide9.show .ee-speedo-needle{animation:semenovNeedleSweep var(--gauge-duration) var(--gauge-easing) var(--gauge-delay) both!important;}
+@keyframes semenovNeedleSweep{from{transform:rotate(-180deg)}to{transform:rotate(0deg)}}
+#pdfSlide26 .kx-cta{grid-template-columns:1.45fr .85fr!important;gap:72px!important;}
+#pdfSlide26 .practice-macbook{position:relative;width:100%;align-self:center;}
+#pdfSlide26 .practice-macbook-photo{display:block;width:100%;height:auto;}
+#pdfSlide26 .practice-macbook-lid{width:94%;margin:0 auto;padding:22px 15px 28px;border:2px solid #92979c;border-radius:24px 24px 9px 9px;background:linear-gradient(115deg,#26282b,#07090b 45%,#25272a);position:relative;box-shadow:inset 0 0 0 2px #090a0c;}
+#pdfSlide26 .practice-macbook-screen{position:absolute;left:18.65%;top:18.49%;width:63.62%;height:55.76%;background:#0d1b2c;overflow:hidden;}
+#pdfSlide26 .practice-macbook-screen img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;}
+#pdfSlide26 .practice-macbook-camera{position:absolute;top:9px;left:50%;width:7px;height:7px;background:#142338;border:1px solid #42474c;border-radius:50%;}
+#pdfSlide26 .practice-macbook-brand{position:absolute;bottom:7px;left:0;width:100%;text-align:center;font:13px Arial,sans-serif;color:#969ca2;letter-spacing:.3px;}
+#pdfSlide26 .practice-macbook-base{height:24px;position:relative;border-radius:2px 2px 50% 50% / 2px 2px 18px 18px;background:linear-gradient(#d5d8db,#a3a7ab 45%,#626970 60%,#b7bcc0);box-shadow:0 3px 0 #41474c,inset 0 1px #eff1f2;}
+#pdfSlide26 .practice-macbook-notch{position:absolute;top:0;left:40%;width:20%;height:8px;border-radius:0 0 9px 9px;background:linear-gradient(#8b939b,#bbc1c7);}
+#pdfSlide26 .practice-actions{display:flex;flex-direction:column;align-items:flex-start;gap:22px;}
+#pdfSlide26 .kx-large{font-size:46px!important;line-height:1.13!important;}
+#pdfSlide26 .kx-cta-text{font-size:27px!important;line-height:1.25;margin:18px 0 0!important;}
+#pdfSlide26 .kx-cta .kx-link{font-size:25px!important;margin-top:16px!important;}
+#pdfSlide26 .kx-qr-wrap{align-items:flex-start!important;gap:14px!important;}
+#pdfSlide26 .kx-qr-link{padding:20px!important;border-radius:20px!important;}
+#pdfSlide26 .kx-qr-link img{width:240px!important;height:240px!important;}
+#pdfSlide26 .kx-qr-under{font-size:21px!important;}
+#pdfSlide28 .qr-scan-corners{position:absolute;inset:-18px;pointer-events:none;animation:semenovQrScanFloat 4.8s ease-in-out infinite;}
+#pdfSlide28 .qr-scan-corners i{position:absolute;width:62px;height:62px;border-color:#ff9b40;border-style:solid;border-width:0;filter:drop-shadow(0 0 5px rgba(255,155,64,.25));}
+#pdfSlide28 .scan-tl{top:0;left:0;border-top-width:5px!important;border-left-width:5px!important;border-radius:13px 0 0 0;}
+#pdfSlide28 .scan-tr{top:0;right:0;border-top-width:5px!important;border-right-width:5px!important;border-radius:0 13px 0 0;}
+#pdfSlide28 .scan-bl{bottom:0;left:0;border-bottom-width:5px!important;border-left-width:5px!important;border-radius:0 0 0 13px;}
+#pdfSlide28 .scan-br{bottom:0;right:0;border-bottom-width:5px!important;border-right-width:5px!important;border-radius:0 0 13px 0;}
+@keyframes semenovQrScanFloat{0%,100%{transform:translateY(-4px)}50%{transform:translateY(4px)}}
+@media(prefers-reduced-motion:reduce){#pdfSlide9.show .ee-gauge-active{animation:none!important;stroke-dashoffset:0;}#pdfSlide9.show .ee-speedo-needle{animation:none!important;transform:rotate(0deg);}#pdfSlide28 .qr-scan-corners{animation:none;}}

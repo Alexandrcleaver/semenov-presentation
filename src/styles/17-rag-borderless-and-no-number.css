@@ -1,0 +1,10 @@
+
+/* Slides 9–22: not a floating presentation card; content sits on the shared dark scene. */
+.pdfRestSlide.ee-slide:not(#pdfSlide8) .ee-canvas {
+  border:0!important;border-radius:0!important;
+  box-shadow:none!important;background:#0c1118!important;
+}
+.pdfRestSlide.ee-slide:not(#pdfSlide8) .ee-canvas::before,
+.pdfRestSlide.ee-slide:not(#pdfSlide8) .ee-canvas::after {display:none!important}
+/* The visible page counters were part of the PDF wrapper, not the content. */
+.pdfRestSlide.ee-slide .ee-index {display:none!important}

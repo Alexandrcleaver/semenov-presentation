@@ -1,0 +1,15 @@
+#debugGlow{position:fixed;left:24px;top:24px;z-index:10000;background:#101820e8;color:#d9ffe8;padding:10px 12px;border-radius:10px;font:13px/1.35 monospace;min-width:190px;box-shadow:0 6px 24px #0006}#debugGlow button{font:12px monospace}#glowStatus{margin:8px 0 0;white-space:pre-wrap}
+/* Replacement for the text-only "Vibe Coding vs SDD" beat (presentation slide 10). */
+#pdfSlide8 #v8FighterIntro {
+  position:absolute;inset:0;width:1920px;height:1080px;display:block;
+  border:0;background:#03060c;z-index:13;pointer-events:none;
+  opacity:0;visibility:hidden;filter:blur(12px);
+  transition:opacity .48s ease,filter .48s ease,visibility 0s linear .48s;
+}
+#pdfSlide8.show.v8-intro-2 #v8FighterIntro {
+  visibility:visible;opacity:1;filter:none;
+  transition:opacity .48s ease,filter .48s ease,visibility 0s;
+}
+
+/* Never leave the fighter overlay on top of subsequent Vibe Coding / SDD steps. */
+#pdfSlide8:not(.v8-intro-2) #v8FighterIntro{visibility:hidden!important;opacity:0!important;pointer-events:none!important;transition:none!important}

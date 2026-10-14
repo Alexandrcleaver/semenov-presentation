@@ -1,0 +1,968 @@
+<section aria-label="Парадигма Vibe-coding: демонстрация чата и потери контекста" class="pdfRestSlide ee-slide ee-vibe-fullsite story-tech" data-slide-number="11" data-source-pdf-page="2" id="pdfSlide8">
+<div class="pdf-stage"><div class="ee-canvas">
+<header class="ee-header ee-reveal"><h2>Парадигма <span>Vibe-coding</span></h2></header>
+<div class="ee-content">
+<div aria-level="2" class="v8-intro-panel v8-intro-meaning" role="heading">
+<h2>ИИ реально ускоряет,<br/><span>когда инженер управляет этим</span></h2>
+</div>
+<iframe aria-label="Поединок Vibe Coding против SDD" id="v8FighterIntro" loading="eager" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ru&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover&quot;&gt;
+&lt;meta name=&quot;color-scheme&quot; content=&quot;dark&quot;&gt;
+&lt;title&gt;VIBE CODING vs SDD — Fighter intro&lt;/title&gt;
+&lt;style&gt;
+  /* Размер и композиция — по фрейму Figma 190:224 (1920 × 1080). */
+  :root {
+    --scale: 1;
+    --dragon-delay: .18s;
+    --kitty-delay: .46s;
+    --vs-delay: 1.94s;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; width: 100%; height: 100%; background: #03060c; overflow: hidden; }
+  body { font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; }
+  #viewport {
+    width: 100%; height: 100%; min-height: 100dvh;
+    display: flex; justify-content: center; align-items: center;
+    overflow: hidden; background: #03060c;
+  }
+  #stage-shell {
+    width: 1920px; height: 1080px; flex: none;
+    position: relative; outline: none; overflow: hidden;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  #stage-shell:focus-visible { outline: 3px solid #ff992d; outline-offset: -3px; }
+  #stage {
+    position: absolute; inset: 0 auto auto 0;
+    width: 1920px; height: 1080px;
+    overflow: hidden;
+    background: #0c1118;
+    transform: scale(var(--scale)); transform-origin: 0 0;
+    isolation: isolate;
+    user-select: none; -webkit-user-select: none;
+  }
+  .scene { position: absolute; inset: 0; }
+  .asset { display: block; width: 100%; height: 100%; object-fit: contain; user-select: none; -webkit-user-drag: none; pointer-events: none; }
+  .layer { position: absolute; pointer-events: none; }
+
+  /* Задний план НЕ анимируется — всегда на экране. */
+  .battlefield { left: -405.535px; top: 0; width: 2389.719px; height: 1344.931px; z-index: 0; }
+  .battlefield .asset { object-fit: cover; }
+  .blue-haze {
+    left: 1590px; top: 169px; width: 1154px; height: 1154px; z-index: 1;
+    border-radius: 50%; mix-blend-mode: screen; opacity: .5;
+    background: radial-gradient(circle at 47% 49%, rgba(0,150,240,.37), rgba(0,112,230,.13) 42%, transparent 69%);
+  }
+  .vignette {
+    position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background: linear-gradient(to bottom, rgba(3,7,15,.30), transparent 22%, transparent 70%, rgba(7,4,6,.28));
+  }
+  .dragon {
+    left: -903.836px; top: -280.939px; width: 1693.16px; height: 1693.16px; z-index: 4;
+    opacity: 0; transform: translate3d(-1120px,0,0);
+    will-change: transform, opacity;
+  }
+  .kitty {
+    left: 1081.32px; top: 271.654px; width: 1254px; height: 1254px; z-index: 5;
+    opacity: 0; transform: translate3d(990px,0,0);
+    will-change: transform, opacity;
+  }
+  .versus {
+    left: 755.98px; top: 335.98px; width: 408.039px; height: 408.039px; z-index: 8;
+    opacity: 0; transform: scale(.2);
+    transform-origin: 50% 50%; will-change: transform, opacity, filter;
+  }
+  .versus .asset { filter: drop-shadow(0 0 12px #fe3b0d) drop-shadow(0 0 32px rgba(255,83,10,.35)); }
+  .name {
+    position: absolute; z-index: 9; top: 103px; margin: 0;
+    color: #fff; font-size: 108.71px; font-weight: 700; line-height: 1.18;
+    letter-spacing: -.038em; white-space: nowrap;
+    opacity: 0; transform: translateY(-22px);
+    text-shadow: 0 3px 25px rgba(0,0,0,.25);
+    will-change: opacity, transform;
+  }
+  .name-left { left: 53.73px; }
+  .name-right { left: 1503.46px; }
+  .vs-light {
+    left: 560px; top: 112px; width: 800px; height: 800px; z-index: 7;
+    opacity: 0;
+    background: radial-gradient(circle, rgba(255,247,199,.85) 0%, rgba(255,170,38,.49) 13%, rgba(243,55,10,.20) 30%, transparent 64%);
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+  .flash {
+    position: absolute; inset: 0; z-index: 10; pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(ellipse at 50% 48%, rgba(255,253,227,.86) 0%, rgba(255,192,72,.34) 12%, rgba(255,81,20,.06) 39%, transparent 63%);
+    mix-blend-mode: screen;
+  }
+
+  /* Последовательность: дракон → котёнок → огненный VS. */
+  .play .dragon { animation: dragon-arrive 1.44s var(--dragon-delay) cubic-bezier(.16,.75,.16,1) both; }
+  .play .kitty  { animation: kitty-arrive 1.38s var(--kitty-delay) cubic-bezier(.16,.75,.17,1) both; }
+  .play .name-left  { animation: name-appear .60s .95s ease-out both; }
+  .play .name-right { animation: name-appear .60s 1.12s ease-out both; }
+  .play .versus { animation: versus-explode .78s var(--vs-delay) cubic-bezier(.2,.7,.17,1) both; }
+  .play .vs-light { animation: light-boom 1.3s var(--vs-delay) ease-out both; }
+  .play .flash { animation: flash-boom .67s calc(var(--vs-delay) + .04s) ease-out both; }
+  .play .versus .asset { animation: fire-flicker 2.5s calc(var(--vs-delay) + .85s) ease-in-out infinite alternate; }
+
+  @keyframes dragon-arrive {
+    0%   { opacity: 0; transform: translate3d(-1120px,0,0) scale(.94); filter: blur(17px); }
+    18%  { opacity: 1; filter: blur(5px); }
+    100% { opacity: 1; transform: translate3d(0,0,0) scale(1); filter: blur(0); }
+  }
+  @keyframes kitty-arrive {
+    0%   { opacity: 0; transform: translate3d(990px,0,0) scale(.94); filter: blur(13px); }
+    18%  { opacity: 1; filter: blur(5px); }
+    100% { opacity: 1; transform: translate3d(0,0,0) scale(1); filter: blur(0); }
+  }
+  @keyframes name-appear {
+    from { opacity: 0; transform: translateY(-22px); filter: blur(3px); }
+    to   { opacity: 1; transform: translateY(0); filter: blur(0); }
+  }
+  @keyframes versus-explode {
+    0%   { opacity: 0; transform: scale(.16) rotate(-10deg); filter: brightness(5) blur(18px); }
+    27%  { opacity: 1; transform: scale(1.33) rotate(2deg); filter: brightness(2.6) blur(0); }
+    52%  { transform: scale(.90) rotate(-1deg); filter: brightness(1.7); }
+    73%  { transform: scale(1.055) rotate(0); filter: brightness(1.22); }
+    100% { opacity: 1; transform: scale(1) rotate(0); filter: brightness(1); }
+  }
+  @keyframes light-boom {
+    0%  { opacity: 0; transform: scale(.15); }
+    18% { opacity: .95; transform: scale(.62); }
+    49% { opacity: .43; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(1.55); }
+  }
+  @keyframes flash-boom {
+    0% { opacity: 0; }
+    16% { opacity: .84; }
+    34% { opacity: .23; }
+    100% { opacity: 0; }
+  }
+  @keyframes fire-flicker {
+    0%, 100% { filter: drop-shadow(0 0 12px rgba(255,83,8,.95)) drop-shadow(0 0 29px rgba(255,82,0,.33)); }
+    52% { filter: drop-shadow(0 0 18px rgba(255,148,33,.98)) drop-shadow(0 0 43px rgba(255,52,0,.50)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .play .dragon, .play .kitty, .play .versus, .play .name, .play .flash, .play .vs-light,
+    .play .versus .asset { animation: none !important; filter: none; }
+    .dragon, .kitty, .versus, .name { opacity: 1 !important; transform: none !important; }
+    .flash, .vs-light { opacity: 0 !important; }
+  }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;main id=&quot;viewport&quot; aria-label=&quot;Анимированная заставка файтинга Vibe Coding против SDD&quot;&gt;
+  &lt;div id=&quot;stage-shell&quot; tabindex=&quot;0&quot; role=&quot;button&quot; aria-label=&quot;Повторить анимацию. Клавиши R или Пробел — повтор, F — полный экран&quot; title=&quot;Нажмите для повтора • R или Пробел — повтор • F — полный экран&quot;&gt;
+    &lt;div id=&quot;stage&quot;&gt;
+      &lt;div class=&quot;scene&quot; id=&quot;scene&quot;&gt;
+        &lt;div class=&quot;layer battlefield&quot; aria-hidden=&quot;true&quot;&gt;&lt;img class=&quot;asset&quot; alt=&quot;&quot; src=&quot;@@EMBED_ASSET_0030@@&quot; fetchpriority=&quot;high&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;layer blue-haze&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;vignette&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;layer dragon&quot; aria-hidden=&quot;true&quot;&gt;&lt;img class=&quot;asset&quot; alt=&quot;&quot; src=&quot;@@EMBED_ASSET_0031@@&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;layer kitty&quot; aria-hidden=&quot;true&quot;&gt;&lt;img class=&quot;asset&quot; alt=&quot;&quot; src=&quot;@@EMBED_ASSET_0032@@&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;layer vs-light&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;layer versus&quot; aria-hidden=&quot;true&quot;&gt;&lt;img class=&quot;asset&quot; alt=&quot;&quot; src=&quot;@@EMBED_ASSET_0033@@&quot;&gt;&lt;/div&gt;
+        &lt;h1 class=&quot;name name-left&quot;&gt;VIBE CODING&lt;/h1&gt;
+        &lt;p class=&quot;name name-right&quot;&gt;SDD&lt;/p&gt;
+        &lt;div class=&quot;flash&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/main&gt;
+&lt;script&gt;
+  (() =&gt; {
+    'use strict';
+    const stage = document.getElementById('stage');
+    const shell = document.getElementById('stage-shell');
+    const WIDTH = 1920, HEIGHT = 1080;
+
+    function fitStage() {
+      const scale = Math.min(window.innerWidth / WIDTH, window.innerHeight / HEIGHT);
+      shell.style.width = `${WIDTH * scale}px`;
+      shell.style.height = `${HEIGHT * scale}px`;
+      stage.style.setProperty('--scale', scale);
+    }
+
+    function replay() {
+      stage.classList.remove('play');
+      // Повторный расчёт нужен, чтобы CSS-анимация начиналась с нулевого кадра.
+      void stage.offsetWidth;
+      requestAnimationFrame(() =&gt; stage.classList.add('play'));
+    }
+
+    function toggleFullscreen() {
+      if (document.fullscreenElement) document.exitFullscreen?.();
+      else document.documentElement.requestFullscreen?.().catch(() =&gt; {});
+    }
+
+    window.addEventListener('resize', fitStage, { passive: true });
+    window.addEventListener('orientationchange', fitStage, { passive: true });
+    document.addEventListener('fullscreenchange', fitStage);
+    shell.addEventListener('click', replay);
+    document.addEventListener('keydown', event =&gt; {
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      if (event.key.toLowerCase() === 'f') { event.preventDefault(); toggleFullscreen(); }
+      if (event.key.toLowerCase() === 'r' || event.code === 'Space') { event.preventDefault(); replay(); }
+    });
+
+    fitStage();
+    const images = [...stage.querySelectorAll('img')];
+    const preload = images.map(img =&gt; img.decode?.().catch(() =&gt; {}) ?? Promise.resolve());
+    Promise.all(preload).then(() =&gt; requestAnimationFrame(() =&gt; stage.classList.add('play')));
+  })();
+&lt;/script&gt;
+&lt;script&gt;
+window.addEventListener('message', (event) =&gt; {
+  if (event.data?.type !== 'replay-fighter') return;
+  const stage = document.getElementById('stage');
+  if (!stage) return;
+  const pictures = [...stage.querySelectorAll('img')];
+  Promise.all(pictures.map(im =&gt; im.decode?.().catch(()=&gt;{}) ?? Promise.resolve())).then(() =&gt; {
+    stage.classList.remove('play');
+    void stage.offsetWidth;
+    requestAnimationFrame(() =&gt; stage.classList.add('play'));
+  });
+});
+&lt;/script&gt;&lt;/body&gt;
+&lt;/html&gt;
+" tabindex="-1" title="Vibe Coding vs SDD — заставка файтинга"></iframe>
+<div aria-level="2" class="v8-intro-panel v8-intro-paradigm" role="heading">
+<h2>Парадигма<br/><span>Vibe Coding</span></h2>
+</div>
+<iframe aria-hidden="true" id="v8FullChatWebsite" loading="eager" srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;ru&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=1920,height=1080&quot;&gt;&lt;style&gt;
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:#0c1118;color:#fff;font-family:Arial,Helvetica,sans-serif}
+body{position:relative}
+.bgGlow{position:absolute;left:-120px;right:-120px;bottom:-120px;height:500px;filter:blur(54px);opacity:.95;background:radial-gradient(55% 90% at 12% 100%,rgba(66,227,180,.55) 0%,rgba(12,17,24,0) 58%),radial-gradient(55% 90% at 90% 100%,rgba(0,217,0,.5) 0%,rgba(12,17,24,0) 58%),radial-gradient(75% 70% at 50% 100%,rgba(0,217,0,.28) 0%,rgba(12,17,24,0) 65%)}
+.chatWrap{position:absolute;left:179.69px;top:-302px;width:724px;height:1199px;border:4px solid rgba(255,255,255,.25);border-radius:48px;background:#0c1118;overflow:hidden;box-sizing:border-box;opacity:0;transform:translateY(-90px);filter:blur(20px);transition:opacity 900ms ease,transform 1250ms cubic-bezier(.22,1,.36,1),filter 950ms ease;box-shadow:0 30px 90px rgba(0,0,0,.26)}
+.chatWrap.show{opacity:1;transform:translateY(0);filter:blur(0)}
+.topbar{position:absolute;left:-4px;right:-4px;top:-4px;height:87px;border-bottom:4px solid rgba(255,255,255,.25);border-radius:48px 48px 0 0;box-sizing:border-box;background:#0c1118}
+.winControls{position:absolute;right:32px;top:24px;width:140px;height:28px;display:flex;align-items:center;justify-content:space-between;opacity:.72}
+.winControls span{display:block;position:relative;width:28px;height:28px}.winControls .min:before{content:'';position:absolute;left:0;right:0;top:13px;height:2px;background:#8a929d}.winControls .max{border:2px solid #8a929d;box-sizing:border-box}.winControls .close:before,.winControls .close:after{content:'';position:absolute;left:13px;top:0;width:2px;height:28px;background:#8a929d}.winControls .close:before{transform:rotate(45deg)}.winControls .close:after{transform:rotate(-45deg)}
+.promptBubble{position:absolute;left:195px;top:485px;width:489px;min-height:116px;box-sizing:border-box;padding:32px;border:4px solid #00d900;border-radius:32px;background:linear-gradient(123deg,rgba(66,227,180,.5) 0%,rgba(72,255,255,.5) 72%);box-shadow:0 0 19.574px #6eb840;opacity:0;transform:translateY(42px) scale(.98);filter:blur(11px);transition:opacity 650ms ease,transform 820ms cubic-bezier(.22,1,.36,1),filter 720ms ease}
+.promptBubble.show{opacity:1;transform:none;filter:blur(0)}
+.promptText{font-size:48px;line-height:1.1;font-weight:600;letter-spacing:-.6px;color:#fff;white-space:pre-wrap}
+.loading{position:absolute;left:455.97px;top:738.04px;display:flex;gap:37.58px;opacity:0;filter:blur(8px);transform:translateY(14px);transition:opacity 600ms ease,filter 700ms ease,transform 740ms cubic-bezier(.22,1,.36,1)}
+.loading.show{opacity:1;filter:blur(0);transform:none}
+.dot{width:49.148px;height:49.148px;border-radius:50%;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);box-shadow:0 0 18px rgba(0,217,0,.18);animation:dotPulse 1.45s ease-in-out infinite}.dot:nth-child(2){animation-delay:.19s}.dot:nth-child(3){animation-delay:.38s}
+
+/* Input states from Figma 81:1213 -&gt; 81:1154 -&gt; 76:591 */
+.inputBar{position:absolute;left:35px;right:32px;bottom:31px;height:104px;border:4px solid rgba(255,255,255,.25);border-radius:48px;box-sizing:border-box;overflow:hidden;background:#0c1118;transition:height 620ms cubic-bezier(.22,1,.36,1)}
+.inputBar.expanded{height:148px}
+.inputText{position:absolute;left:48.71px;top:17px;width:474.076px;min-height:105px;font-size:48px;line-height:1.1;font-weight:600;letter-spacing:-.65px;color:#fff;white-space:pre-wrap;word-break:break-word;opacity:1}
+.inputCursor{display:inline-block;width:3px;height:48px;background:#fff;vertical-align:-7px;margin-left:5px;animation:blink 1s steps(1) infinite}
+
+.send{position:absolute;left:537.88px;top:1.44px;width:93.119px;height:93.119px;border-radius:50%;box-sizing:border-box;background:rgba(0,110,44,.42);box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);transition:top 620ms cubic-bezier(.22,1,.36,1),background 420ms ease,box-shadow 420ms ease,transform 260ms ease,filter 260ms ease;opacity:1}
+.inputBar.expanded .send{top:40px}
+.send.active{background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);box-shadow:0 0 16px rgba(0,217,0,.26)}
+.send.pressed{transform:scale(.91);filter:brightness(1.08)}.sendAsset{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:.25;transition:opacity 260ms ease,transform 300ms ease;pointer-events:none}
+.send .sendIcon.arrow{opacity:0}
+.send.active:not(.sent){background:transparent;box-shadow:none}
+.send.active:not(.sent) .sendAsset{opacity:1}
+.send.sent .sendAsset{opacity:0;transform:scale(.86)}
+
+.sendIcon{position:absolute;inset:0;transition:opacity 260ms ease,transform 300ms ease}
+.sendIcon.arrow:before,.sendIcon.arrow:after{content:'';position:absolute;left:50%;top:50%;width:31px;height:4px;border-radius:3px;background:#7b9e83;transform-origin:100% 50%}
+.sendIcon.arrow:before{transform:translate(-27px,-9px) rotate(-56deg)}
+.sendIcon.arrow:after{transform:translate(-4px,-9px) rotate(56deg)}
+.send.active .sendIcon.arrow:before,.send.active .sendIcon.arrow:after{background:#fff}
+.sendIcon.cross{opacity:0;transform:scale(.7)}
+.sendIcon.cross:before,.sendIcon.cross:after{content:'';position:absolute;left:45px;top:31px;width:4px;height:31px;border-radius:3px;background:#fff}
+.sendIcon.cross:before{transform:rotate(45deg)}.sendIcon.cross:after{transform:rotate(-45deg)}
+.send.sent .sendIcon.arrow{opacity:0;transform:scale(.72)}
+.send.sent .sendIcon.cross{opacity:1;transform:scale(1)}
+
+
+
+.chatWrap{transform-origin:0 0}
+.chatWrap.compose{transform:translate3d(-105.69px,652.57px,0) scale(.5524861878453039)!important;filter:blur(0)!important}
+.codePane{position:absolute;left:547px;top:96px;width:1235px;height:917px;border:4px solid rgba(255,255,255,.25);border-radius:48px;background:#0c1118;box-shadow:none;opacity:0;transform:translateX(180px);filter:blur(24px);transition:opacity 950ms ease,transform 1200ms cubic-bezier(.22,1,.36,1),filter 1000ms ease;overflow:hidden;box-sizing:border-box}
+.codePane.show{opacity:1;transform:translateX(0);filter:blur(0)}
+.codeTopAsset{position:absolute;left:-4px;top:-4px;width:1235px;height:87px;display:block;max-width:none;pointer-events:none}
+.codeBody{position:absolute;left:65.11px;top:111px;width:1105.891px;height:770px;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;scroll-behavior:smooth;overscroll-behavior:none;box-sizing:border-box;padding-bottom:420px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:24px;line-height:1.1;font-weight:600;letter-spacing:-.15px;color:rgba(255,255,255,.42);white-space:pre-wrap}
+.codeBody::-webkit-scrollbar{display:none}
+.codeBody{transition:opacity 620ms ease,filter 620ms ease}
+.codeBody.complete{opacity:.25;filter:blur(.15px)}
+.codeLine{position:relative;display:block;width:max-content;max-width:100%;min-height:1.1em;opacity:1;filter:none}
+.codeChar{display:inline-block;opacity:0;transform:translateY(8px) scale(.985);filter:blur(5px);will-change:opacity,transform,filter}
+.codeLine.show .codeChar{animation:charIn .34s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--char-i,0) * 9ms)}
+@keyframes charIn{0%{opacity:0;transform:translateY(8px) scale(.985);filter:blur(5px)}55%{opacity:.92;filter:blur(1.5px)}100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+.doneMessage{position:absolute;left:443.65px;top:715.90px;width:244.35px;height:116.49px;box-sizing:border-box;padding:32px;border:4px solid transparent;border-radius:32px;background:linear-gradient(180deg,rgba(83,91,103,.78) 0%,rgba(56,61,69,.82) 100%) padding-box,linear-gradient(180deg,rgba(151,159,170,.58) 0%,rgba(94,100,110,.38) 100%) border-box;box-shadow:0 0 18px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.08);font-family:SB,Arial,Helvetica,sans-serif;font-size:48px;line-height:1.1;font-weight:600;letter-spacing:-.6px;color:#d9dde3;opacity:0;transform:translateY(22px) scale(.94);filter:blur(10px);transition:opacity 520ms ease,transform 700ms cubic-bezier(.22,1,.36,1),filter 700ms ease;display:flex;align-items:center;justify-content:flex-start}
+.chatWrap.compose .doneMessage{left:443.65px;top:715.90px;width:244.35px;height:116.49px;padding:32px;border-radius:32px;font-size:48px}
+.doneMessage.show{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+.codeDone{position:absolute;left:1164.5px;top:554.5px;width:241.3125px;height:241.3125px;z-index:20;opacity:0;transform:translate(-50%,-50%) scale(.58);filter:blur(18px);transition:opacity 520ms ease,transform 760ms cubic-bezier(.22,1,.36,1),filter 760ms ease;pointer-events:none}
+.codeDone.show{opacity:1;transform:translate(-50%,-50%) scale(1);filter:blur(0)}
+.codeDone .ring,.codeDone .check{display:none}
+.codeDone .doneSvg{display:block;width:100%;height:100%;overflow:visible}
+.codeDone .doneCircle,.codeDone .doneCheck{fill:none;stroke:url(#doneGrad);stroke-linecap:round;stroke-linejoin:round}
+.codeDone .doneCircle{stroke-width:16.5}
+.codeDone .doneCheck{stroke-width:18}
+.codeDone .doneGlow{filter:drop-shadow(0 0 18px rgba(0,217,0,.18)) drop-shadow(0 0 32px rgba(66,227,180,.14))}
+
+.codeDone.stage9Hidden{display:none!important;opacity:0!important;transition:none!important}
+.chatWrap.stage9Slow{transition:opacity 1800ms ease,transform 2500ms cubic-bezier(.22,1,.36,1),filter 1900ms ease!important}
+.codePane.stage9Slow{transition:opacity 1900ms ease,transform 2400ms cubic-bezier(.22,1,.36,1),filter 2000ms ease,left 2400ms cubic-bezier(.22,1,.36,1)!important}
+.ragScene.stage9Slow{transition:opacity 1240ms ease,transform 1640ms cubic-bezier(.22,1,.36,1),filter 1640ms ease!important}
+.fanoutStack.stage9Slow .tabGhost{transition:opacity 1120ms ease,filter 1400ms ease,transform 1720ms cubic-bezier(.22,1,.36,1)!important}
+.chatWrap.offLeft{opacity:.14;transform:translate(-430px,0) scale(.965);filter:blur(18px)}
+.codePane.fanout{left:342.5px;transform:translateX(0) scale(1);filter:blur(0)}
+.codePane.fanout .codeBody{opacity:0;filter:blur(10px)}
+.ragScene{position:absolute;left:54px;top:126px;width:1127px;height:730px;opacity:0;transform:translateY(22px) scale(.986);filter:blur(14px);transition:opacity 620ms ease,transform 820ms cubic-bezier(.22,1,.36,1),filter 820ms ease;pointer-events:none}
+.ragScene.show{opacity:1;transform:none;filter:blur(0)}
+.ragBadgeRow{display:flex;gap:14px;margin-bottom:22px}
+.ragBadge{padding:10px 16px;border-radius:999px;border:2px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);font:600 18px/1 SB,Arial,sans-serif;color:#9da7b4;letter-spacing:-.2px}
+.ragTitle{margin:0 0 24px;font:600 36px/1.05 SB,Arial,sans-serif;color:#eef2f7;letter-spacing:-.6px}
+.ragGrid{position:relative;height:620px;border-radius:34px;border:2px solid rgba(255,255,255,.10);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));overflow:hidden}
+.ragCol{position:absolute;top:34px;bottom:34px;width:250px;border-radius:28px;border:2px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02)}
+.ragCol.c1{left:34px}.ragCol.c2{left:438px}.ragCol.c3{right:34px;width:320px}
+.ragColTitle{position:absolute;left:24px;top:22px;font:600 22px/1 SB,Arial,sans-serif;color:#e8edf5;letter-spacing:-.35px}
+.ragItem{position:absolute;left:24px;right:24px;height:54px;border-radius:18px;background:linear-gradient(180deg,rgba(108,120,139,.42),rgba(70,80,94,.18));border:1px solid rgba(255,255,255,.08)}
+.ragItem.i1{top:72px}.ragItem.i2{top:144px}.ragItem.i3{top:216px}.ragItem.i4{top:288px}
+.ragPill{position:absolute;height:38px;padding:0 16px;border-radius:999px;background:linear-gradient(135deg,rgba(66,227,180,.24),rgba(72,255,255,.18));border:1px solid rgba(66,227,180,.28);font:600 16px/38px SB,Arial,sans-serif;color:#dffbf0}
+.ragPill.p1{left:32px;top:90px}.ragPill.p2{left:138px;top:90px}.ragPill.p3{left:32px;top:144px}.ragPill.p4{left:170px;top:144px}.ragPill.p5{left:32px;top:198px}
+.ragNode{position:absolute;border-radius:22px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015))}
+.ragNode.n1{left:36px;top:84px;width:184px;height:82px}.ragNode.n2{left:36px;top:208px;width:184px;height:82px}.ragNode.n3{left:36px;top:332px;width:184px;height:82px}
+.ragNode.n4{left:64px;top:168px;width:196px;height:78px}.ragNode.n5{left:64px;top:292px;width:196px;height:78px}
+.ragNode.n6{left:44px;top:132px;width:230px;height:92px}.ragNode.n7{left:44px;top:278px;width:230px;height:92px}.ragNode.n8{left:44px;top:424px;width:230px;height:92px}
+.ragNode::before{content:'';position:absolute;left:16px;top:16px;width:48%;height:12px;border-radius:999px;background:rgba(255,255,255,.16)}
+.ragNode::after{content:'';position:absolute;left:16px;right:16px;bottom:16px;height:26px;border-radius:12px;background:rgba(255,255,255,.08)}
+.ragLines{position:absolute;inset:0;pointer-events:none;opacity:.55}
+.ragLines svg{width:100%;height:100%}
+.fanoutStack{position:absolute;inset:0;pointer-events:none}
+.tabGhost{position:absolute;left:342.5px;top:96px;width:1235px;height:917px;border:4px solid rgba(255,255,255,.22);border-radius:48px;background:#0c1118;box-sizing:border-box;overflow:hidden;opacity:0;filter:blur(16px);transform:translateX(0) scale(.985);transition:opacity 560ms ease,filter 700ms ease,transform 860ms cubic-bezier(.22,1,.36,1)}
+.tabGhost::before{content:'';position:absolute;left:0;right:0;top:0;height:87px;border-bottom:4px solid rgba(255,255,255,.16);background:#0c1118}
+.tabGhost::after{content:'';position:absolute;right:32px;top:26px;width:104px;height:20px;background:linear-gradient(90deg,rgba(255,255,255,.18),rgba(255,255,255,.04));border-radius:999px}
+.tabGhost .mini{position:absolute;left:40px;right:40px;top:120px;bottom:40px;border-radius:28px;border:2px solid rgba(255,255,255,.06);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015))}
+.tabGhost .mini .row{position:absolute;left:24px;right:24px;height:38px;border-radius:14px;background:rgba(255,255,255,.08)}
+.tabGhost .mini .row.r1{top:26px}.tabGhost .mini .row.r2{top:82px}.tabGhost .mini .row.r3{top:138px}
+.tabGhost .mini .node{position:absolute;width:160px;height:64px;border-radius:18px;background:rgba(66,227,180,.12);border:1px solid rgba(66,227,180,.18)}
+.tabGhost .mini .node.n1{left:24px;top:228px}.tabGhost .mini .node.n2{left:230px;top:228px}.tabGhost .mini .node.n3{right:24px;top:228px}
+.tabGhost.g1{z-index:6}.tabGhost.g2{z-index:5}.tabGhost.g3{z-index:4}.tabGhost.g4{z-index:3}
+.tabGhost.g1.show{opacity:.94;filter:blur(0);transform:translateX(42px) scale(.996)}
+.tabGhost.g2.show{opacity:.82;filter:blur(0);transform:translateX(84px) scale(.992)}
+.tabGhost.g3.show{opacity:.68;filter:blur(0);transform:translateX(126px) scale(.988)}
+.tabGhost.g4.show{opacity:.56;filter:blur(0);transform:translateX(168px) scale(.984)}
+.errorLayer{position:absolute;left:342.5px;top:96px;width:1235px;height:917px;z-index:35;pointer-events:none;overflow:hidden}.solitaireTrail{position:absolute;inset:0;z-index:10}.errorCard,.solitaireClone{position:absolute;width:489px;height:244px;padding:32px;border-radius:32px;border:7px solid #fff;background:linear-gradient(135deg,#FF5A5A 0%,#E11E1E 100%);box-shadow:0 18px 32px rgba(0,0,0,.30);box-sizing:border-box;display:flex;align-items:center;justify-content:center;text-align:center;left:0;top:0;will-change:transform,opacity}.errorCard{opacity:0;filter:blur(8px);z-index:120}.errorLayer.show .errorCard{opacity:1;filter:blur(0)}.solitaireClone{opacity:1;z-index:20;filter:none;transition:opacity .50s linear}.solitaireClone.fading{opacity:0}.errorTrail{display:none!important}.errorCode{font-family:SB,Arial,Helvetica,sans-serif;font-size:128px;line-height:1.0;font-weight:600;color:#fff;letter-spacing:-2px;margin:0}.errorLabel{margin-top:0;font-family:SB,Arial,Helvetica,sans-serif;font-size:48px;line-height:1.1;font-weight:600;color:#fff;letter-spacing:-.7px}
+.errorCard.outroLeft{transform:translate(-1420px,0) scale(.98);opacity:0;filter:blur(18px)}
+
+
+.chatWrap.outroLeft{transform:translate(-1460px,0) scale(.68);opacity:0;filter:blur(16px)}
+.codePane.outroLeft{transform:translateX(-1420px) scale(.88);opacity:.08;filter:blur(18px)}
+.ragScene.outroLeft,.fanoutStack.outroLeft,.errorLayer.outroLeft{transform:translateX(-1420px);opacity:0;filter:blur(18px)}
+.outroTextScene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:120px 160px;box-sizing:border-box;opacity:0;transform:translateY(18px) scale(.985);filter:blur(18px);transition:opacity 620ms ease,transform 820ms cubic-bezier(.22,1,.36,1),filter 820ms ease;pointer-events:none;z-index:50}
+.outroTextScene.show{opacity:1;transform:none;filter:blur(0)}
+.outroTextWrap{max-width:1380px;text-align:left}
+.outroLine{display:block;font-family:SB,Arial,Helvetica,sans-serif;font-weight:600;font-size:78px;line-height:1.02;letter-spacing:-1.6px;color:#F2F6FB;margin:0 0 12px 0;white-space:nowrap}
+.outroLine.gradient{color:#FFD9D9}.outroLine.gradient .outroChar{background:linear-gradient(90deg,#FF5757 0%,#EF1010 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}.outroLine.gradient .outroGap{-webkit-text-fill-color:transparent;color:transparent;background:none}
+.outroChar{display:inline-block;opacity:0;transform:translateY(8px) scale(.985);filter:blur(5px);animation:charIn .34s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--char-i,0) * 26ms);will-change:opacity,transform,filter}
+.outroGap{display:inline-block;width:.36em}
+
+.codeIndent{display:inline-block;width:1.6em}
+.kw{color:rgba(199,146,234,.68)}.name{color:rgba(130,170,255,.68)}.str{color:rgba(236,196,141,.68)}.func{color:rgba(130,210,255,.68)}.cls{color:rgba(127,219,202,.68)}.com{color:rgba(102,118,142,.7)}.pun{color:rgba(180,190,205,.5)}.decor{color:rgba(255,203,107,.68)}.num{color:rgba(247,140,108,.68)}
+@keyframes dotPulse{0%,72%,100%{transform:translateY(0) scale(.86);opacity:.58}36%{transform:translateY(-8px) scale(1.04);opacity:1}}
+@keyframes blink{0%,48%{opacity:1}49%,100%{opacity:0}}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;
+&lt;div class=&quot;bgGlow&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;chatWrap&quot; id=&quot;wrap&quot;&gt;
+  &lt;div class=&quot;topbar&quot;&gt;&lt;div class=&quot;winControls&quot;&gt;&lt;span class=&quot;min&quot;&gt;&lt;/span&gt;&lt;span class=&quot;max&quot;&gt;&lt;/span&gt;&lt;span class=&quot;close&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;promptBubble&quot; id=&quot;bubble&quot;&gt;&lt;div class=&quot;promptText&quot; id=&quot;promptBubble&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div id=&quot;v8NextPrompt&quot;&gt;&lt;/div&gt;&lt;div id=&quot;v8LostReply&quot;&gt;&lt;strong&gt;Не вижу контекста&lt;/strong&gt; предыдущей задачи. Пришлите детали ещё раз.&lt;/div&gt;&lt;div class=&quot;loading&quot; id=&quot;loading&quot;&gt;&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;doneMessage&quot; id=&quot;doneMessage&quot;&gt;Готово&lt;/div&gt;
+  &lt;div class=&quot;inputBar&quot; id=&quot;inputBar&quot;&gt;
+    &lt;div class=&quot;inputText&quot; id=&quot;inputText&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;send&quot; id=&quot;send&quot;&gt;&lt;img class=&quot;sendAsset&quot; src=&quot;@@EMBED_ASSET_0034@@&quot; alt=&quot;&quot;&gt;&lt;div class=&quot;sendIcon arrow&quot;&gt;&lt;/div&gt;&lt;div class=&quot;sendIcon cross&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;codePane&quot; id=&quot;codePane&quot;&gt;
+  &lt;img class=&quot;codeTopAsset&quot; src=&quot;@@EMBED_ASSET_0035@@&quot; alt=&quot;&quot;&gt;&lt;div class=&quot;codeBody&quot; id=&quot;codeBody&quot;&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;kw&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;name&quot;&gt;fastapi&lt;/span&gt; &lt;span class=&quot;kw&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;cls&quot;&gt;FastAPI&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;kw&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;name&quot;&gt;pydantic&lt;/span&gt; &lt;span class=&quot;kw&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;cls&quot;&gt;BaseModel&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;kw&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;name&quot;&gt;langchain_openai&lt;/span&gt; &lt;span class=&quot;kw&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;cls&quot;&gt;ChatOpenAI&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;kw&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;name&quot;&gt;langchain_chroma&lt;/span&gt; &lt;span class=&quot;kw&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;cls&quot;&gt;Chroma&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;name&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;cls&quot;&gt;FastAPI&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;()&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;name&quot;&gt;llm&lt;/span&gt; &lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;cls&quot;&gt;ChatOpenAI&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;gpt-4o-mini&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;)&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;name&quot;&gt;db&lt;/span&gt; &lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;cls&quot;&gt;Chroma&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;collection_name&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;docs&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;)&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;kw&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;cls&quot;&gt;Query&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;cls&quot;&gt;BaseModel&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;):&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;codeIndent&quot;&gt;&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;question&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;cls&quot;&gt;str&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;decor&quot;&gt;@app.post&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;/rag&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;)&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;kw&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;kw&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;func&quot;&gt;run_rag&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;payload&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;cls&quot;&gt;Query&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;):&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;codeIndent&quot;&gt;&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;docs&lt;/span&gt; &lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;name&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;func&quot;&gt;similarity_search&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;payload&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;question&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;num&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;)&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;codeIndent&quot;&gt;&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;str&quot;&gt;&quot;\n\n&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;func&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;page_content&lt;/span&gt; &lt;span class=&quot;kw&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;name&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;kw&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;name&quot;&gt;docs&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;])&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;codeIndent&quot;&gt;&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;answer&lt;/span&gt; &lt;span class=&quot;pun&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;name&quot;&gt;llm&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;func&quot;&gt;invoke&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;f&quot;Use context: {context}\nQ: {payload.question}&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;)&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;codeLine&quot;&gt;&lt;span class=&quot;codeIndent&quot;&gt;&lt;/span&gt;&lt;span class=&quot;kw&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;pun&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;str&quot;&gt;&quot;answer&quot;&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;name&quot;&gt;answer&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;name&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;pun&quot;&gt;}&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;div class=&quot;ragScene&quot; id=&quot;ragScene&quot;&gt;
+  &lt;div class=&quot;ragBadgeRow&quot;&gt;&lt;div class=&quot;ragBadge&quot;&gt;index&lt;/div&gt;&lt;div class=&quot;ragBadge&quot;&gt;retrieve&lt;/div&gt;&lt;div class=&quot;ragBadge&quot;&gt;reason&lt;/div&gt;&lt;div class=&quot;ragBadge&quot;&gt;answer&lt;/div&gt;&lt;/div&gt;
+  &lt;h3 class=&quot;ragTitle&quot;&gt;RAG system skeleton&lt;/h3&gt;
+  &lt;div class=&quot;ragGrid&quot;&gt;
+    &lt;div class=&quot;ragLines&quot;&gt;&lt;svg viewBox=&quot;0 0 1127 620&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;path d=&quot;M285 168C360 168 360 122 438 122&quot; stroke=&quot;rgba(255,255,255,.18)&quot; stroke-width=&quot;3&quot; stroke-dasharray=&quot;8 10&quot;/&gt;&lt;path d=&quot;M285 292C360 292 360 246 438 246&quot; stroke=&quot;rgba(255,255,255,.18)&quot; stroke-width=&quot;3&quot; stroke-dasharray=&quot;8 10&quot;/&gt;&lt;path d=&quot;M285 416C360 416 360 370 438 370&quot; stroke=&quot;rgba(255,255,255,.18)&quot; stroke-width=&quot;3&quot; stroke-dasharray=&quot;8 10&quot;/&gt;&lt;path d=&quot;M688 160C760 160 760 172 792 172&quot; stroke=&quot;rgba(66,227,180,.32)&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;path d=&quot;M688 304C760 304 760 316 792 316&quot; stroke=&quot;rgba(66,227,180,.32)&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;path d=&quot;M688 450C760 450 760 462 792 462&quot; stroke=&quot;rgba(66,227,180,.32)&quot; stroke-width=&quot;4&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;
+    &lt;div class=&quot;ragCol c1&quot;&gt;&lt;div class=&quot;ragColTitle&quot;&gt;Sources&lt;/div&gt;&lt;div class=&quot;ragItem i1&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ragItem i2&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ragItem i3&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ragItem i4&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;ragCol c2&quot;&gt;&lt;div class=&quot;ragColTitle&quot;&gt;Pipeline&lt;/div&gt;&lt;div class=&quot;ragNode n1&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ragNode n2&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ragNode n3&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class=&quot;ragCol c3&quot;&gt;&lt;div class=&quot;ragColTitle&quot;&gt;Runtime&lt;/div&gt;&lt;div class=&quot;ragPill p1&quot;&gt;Query&lt;/div&gt;&lt;div class=&quot;ragPill p2&quot;&gt;Rerank&lt;/div&gt;&lt;div class=&quot;ragPill p3&quot;&gt;Context&lt;/div&gt;&lt;div class=&quot;ragPill p4&quot;&gt;Prompt&lt;/div&gt;&lt;div class=&quot;ragPill p5&quot;&gt;Answer&lt;/div&gt;&lt;div class=&quot;ragNode n6&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ragNode n7&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ragNode n8&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;fanoutStack&quot; id=&quot;fanoutStack&quot;&gt;
+  &lt;div class=&quot;tabGhost g4&quot;&gt;&lt;div class=&quot;mini&quot;&gt;&lt;div class=&quot;row r1&quot;&gt;&lt;/div&gt;&lt;div class=&quot;row r2&quot;&gt;&lt;/div&gt;&lt;div class=&quot;row r3&quot;&gt;&lt;/div&gt;&lt;div class=&quot;node n1&quot;&gt;&lt;/div&gt;&lt;div class=&quot;node n2&quot;&gt;&lt;/div&gt;&lt;div class=&quot;node n3&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;tabGhost g3&quot;&gt;&lt;div class=&quot;mini&quot;&gt;&lt;div class=&quot;row r1&quot;&gt;&lt;/div&gt;&lt;div class=&quot;row r2&quot;&gt;&lt;/div&gt;&lt;div class=&quot;row r3&quot;&gt;&lt;/div&gt;&lt;div class=&quot;node n1&quot;&gt;&lt;/div&gt;&lt;div class=&quot;node n2&quot;&gt;&lt;/div&gt;&lt;div class=&quot;node n3&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;tabGhost g2&quot;&gt;&lt;div class=&quot;mini&quot;&gt;&lt;div class=&quot;row r1&quot;&gt;&lt;/div&gt;&lt;div class=&quot;row r2&quot;&gt;&lt;/div&gt;&lt;div class=&quot;row r3&quot;&gt;&lt;/div&gt;&lt;div class=&quot;node n1&quot;&gt;&lt;/div&gt;&lt;div class=&quot;node n2&quot;&gt;&lt;/div&gt;&lt;div class=&quot;node n3&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;tabGhost g1&quot;&gt;&lt;div class=&quot;mini&quot;&gt;&lt;div class=&quot;row r1&quot;&gt;&lt;/div&gt;&lt;div class=&quot;row r2&quot;&gt;&lt;/div&gt;&lt;div class=&quot;row r3&quot;&gt;&lt;/div&gt;&lt;div class=&quot;node n1&quot;&gt;&lt;/div&gt;&lt;div class=&quot;node n2&quot;&gt;&lt;/div&gt;&lt;div class=&quot;node n3&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&quot;errorLayer&quot; id=&quot;errorLayer&quot;&gt;
+  &lt;div class=&quot;solitaireTrail&quot; id=&quot;solitaireTrail&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;errorCard&quot; id=&quot;errorCard&quot;&gt;&lt;div&gt;&lt;div class=&quot;errorCode&quot;&gt;502&lt;/div&gt;&lt;div class=&quot;errorLabel&quot;&gt;Bad Gateway&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;outroTextScene&quot; id=&quot;outroTextScene&quot;&gt;&lt;div class=&quot;outroTextWrap&quot; id=&quot;outroTextWrap&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;codeDone&quot; id=&quot;codeDone&quot;&gt;
+  &lt;svg class=&quot;doneSvg doneGlow&quot; viewBox=&quot;0 0 241.3125 241.3125&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;defs&gt;
+      &lt;linearGradient id=&quot;doneGrad&quot; x1=&quot;0&quot; y1=&quot;201.09375&quot; x2=&quot;201.09375&quot; y2=&quot;0&quot; gradientUnits=&quot;userSpaceOnUse&quot; gradientTransform=&quot;translate(20.109375 20.109375)&quot;&gt;
+        &lt;stop offset=&quot;0&quot; stop-color=&quot;#00D900&quot;&gt;&lt;/stop&gt;
+        &lt;stop offset=&quot;1&quot; stop-color=&quot;#42E3B4&quot;&gt;&lt;/stop&gt;
+      &lt;/linearGradient&gt;
+    &lt;/defs&gt;
+    &lt;circle class=&quot;doneCircle&quot; cx=&quot;120.65625&quot; cy=&quot;120.65625&quot; r=&quot;92.296875&quot;&gt;&lt;/circle&gt;
+    &lt;path class=&quot;doneCheck&quot; d=&quot;M82.8 122.4 L106.9 146.5 L157.9 95.5&quot;&gt;&lt;/path&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(()=&gt;{
+  const lines=['напиши мне RAG','на FastAPI'];
+  const full=lines.join('\n');
+  const wrap=document.getElementById('wrap');
+  const bubble=document.getElementById('bubble');
+  const promptBubble=document.getElementById('promptBubble');
+  const inputBar=document.getElementById('inputBar');
+  const inputText=document.getElementById('inputText');
+  const loading=document.getElementById('loading');
+  const doneMessage=document.getElementById('doneMessage');
+  const send=document.getElementById('send');
+  const codePane=document.getElementById('codePane');
+  const codeDone=document.getElementById('codeDone');
+  const codeBody=document.getElementById('codeBody');
+  const codeLines=[...document.querySelectorAll('.codeLine')];
+  const ragScene=document.getElementById('ragScene');
+  const fanoutStack=document.getElementById('fanoutStack');
+  const fanClones=[...document.querySelectorAll('.tabGhost')];
+  const errorLayer=document.getElementById('errorLayer');
+  const solitaireTrail=document.getElementById('solitaireTrail');
+  const errorCard=document.getElementById('errorCard');
+  const outroTextScene=document.getElementById('outroTextScene');
+  const outroTextWrap=document.getElementById('outroTextWrap');
+  const outroLines=[
+    {text:'Под нагрузкой', gradient:false},
+    {text:'навайбкоденный продукт', gradient:false},
+    {text:'быстро крашится', gradient:true}
+  ];
+  let i=0,timer=null,sendTimer=null,loadTimer=null,codeTimers=[],fanTimers=[],outroTimers=[],chatStarted=false;
+  let errorRaf=0,errorLastTs=0,lastStampTs=0,errorPos=null,errorVel={x:760,y:520},solitaireClones=[];
+
+  function prepareCodeChars(){
+    codeLines.forEach(line=&gt;{
+      let charIndex=0;
+      const walker=document.createTreeWalker(line,NodeFilter.SHOW_TEXT);
+      const textNodes=[];
+      while(walker.nextNode()) textNodes.push(walker.currentNode);
+      textNodes.forEach(node=&gt;{
+        const frag=document.createDocumentFragment();
+        [...node.nodeValue].forEach(ch=&gt;{
+          const span=document.createElement('span');
+          span.className='codeChar';
+          span.style.setProperty('--char-i',charIndex++);
+          span.textContent=ch===' ' ? '\u00a0' : ch;
+          frag.appendChild(span);
+        });
+        node.replaceWith(frag);
+      });
+      line.dataset.charCount=charIndex;
+    });
+  }
+  prepareCodeChars();
+
+  function renderInput(content, withCursor){
+    inputText.innerHTML = content.replace(/\n/g,'&lt;br&gt;') + (withCursor ? '&lt;span class=&quot;inputCursor&quot;&gt;&lt;/span&gt;' : '');
+    const hasText = content.length &gt; 0;
+    send.classList.toggle('active', hasText);
+    if(content.includes('\n')) inputBar.classList.add('expanded');
+  }
+
+
+  function makeSolitaireClone(x,y){
+    if(!solitaireTrail||!errorCard) return;
+    const clone=errorCard.cloneNode(true);
+    clone.removeAttribute('id');
+    clone.className='solitaireClone';
+    clone.style.transform=`translate(${Math.round(x)}px, ${Math.round(y)}px)`;
+    clone.style.opacity='1';
+    solitaireTrail.appendChild(clone);
+    solitaireClones.push(clone);
+    const maxClones=46;
+    while(solitaireClones.length&gt;maxClones){
+      const old=solitaireClones.shift();
+      if(old&amp;&amp;old.parentNode) old.remove();
+    }
+    setTimeout(()=&gt;{
+      if(!clone.isConnected) return;
+      clone.classList.add('fading');
+      setTimeout(()=&gt;{
+        const idx=solitaireClones.indexOf(clone);
+        if(idx&gt;=0) solitaireClones.splice(idx,1);
+        clone.remove();
+      },480);
+    },2400);
+  }
+
+  function renderErrorCard(){
+    if(!errorCard||!errorPos) return;
+    errorCard.style.transform=`translate(${errorPos.x}px, ${errorPos.y}px)`;
+  }
+
+  function stopErrorBounce(){
+    if(errorRaf){ cancelAnimationFrame(errorRaf); errorRaf=0; }
+    errorLastTs=0; lastStampTs=0;
+    errorPos=null;
+    if(errorLayer) errorLayer.classList.remove('show');
+    if(errorCard){ errorCard.classList.remove('show'); errorCard.style.transform='translate(373px, 336px)'; errorCard.style.opacity='0'; }
+    solitaireClones.forEach(el=&gt;el.remove());
+    solitaireClones=[];
+    if(solitaireTrail) solitaireTrail.innerHTML='';
+  }
+
+  function startErrorBounce(){
+    if(!errorLayer||!errorCard) return;
+    stopErrorBounce();
+    const cardW=489, cardH=244;
+    const maxX=Math.max(0,errorLayer.clientWidth-cardW);
+    const maxY=Math.max(0,errorLayer.clientHeight-cardH);
+    errorPos={x:Math.round(maxX*.14),y:Math.round(maxY*.18)};
+    errorVel={x:760,y:520};
+    errorLayer.classList.add('show');
+    errorCard.classList.add('show');
+    errorCard.style.opacity='1';
+    renderErrorCard();
+    for(let k=6;k&gt;=1;k--){
+      makeSolitaireClone(Math.max(0,errorPos.x-k*34),Math.max(0,errorPos.y-k*23));
+    }
+    const step=(ts)=&gt;{
+      if(!errorLayer.classList.contains('show')) return;
+      if(!errorLastTs) errorLastTs=ts;
+      let dt=(ts-errorLastTs)/1000;
+      if(dt&gt;.035) dt=.035;
+      errorLastTs=ts;
+      errorPos.x+=errorVel.x*dt;
+      errorPos.y+=errorVel.y*dt;
+      let bounced=false;
+      if(errorPos.x&lt;=0){errorPos.x=0;errorVel.x=Math.abs(errorVel.x);bounced=true}
+      else if(errorPos.x&gt;=maxX){errorPos.x=maxX;errorVel.x=-Math.abs(errorVel.x);bounced=true}
+      if(errorPos.y&lt;=0){errorPos.y=0;errorVel.y=Math.abs(errorVel.y);bounced=true}
+      else if(errorPos.y&gt;=maxY){errorPos.y=maxY;errorVel.y=-Math.abs(errorVel.y);bounced=true}
+      renderErrorCard();
+      if(!lastStampTs||ts-lastStampTs&gt;42){
+        makeSolitaireClone(errorPos.x,errorPos.y);
+        lastStampTs=ts;
+      }
+      if(bounced){
+        for(let j=1;j&lt;=3;j++){
+          setTimeout(()=&gt;{if(errorPos)makeSolitaireClone(errorPos.x,errorPos.y)},j*28);
+        }
+      }
+      errorRaf=requestAnimationFrame(step);
+    };
+    errorRaf=requestAnimationFrame(step);
+  }
+
+  function clearOutro(){
+    outroTimers.forEach(clearTimeout); outroTimers=[];
+    wrap.classList.remove('outroLeft');
+    codePane.classList.remove('outroLeft');
+    if(ragScene) ragScene.classList.remove('outroLeft');
+    if(fanoutStack) fanoutStack.classList.remove('outroLeft');
+    if(errorLayer) errorLayer.classList.remove('outroLeft');
+    if(errorCard) errorCard.classList.remove('outroLeft');
+    if(outroTextScene){
+      outroTextScene.classList.remove('show');
+      outroTextWrap.innerHTML='';
+    }
+  }
+
+  function buildOutroText(){
+    if(!outroTextWrap) return;
+    outroTextWrap.innerHTML='';
+    let charIndex=0;
+    outroLines.forEach((line,lineIdx)=&gt;{
+      const row=document.createElement('div');
+      row.className='outroLine' + (line.gradient ? ' gradient' : '');
+      [...line.text].forEach(ch=&gt;{
+        const span=document.createElement('span');
+        span.className = ch===' ' ? 'outroChar outroGap' : 'outroChar';
+        span.style.setProperty('--char-i', charIndex++);
+        span.textContent = ch===' ' ? ' ' : ch;
+        row.appendChild(span);
+      });
+      charIndex += lineIdx===0 ? 10 : 0;
+      outroTextWrap.appendChild(row);
+    });
+  }
+
+  function clearFanout(){
+    clearOutro();
+    fanTimers.forEach(clearTimeout); fanTimers=[];
+    wrap.classList.remove('offLeft','stage9Slow');
+    codePane.classList.remove('fanout','stage9Slow');
+    codeDone.classList.remove('stage9Hidden');
+    if(ragScene) ragScene.classList.remove('show','stage9Slow');
+    if(fanoutStack) fanoutStack.classList.remove('show','stage9Slow');
+    fanClones.forEach(clone=&gt;clone.classList.remove('show'));
+    stopErrorBounce();
+  }
+
+  function clearCode(){
+    clearFanout();
+    codeTimers.forEach(clearTimeout); codeTimers=[];
+    codePane.classList.remove('show');
+    codeDone.classList.remove('show');
+    codeLines.forEach(line=&gt;line.classList.remove('show'));
+    if(codeBody){codeBody.scrollTop=0;codeBody.classList.remove('complete');}
+    wrap.classList.remove('compose');
+    doneMessage.classList.remove('show');
+  }
+
+  function reset(){
+    clearTimeout(timer);clearTimeout(sendTimer);clearTimeout(loadTimer);
+    chatStarted=false;
+    i=0;
+    promptBubble.innerHTML='';
+    inputText.innerHTML='';
+    loading.classList.remove('show');
+    bubble.classList.remove('show');
+    inputBar.classList.remove('expanded');
+    send.classList.remove('active','pressed','sent');
+    wrap.classList.remove('show');
+    clearCode();
+  }
+
+  function typeIntoInput(){
+    if(i&lt;full.length){
+      const part=full.slice(0,i+1);
+      i++;
+      renderInput(part,true);
+      const ch=full[i-1];
+      timer=setTimeout(typeIntoInput,ch===' '?46:ch==='\n'?230:66);
+    }else{
+      renderInput(full,true);
+      sendTimer=setTimeout(sendMessage,700);
+    }
+  }
+
+  function sendMessage(){
+    send.classList.add('pressed');
+    renderInput(full,false);
+    setTimeout(()=&gt;send.classList.remove('pressed'),260);
+    setTimeout(()=&gt;{
+      inputText.innerHTML='';
+      inputBar.classList.remove('expanded');
+      send.classList.add('sent');
+      promptBubble.innerHTML=lines.join('&lt;br&gt;');
+      bubble.classList.add('show');
+      loadTimer=setTimeout(()=&gt;loading.classList.add('show'),520);
+    },430);
+  }
+
+  function showCode(){
+    wrap.classList.add('compose');
+    codePane.classList.add('show');
+    if(codeBody) codeBody.scrollTop=0;
+    try{ parent.postMessage({type:'codeStarted'},'*'); }catch(_){}
+    const startDelay=240;
+    const stepDelay=118;
+    let lastFinish=0;
+    codeLines.forEach((line,idx)=&gt;{
+      const chars=Number(line.dataset.charCount||0);
+      const delay=startDelay + idx*stepDelay;
+      const charTail=Math.max(0,(chars-1)*9);
+      lastFinish=Math.max(lastFinish,delay+340+charTail);
+      codeTimers.push(setTimeout(()=&gt;{
+        line.classList.add('show');
+        if(codeBody &amp;&amp; line.offsetTop&gt;codeBody.clientHeight*.46){
+          codeBody.scrollTo({top:Math.max(0,line.offsetTop-codeBody.clientHeight*.46),behavior:'smooth'});
+        }
+      },delay));
+    });
+    codeTimers.push(setTimeout(()=&gt;{
+      loading.classList.remove('show');
+      doneMessage.classList.add('show');
+    }, lastFinish + 180));
+    codeTimers.push(setTimeout(()=&gt;{
+      if(codeBody) codeBody.classList.add('complete');
+      codeDone.classList.add('show');
+    }, lastFinish + 360));
+  }
+
+  function backFromCode(){
+    clearCode();
+    if(bubble.classList.contains('show')) loading.classList.add('show');
+  }
+
+
+  function showFanout(){
+    clearFanout();
+    loading.classList.remove('show');
+    doneMessage.classList.remove('show');
+    codeDone.classList.remove('show');
+    codeDone.classList.add('stage9Hidden');
+    wrap.classList.add('stage9Slow','offLeft','compose');
+    codePane.classList.add('stage9Slow','show','fanout');
+    if(codeBody) codeBody.classList.remove('complete');
+    if(ragScene) ragScene.classList.add('stage9Slow','show');
+    if(fanoutStack) fanoutStack.classList.add('stage9Slow','show');
+    fanClones.forEach((clone,idx)=&gt;{
+      fanTimers.push(setTimeout(()=&gt;clone.classList.add('show'),280 + idx*240));
+    });
+    fanTimers.push(setTimeout(()=&gt;{ startErrorBounce(); }, 1520));
+  }
+
+  function backFromFanout(){
+    clearFanout();
+    wrap.classList.add('show','compose');
+    codePane.classList.add('show');
+    if(codeBody) codeBody.classList.add('complete');
+    doneMessage.classList.add('show');
+    codeDone.classList.remove('stage9Hidden');
+    codeDone.classList.add('show');
+  }
+
+  function showOutroTyping(){
+    clearOutro();
+    wrap.classList.add('offLeft','compose','outroLeft');
+    codePane.classList.add('show','fanout','outroLeft');
+    if(codeBody) codeBody.classList.remove('complete');
+    if(ragScene) ragScene.classList.add('show','outroLeft');
+    if(fanoutStack) fanoutStack.classList.add('show','outroLeft');
+    fanClones.forEach(clone=&gt;clone.classList.add('show'));
+    if(errorLayer) errorLayer.classList.add('show','outroLeft');
+    if(errorCard) errorCard.classList.add('show','outroLeft');
+    buildOutroText();
+    outroTimers.push(setTimeout(()=&gt;{ if(outroTextScene) outroTextScene.classList.add('show'); }, 180));
+  }
+
+  function backFromOutroTyping(){
+    clearOutro();
+    wrap.classList.add('offLeft','compose');
+    codePane.classList.add('show','fanout');
+    if(ragScene) ragScene.classList.add('show');
+    if(fanoutStack) fanoutStack.classList.add('show');
+    fanClones.forEach(clone=&gt;clone.classList.add('show'));
+    if(errorLayer) errorLayer.classList.add('show');
+    if(errorCard) errorCard.classList.add('show');
+  }
+
+  function startChat(){
+    if(chatStarted){
+      try{ parent.postMessage({type:'chatStarted'},'*'); }catch(_){}
+      return;
+    }
+    reset();
+    chatStarted=true;
+    wrap.classList.add('show');
+    try{ parent.postMessage({type:'chatStarted'},'*'); }catch(_){}
+    setTimeout(typeIntoInput,900);
+  }
+
+  addEventListener('message',e=&gt;{
+    if(!e.data)return;
+    if(e.data.type==='start') startChat();
+    if(e.data.type==='compose') showCode();
+    if(e.data.type==='fanout') showFanout();
+    if(e.data.type==='outroTyping') showOutroTyping();
+    if(e.data.type==='backCompose') backFromCode();
+    if(e.data.type==='backFanout') backFromFanout();
+    if(e.data.type==='backOutroTyping') backFromOutroTyping();
+    if(e.data.type==='reset') reset();
+  });
+})();
+&lt;/script&gt;
+&lt;style id=&quot;v8-fullsite-extension&quot;&gt;
+/* Standalone copy of the earlier full-size chat UI; no miniature or card scaling. */
+.sendAsset,.codeTopAsset{display:none!important}
+.codePane:before{content:'';position:absolute;top:0;left:0;right:0;height:83px;background:#101820;border-bottom:2px solid rgba(255,255,255,.19);z-index:2;pointer-events:none}
+.codePane:after{content:'●  ●  ●';position:absolute;right:36px;top:18px;letter-spacing:10px;font:20px SB,Arial,sans-serif;color:#5b656d;z-index:3;pointer-events:none}
+#v8TimeStamp{position:absolute;left:970px;top:173px;padding:16px 28px;border-radius:100px;background:rgba(13,27,30,.93);border:2px solid rgba(66,227,180,.42);color:#aaffd5;font:600 32px/1.2 SB,Arial,sans-serif;letter-spacing:.5px;opacity:0;transform:translateY(28px);transition:opacity .6s,transform .8s cubic-bezier(.16,1,.3,1);pointer-events:none}
+#v8TimeStamp.show{opacity:1;transform:none}
+#v8LostOutcome{position:absolute;left:967px;top:295px;width:855px;opacity:0;transform:translateY(35px);filter:blur(13px);transition:opacity .95s cubic-bezier(.16,1,.3,1),transform .95s cubic-bezier(.16,1,.3,1),filter .95s;pointer-events:none}
+#v8LostOutcome.show{opacity:1;transform:none;filter:blur(0)}
+#v8LostOutcome .v8-overline{color:#9bb1ac;font:500 30px/1.1 SB,Arial,sans-serif;margin-bottom:23px}
+#v8LostOutcome .v8-statement{font:600 93px/.97 SB,Arial,sans-serif;letter-spacing:-3px;color:#fff}
+#v8LostOutcome .v8-statement span{color:#42e3b4}
+#v8LostOutcome .v8-detail{max-width:750px;color:#b5cac4;font:400 35px/1.3 SB,Arial,sans-serif;margin-top:30px}
+#v8NextPrompt{position:absolute;left:75px;top:499px;width:555px;min-height:106px;box-sizing:border-box;padding:23px 26px;border:3px solid #00d900;border-radius:30px;background:linear-gradient(125deg,rgba(66,227,180,.40),rgba(72,255,255,.20));color:#fff;font:600 39px/1.14 SB,Arial,sans-serif;letter-spacing:-.6px;opacity:0;transform:translateY(28px);transition:opacity .65s,transform .8s cubic-bezier(.16,1,.3,1);pointer-events:none}
+#v8NextPrompt.show{opacity:1;transform:none}
+#v8LostReply{position:absolute;left:56px;top:700px;width:578px;min-height:130px;box-sizing:border-box;padding:24px 27px;border-radius:30px;background:linear-gradient(155deg,#253238,#303942);border:3px solid rgba(255,255,255,.24);color:#fff;font:500 34px/1.19 SB,Arial,sans-serif;opacity:0;transform:translateY(28px);filter:blur(7px);transition:opacity .8s,transform .85s cubic-bezier(.16,1,.3,1),filter .8s;pointer-events:none}
+#v8LostReply.show{opacity:1;transform:none;filter:none}
+#v8LostReply strong{color:#f0b6ae;font-weight:600}
+/* When we jump forward, restore the original chat window while clearing its history. */
+body.v8-lost-context .chatWrap{opacity:1!important;transform:none!important;filter:none!important}
+body.v8-lost-context .codePane,body.v8-lost-context .codeDone,
+body.v8-lost-context .fanoutStack{opacity:0!important;pointer-events:none!important;transition:opacity .48s!important}
+body.v8-lost-context .promptBubble,body.v8-lost-context .loading,
+body.v8-lost-context .doneMessage{opacity:0!important;pointer-events:none!important}
+&lt;/style&gt;
+&lt;div id=&quot;v8TimeStamp&quot;&gt;2 ДНЯ СПУСТЯ&lt;/div&gt;
+&lt;div id=&quot;v8LostOutcome&quot;&gt;&lt;div class=&quot;v8-overline&quot;&gt;ИТОГ · VIBE-CODING&lt;/div&gt;&lt;div class=&quot;v8-statement&quot;&gt;Контекст &lt;span&gt;потерян&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;v8-detail&quot;&gt;Чтобы продолжить разработку, приходится заново восстанавливать договорённости и решения.&lt;/div&gt;&lt;/div&gt;
+
+
+&lt;script id=&quot;v8-lost-context-sequence&quot;&gt;
+(()=&gt;{
+ const wrap=document.getElementById('wrap');
+ const input=document.getElementById('inputText');
+ const bar=document.getElementById('inputBar');
+ const prompt=document.getElementById('v8NextPrompt');
+ const reply=document.getElementById('v8LostReply');
+ const stamp=document.getElementById('v8TimeStamp');
+ const outcome=document.getElementById('v8LostOutcome');
+ const full='Продолжим RAG на FastAPI, который делали два дня назад';
+ let pending=[];
+ function later(f,t){pending.push(setTimeout(f,t));}
+ function resetLoss(){pending.forEach(clearTimeout);pending=[];document.body.classList.remove('v8-lost-context');
+   [prompt,reply,stamp,outcome].forEach(e=&gt;e.classList.remove('show'));
+   prompt.textContent='';
+ }
+ function startLoss(){
+  resetLoss();
+  // Execute the original chat reset so code timers and message history are genuinely cleared.
+  window.postMessage({type:'reset'},'*');
+  stamp.classList.add('show');
+  later(()=&gt;{
+   document.body.classList.add('v8-lost-context');
+   wrap.classList.add('show');
+   bar.classList.remove('expanded');
+   input.textContent='';
+  },510);
+  later(()=&gt;{
+   let i=0;bar.classList.add('expanded');
+   function type(){
+    input.textContent=full.slice(0,i++);
+    if(i&lt;=full.length)later(type,38);
+    else later(()=&gt;{
+      prompt.textContent=full;
+      prompt.classList.add('show');
+      input.textContent='';bar.classList.remove('expanded');
+      later(()=&gt;reply.classList.add('show'),710);
+      later(()=&gt;outcome.classList.add('show'),1420);
+    },550);
+   }
+   type();
+  },960);
+ }
+ addEventListener('message',e=&gt;{
+  if(e.data?.type==='v8forget')startLoss();
+  else if(e.data?.type==='v8clean')resetLoss();
+ });
+})();
+&lt;/script&gt;
+&lt;style id=&quot;v8-autogrow-send-fallback&quot;&gt;
+/* The original design used a 104/148 px toggle. Size the bar from actual content instead. */
+.inputBar,.inputBar.expanded{height:var(--v8-bar-height,104px)!important;max-height:350px!important;transition:height 450ms cubic-bezier(.22,1,.36,1)!important}
+.inputBar .inputText{width:calc(100% - 180px)!important;min-height:0!important;height:auto!important;white-space:pre-wrap!important;overflow-wrap:anywhere!important;word-break:normal!important;top:17px!important}
+.inputBar .send,.inputBar.expanded .send{left:auto!important;right:10px!important;top:auto!important;bottom:2px!important;flex-shrink:0}
+/* Exact button from Figma node 81:1212, embedded as an offline SVG asset. */
+.send{background:transparent!important;box-shadow:none!important}
+.send .sendAsset{display:block!important;opacity:.62}
+.send.active:not(.sent) .sendAsset{opacity:1}
+.send.sent .sendAsset{opacity:0}
+.send .sendIcon.arrow{display:none!important}
+.send.active:not(.sent){background:transparent!important;box-shadow:none!important}
+.send.sent{background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%)!important}
+&lt;/style&gt;
+&lt;script id=&quot;v8-auto-input-height&quot;&gt;
+(()=&gt;{
+ const bar=document.getElementById('inputBar'), text=document.getElementById('inputText');
+ if(!bar||!text)return;
+ let pending=0;
+ function fit(){pending=0; const h=Math.max(104,Math.min(350,Math.ceil(text.scrollHeight+36)));bar.style.setProperty('--v8-bar-height',h+'px');}
+ function update(){if(pending)return;pending=requestAnimationFrame(fit)}
+ new MutationObserver(update).observe(text,{childList:true,characterData:true,subtree:true});
+ window.addEventListener('resize',update);update();
+})();
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;" title="Полный интерфейс чата с исходной анимацией"></iframe>
+<!-- SDD: source wording adapted from Solo_Enterprise_RAG_Engineering.pdf pages 2 and 5 -->
+<div aria-label="Второй подход: Spec-Driven Development" class="v8-sdd-intro">
+<div class="sdd10-eyebrow">ВТОРОЙ ПОДХОД</div>
+<h2>Spec-Driven<br/><span>Development</span></h2>
+<p>Разработка начинается со спецификации, а не с нового промпта.</p>
+</div>
+<div aria-label="SDD: правила в PRD.md, работа по ним и продолжение через два дня" class="v8-sdd-scene">
+<header class="sdd10-header">
+<span class="sdd10-approach">SPEC-DRIVEN DEVELOPMENT</span>
+<h2 class="sdd10-title sdd10-title-md">Правила остаются в <em>PRD.md</em></h2>
+<h2 class="sdd10-title sdd10-title-process">ИИ работает <em>по спецификации</em></h2>
+<h2 class="sdd10-title sdd10-title-later">Два дня <em>спустя</em></h2>
+</header>
+<div class="sdd10-layout">
+<div aria-label="Содержимое Markdown-файла с требованиями" class="sdd10-editor">
+<div class="sdd10-editorbar">
+<span aria-hidden="true" class="sdd10-fileicon">#</span>
+<strong>PRD.md</strong>
+<span class="sdd10-saved"><span class="sdd10-dot"></span> сохранено</span>
+</div>
+<div class="sdd10-code">
+<div class="sdd10-line" style="--i:0"><span>#</span> PRD — RAG-платформа</div>
+<div class="sdd10-line sdd10-blank" style="--i:1"> </div>
+<div class="sdd10-line" style="--i:2"><span>##</span> Процесс</div>
+<div class="sdd10-line" style="--i:3">ИИ — исполнитель в заданных рамках</div>
+<div class="sdd10-line sdd10-blank" style="--i:4"> </div>
+<div class="sdd10-line" style="--i:5"><span>##</span> Правила</div>
+<div class="sdd10-line" style="--i:6">Не придумывать вне .md-файла</div>
+<div class="sdd10-line sdd10-blank" style="--i:7"> </div>
+<div class="sdd10-line" style="--i:8"><span>##</span> Итог</div>
+<div class="sdd10-line" style="--i:9">Предсказуемость и масштабируемость</div>
+</div>
+</div>
+<div aria-live="polite" class="sdd10-explanation">
+<div class="sdd10-state sdd10-state-md">
+<p class="sdd10-big">Контекст —<br/><em>в файле.</em></p>
+<p class="sdd10-small">Не нужно держать все договорённости в истории чата.</p>
+</div>
+<div class="sdd10-state sdd10-state-process">
+<p class="sdd10-big">ИИ —<br/><em>исполнитель.</em></p>
+<div class="sdd10-message"><span>Запрос</span>Работай по PRD.md</div>
+<div class="sdd10-message sdd10-answer"><span>ИИ</span>Следую правилам спецификации.</div>
+</div>
+<div class="sdd10-state sdd10-state-later">
+<p class="sdd10-big">Файл <em>остался.</em></p>
+<div class="sdd10-message"><span>Запрос</span>Продолжи работу по PRD.md</div>
+<div class="sdd10-message sdd10-answer"><span>ИИ</span>Правила доступны. Продолжаю работу.</div>
+</div>
+</div>
+</div>
+<div aria-label="Главное различие подходов" class="v8-sdd-conclusion">
+<p class="sdd10-end-overline">ОДИН И ТОТ ЖЕ ИИ</p>
+<h2>Разница — <em>в контексте.</em></h2>
+<div class="sdd10-comparison">
+<div class="sdd10-side sdd10-bad">
+<span>VIBE CODING</span>
+<strong>Контекст остаётся<br/>в чате</strong>
+<p>После перерыва его приходится восстанавливать.</p>
+</div>
+<div class="sdd10-side sdd10-good">
+<span>SPEC-DRIVEN DEVELOPMENT</span>
+<strong>Правила сохранены<br/>в PRD.md</strong>
+<p>Работу можно продолжить по спецификации.</p>
+</div>
+</div>
+</div>
+</div>
+<div aria-label="Промпты, процесс, итог" class="v8-narrative">
+<div class="v8-progress-step v8-prompt-label"><span>01</span><b>Промпты</b></div>
+<div class="v8-progress-step v8-process-label"><span>02</span><b>Процесс</b></div>
+<div class="v8-progress-step v8-result-label"><span>03</span><b>Итог</b></div>
+</div>
+</div>
+</div></div>
+</section>

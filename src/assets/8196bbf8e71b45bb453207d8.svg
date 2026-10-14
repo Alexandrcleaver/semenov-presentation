@@ -1,0 +1,20 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="70" height="108.11" viewBox="0 0 70 108.11" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="icon" clip-path="url(#clip0_0_4)">
+<path id="Rectangle 327056" d="M0.640991 19.8235C0.646028 17.9309 1.90303 16.27 3.72314 15.7512L44.5484 4.11309C51.7805 2.05143 58.9761 7.48244 58.9761 15.0027V74.5994C58.9761 79.7698 55.4738 84.2835 50.4655 85.5679L14.607 94.7635C7.43168 96.6036 0.451095 91.1723 0.47081 83.7649L0.640991 19.8235Z" fill="white"/>
+<g id="Rectangle 327054">
+<use xlink:href="#stroke0_0_4" fill="#D9D9D9"/>
+<use xlink:href="#stroke0_0_4" fill="url(#paint0_radial_0_4)"/>
+</g>
+</g>
+<defs>
+<radialGradient id="paint0_radial_0_4" cx="0" cy="0" r="1" gradientTransform="matrix(78.6346 -112.692 43.3467 313.09 -3.10213 127.705)" gradientUnits="userSpaceOnUse">
+<stop offset="0.063611" stop-color="#EAE619"/>
+<stop offset="0.390103" stop-color="#15B648"/>
+<stop offset="0.745717" stop-color="#0A9FDF"/>
+</radialGradient>
+<clipPath id="clip0_0_4">
+<rect width="70" height="108.11" fill="white"/>
+</clipPath>
+<path id="stroke0_0_4" d="M0.430439 19.9002C0.430439 17.3191 2.71409 15.335 5.26986 15.6956L59.5353 23.3507C65.1226 24.1389 69.2769 28.9205 69.2769 34.5631V95.0773C69.2769 101.96 63.1872 107.251 56.3718 106.29L4.08357 98.9134C1.98833 98.6179 0.430439 96.8248 0.430439 94.7088L0.430439 19.9002Z"/>
+</defs>
+</svg>

@@ -1,0 +1,13 @@
+
+.pdfRestSlide.story-tech.story-tools .story-tool-cards{height:auto!important;max-height:650px!important;align-items:start!important;}
+.pdfRestSlide.story-tech.story-tools .ee-toolstack{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ grid-template-rows:none!important;grid-auto-rows:auto!important;
+ height:auto!important;min-height:0!important;max-height:580px!important;
+ align-items:stretch!important;margin:22px 0 0!important;padding:0!important;gap:30px!important;
+}
+.pdfRestSlide.story-tech.story-tools .ee-toolstack .ee-block{
+ height:auto!important;min-height:355px!important;max-height:500px!important;
+ margin:0!important;padding:40px!important;border:1px solid rgba(118,218,168,.16)!important;
+ background:rgba(18,36,34,.6)!important;border-radius:24px!important;
+}

@@ -1,0 +1,19 @@
+
+/* Removed cinematic title movement means content must not wait 3 seconds to appear. */
+.pdfRestSlide.ee-slide.show>.pdf-stage .ee-content{
+  animation:none!important;
+  opacity:1!important;
+  visibility:visible!important;
+  filter:none!important;
+}
+.pdfRestSlide.ee-slide.show .ee-content .ee-reveal{
+  animation:none!important;
+  opacity:1!important;
+  filter:none!important;
+}
+.sv29-final.show .sv29-speaker,.sv29-final.show .sv29-photo,.sv29-final.show .sv29-qr-group{
+  animation:none!important;
+  opacity:1!important;
+  transform:none!important;
+  filter:none!important;
+}

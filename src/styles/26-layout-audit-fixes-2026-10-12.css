@@ -1,0 +1,88 @@
+
+/* Targeted corrections following a 24-slide layout audit.
+   The source copy, 24-slide navigation, choreography and offline assets are unchanged. */
+
+/* Slide 8: keep the storytelling progress track visually separate from
+   the fixed navigation bar at the bottom of the screen. */
+#aistEvolutionSlide .ev2-navigation-track {
+  bottom: 132px !important;
+}
+#aistEvolutionSlide .ev2-catalog-shot {
+  top: 466px;
+  transform: scale(.73);
+}
+
+/* Slide 14 / ADR: give explanatory notes and lower stage more breathing room. */
+#pdfSlide12 .ee-adr-sub {margin-bottom:21px;}
+#pdfSlide12 .ee-adr-layout {height:452px;gap:28px;}
+#pdfSlide12 .ee-adr-table>div {min-height:91px;font-size:20px;}
+#pdfSlide12 .ee-adr-table>.ee-table-header {min-height:58px;}
+#pdfSlide12 .ee-adr-detail {padding:14px 22px;}
+#pdfSlide12 .ee-decision {font-size:19px;padding:7px 6px;}
+#pdfSlide12 .ee-decision b {font-size:19px;}
+#pdfSlide12 .ee-adr-bot {margin-top:21px;gap:28px;}
+#pdfSlide12 .ee-adr-bot>div {padding:16px 7px 8px;font-size:22px;line-height:1.24;}
+#pdfSlide12 .ee-adr-bot b {font-size:27px;margin-bottom:7px;}
+
+/* Slide 15 / 16 patterns: major bug fix. Card titles and their small
+   explanatory lines had been flexed SIDE BY SIDE, causing text collisions. */
+#pdfSlide13 .ee-layers {gap:8px;grid-template-rows:repeat(5,minmax(0,1fr));}
+#pdfSlide13 .ee-layer {min-height:0;grid-template-columns:228px minmax(0,1fr);padding:6px 0;border-bottom-color:rgba(255,255,255,.10);}
+#pdfSlide13 .ee-layer-name {font-size:28px;line-height:1.14;overflow-wrap:normal;}
+#pdfSlide13 .ee-layer-nodes {min-width:0;gap:11px;align-items:stretch;}
+#pdfSlide13 .ee-layer-node,
+#pdfSlide13 .ee-layer:nth-child(even) .ee-layer-node {
+  min-width:0;min-height:0;padding:9px 10px;
+  flex:1 1 0;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;
+  font-size:19.5px;line-height:1.17;
+  overflow-wrap:break-word;hyphens:auto;
+  background:rgba(255,255,255,.032);
+}
+#pdfSlide13 .ee-layer-node small {
+  display:block;flex:0 0 auto;width:100%;
+  margin-top:5px;line-height:1.17;font-size:15px;
+  white-space:normal;overflow-wrap:break-word;
+}
+
+/* Slide 18 / pipeline: preserve five stages, but make the technical text
+   more readable than five heavily padded skinny columns. */
+#pdfSlide16 .ee-pipe {
+  display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
+  grid-template-rows:repeat(2,minmax(0,1fr));
+  height:480px;margin-top:30px;gap:19px 23px;
+}
+#pdfSlide16 .ee-pipe-node,
+#pdfSlide16 .ee-pipe-node.tone-blue {
+  min-width:0;min-height:0;padding:22px 26px 19px;
+  border-top-width:3px;
+}
+#pdfSlide16 .ee-pipe-node:nth-child(-n+3) {grid-column:span 2;}
+#pdfSlide16 .ee-pipe-node:nth-child(n+4) {grid-column:span 3;}
+#pdfSlide16 .ee-pipe-label {
+  font-size:30px;line-height:1.11;
+  margin-bottom:14px;padding-bottom:14px;
+  overflow-wrap:normal;
+}
+#pdfSlide16 .ee-pipe-copy {
+  font-size:24px;line-height:1.26;
+  overflow-wrap:break-word;
+}
+#pdfSlide16 .ee-pipe-node:not(:last-child):after {display:none;}
+#pdfSlide16 .ee-pipe-tag {margin-top:26px;font-size:31px;}
+
+/* Slide 21 / isolation: reserve a real middle channel for Tool Bridge,
+   instead of painting the label over the neighbouring cards. */
+#pdfSlide19 .ee-sandbox {grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:144px;}
+#pdfSlide19 .ee-isolation {min-width:0;}
+#pdfSlide19 .ee-bridge {
+  top:48%;right:-132px;width:120px;z-index:4;
+  text-align:center;white-space:normal;line-height:1.1;
+  font-size:20px;
+}
+#pdfSlide19 .ee-bridge small {font-size:16px;}
+#pdfSlide19 .ee-bridge span {font-size:52px;line-height:1.04;}
+#pdfSlide19 .ee-toolstack {min-width:0;}
+#pdfSlide19 .ee-toolstack .ee-block {padding:20px 15px;}
+#pdfSlide19 .ee-toolstack .ee-block-label {font-size:29px;margin-bottom:11px;}
+#pdfSlide19 .ee-toolstack .ee-block-body {font-size:24px;line-height:1.28;}

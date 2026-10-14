@@ -1,0 +1,202 @@
+[
+  {
+    "number": 1,
+    "id": "cover",
+    "path": "src/slides/01-cover.html"
+  },
+  {
+    "number": 2,
+    "id": "figmaSlide2",
+    "path": "src/slides/02-figmaSlide2.html"
+  },
+  {
+    "number": 3,
+    "id": "figmaSlide3Extras",
+    "path": "src/slides/03-figmaSlide3Extras.html"
+  },
+  {
+    "number": 4,
+    "id": "figmaSlide4",
+    "path": "src/slides/04-figmaSlide4.html"
+  },
+  {
+    "number": 5,
+    "id": "figmaSlide5",
+    "path": "src/slides/05-figmaSlide5.html"
+  },
+  {
+    "number": 6,
+    "id": "agentsIntroSlide",
+    "path": "src/slides/06-agentsIntroSlide.html"
+  },
+  {
+    "number": 7,
+    "id": "figmaSlide6",
+    "path": "src/slides/06-figmaSlide6.html"
+  },
+  {
+    "number": 8,
+    "id": "architectureRagSlide",
+    "path": "src/slides/07-architectureRagSlide.html"
+  },
+  {
+    "number": 9,
+    "id": "aistEvolutionSlide",
+    "path": "src/slides/08-aistEvolutionSlide.html"
+  },
+  {
+    "number": 10,
+    "id": "figmaSlide7",
+    "path": "src/slides/09-figmaSlide7.html"
+  },
+  {
+    "number": 11,
+    "id": "pdfSlide8",
+    "path": "src/slides/10-pdfSlide8.html"
+  },
+  {
+    "number": 12,
+    "id": "pdfSlide27",
+    "path": "src/slides/11-pdfSlide27.html"
+  },
+  {
+    "number": 13,
+    "id": "pdfSlide9",
+    "path": "src/slides/12-pdfSlide9.html"
+  },
+  {
+    "number": 14,
+    "id": "pdfSlide29",
+    "path": "src/slides/13-pdfSlide29.html"
+  },
+  {
+    "number": 15,
+    "id": "pdfSlide10",
+    "path": "src/slides/14-pdfSlide10.html"
+  },
+  {
+    "number": 16,
+    "id": "pdfSlide11",
+    "path": "src/slides/15-pdfSlide11.html"
+  },
+  {
+    "number": 17,
+    "id": "pdfSlide12",
+    "path": "src/slides/16-pdfSlide12.html"
+  },
+  {
+    "number": 18,
+    "id": "pdfSlide30",
+    "path": "src/slides/17-pdfSlide30.html"
+  },
+  {
+    "number": 19,
+    "id": "pdfSlide13",
+    "path": "src/slides/18-pdfSlide13.html"
+  },
+  {
+    "number": 20,
+    "id": "pdfSlide31",
+    "path": "src/slides/19-pdfSlide31.html"
+  },
+  {
+    "number": 21,
+    "id": "pdfSlide32",
+    "path": "src/slides/20-pdfSlide32.html"
+  },
+  {
+    "number": 22,
+    "id": "pdfSlide14",
+    "path": "src/slides/21-pdfSlide14.html"
+  },
+  {
+    "number": 23,
+    "id": "pdfSlide15",
+    "path": "src/slides/22-pdfSlide15.html"
+  },
+  {
+    "number": 24,
+    "id": "pdfSlide33",
+    "path": "src/slides/23-pdfSlide33.html"
+  },
+  {
+    "number": 25,
+    "id": "pdfSlide16",
+    "path": "src/slides/24-pdfSlide16.html"
+  },
+  {
+    "number": 26,
+    "id": "pdfSlide34",
+    "path": "src/slides/25-pdfSlide34.html"
+  },
+  {
+    "number": 27,
+    "id": "pdfSlide17",
+    "path": "src/slides/26-pdfSlide17.html"
+  },
+  {
+    "number": 28,
+    "id": "pdfSlide35",
+    "path": "src/slides/27-pdfSlide35.html"
+  },
+  {
+    "number": 29,
+    "id": "pdfSlide18",
+    "path": "src/slides/28-pdfSlide18.html"
+  },
+  {
+    "number": 30,
+    "id": "pdfSlide19",
+    "path": "src/slides/29-pdfSlide19.html"
+  },
+  {
+    "number": 31,
+    "id": "pdfSlide36",
+    "path": "src/slides/30-pdfSlide36.html"
+  },
+  {
+    "number": 32,
+    "id": "pdfSlide20",
+    "path": "src/slides/31-pdfSlide20.html"
+  },
+  {
+    "number": 33,
+    "id": "pdfSlide37",
+    "path": "src/slides/32-pdfSlide37.html"
+  },
+  {
+    "number": 34,
+    "id": "pdfSlide21",
+    "path": "src/slides/33-pdfSlide21.html"
+  },
+  {
+    "number": 35,
+    "id": "pdfSlide22",
+    "path": "src/slides/34-pdfSlide22.html"
+  },
+  {
+    "number": 36,
+    "id": "pdfSlide23",
+    "path": "src/slides/35-pdfSlide23.html"
+  },
+  {
+    "number": 37,
+    "id": "pdfSlide24",
+    "path": "src/slides/36-pdfSlide24.html"
+  },
+  {
+    "number": 38,
+    "id": "pdfSlide25",
+    "path": "src/slides/37-pdfSlide25.html"
+  },
+  {
+    "number": 39,
+    "id": "pdfSlide26",
+    "path": "src/slides/38-pdfSlide26.html"
+  },
+  {
+    "number": 40,
+    "id": "pdfSlide28",
+    "path": "src/slides/39-pdfSlide28.html"
+  }
+]

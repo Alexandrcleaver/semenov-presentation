@@ -1,0 +1,90 @@
+
+/* ===== Sergei requested cleanup ===== */
+.ee-slide .ee-header{display:none!important;opacity:0!important;visibility:hidden!important;pointer-events:none!important;}
+.ee-slide .ee-content{padding-top:84px!important;}
+.ee-slide .ee-reveal{animation:none!important;transform:none!important;opacity:1!important;}
+
+/* More editorial, less classic-title feeling for practice / ending slides */
+#pdfSlide26 .ee-content, #pdfSlide28 .ee-content, #pdfSlide28 .ee-content{padding-top:72px!important;}
+
+/* Final thank-you slide: compact, no overflow, QR fits */
+.sv29-final .ee-content{
+  display:grid!important;
+  grid-template-columns:minmax(420px,1.15fr) minmax(270px,.72fr) minmax(250px,.62fr)!important;
+  align-items:center!important;
+  gap:34px!important;
+  min-height:100%;
+}
+.sv29-final .sv29-line{display:none!important;}
+.sv29-final .sv29-speaker{align-self:center!important;max-width:540px!important;}
+.sv29-final .sv29-name{font-size:72px!important;line-height:1.02!important;letter-spacing:-.03em;}
+.sv29-final .sv29-role{margin-top:16px!important;font-size:27px!important;line-height:1.28!important;}
+.sv29-final .sv29-link{margin-top:22px!important;font-size:30px!important;padding:16px 22px!important;display:inline-flex!important;align-items:center!important;gap:12px!important;}
+.sv29-final .sv29-photo{width:100%!important;max-width:350px!important;justify-self:center!important;}
+.sv29-final .sv29-photo img{width:100%!important;height:auto!important;aspect-ratio:0.82/1;object-fit:cover!important;border-radius:28px!important;}
+.sv29-final .sv29-qr-group{justify-self:end!important;align-self:center!important;max-width:290px!important;width:100%!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:14px!important;}
+.sv29-final .sv29-qr-link{display:flex!important;align-items:center!important;justify-content:center!important;padding:14px!important;border-radius:28px!important;background:rgba(255,255,255,.95)!important;box-shadow:0 25px 54px rgba(0,0,0,.26)!important;}
+.sv29-final .sv29-qr-link img{display:block!important;width:228px!important;height:228px!important;max-width:100%!important;object-fit:contain!important;}
+.sv29-final .sv29-qr-label{font-size:20px!important;line-height:1.3!important;text-align:center!important;max-width:250px!important;}
+
+/* New summary slide: kitty wins */
+.catwin-slide .pdf-stage{overflow:hidden;}
+.catwin-slide .ee-canvas{
+  position:relative;
+  background:radial-gradient(circle at 74% 32%, rgba(68,222,168,.14), transparent 32%), linear-gradient(160deg,#08110f 0%,#0a1718 45%,#081012 100%);
+}
+.catwin-slide .catwin-bg, .catwin-slide .catwin-bg::before, .catwin-slide .catwin-bg::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+}
+.catwin-slide .catwin-bg::before{
+  background:radial-gradient(circle at 18% 50%, rgba(40,110,140,.34), transparent 27%), radial-gradient(circle at 82% 26%, rgba(116,234,190,.18), transparent 23%);
+  opacity:.95;
+}
+.catwin-slide .catwin-bg::after{
+  background:linear-gradient(180deg, rgba(3,8,10,.16), transparent 22%, transparent 75%, rgba(3,8,10,.32));
+}
+.catwin-slide .catwin-layout{
+  position:relative; z-index:1; height:100%; display:grid; grid-template-columns:1.02fr .98fr; gap:14px; padding:74px 84px 72px;
+}
+.catwin-slide .catwin-copy{display:flex;flex-direction:column;justify-content:center;max-width:770px;}
+.catwin-slide .catwin-kicker{
+  display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
+  padding:11px 18px;border-radius:999px;
+  background:rgba(16,41,35,.84);border:1px solid rgba(109,240,179,.28);
+  color:#7de7b8;font:700 18px/1.1 SB,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+.catwin-slide .catwin-title{
+  margin:26px 0 14px;color:#f3fbf8;font:800 84px/0.96 SB,Arial,sans-serif;letter-spacing:-.055em;
+}
+.catwin-slide .catwin-title span{display:block;color:#79efb7;}
+.catwin-slide .catwin-lead{
+  margin:0 0 26px;max-width:640px;color:#d7e9e1;font:500 30px/1.3 SB,Arial,sans-serif;
+}
+.catwin-slide .catwin-badges{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 28px;}
+.catwin-slide .catwin-badge{
+  padding:14px 18px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);
+  color:#e7f5ef;font:600 20px/1.25 SB,Arial,sans-serif;
+}
+.catwin-slide .catwin-badge strong{display:block;color:#79efb7;font-size:18px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+.catwin-slide .catwin-note{
+  display:flex;align-items:flex-start;gap:14px;max-width:630px;padding:18px 22px;border-radius:22px;
+  background:linear-gradient(180deg, rgba(18,39,41,.92), rgba(10,23,25,.92));
+  border:1px solid rgba(111,222,180,.20); color:#d6ece2; font:500 22px/1.38 SB,Arial,sans-serif;
+}
+.catwin-slide .catwin-note .dot{width:12px;height:12px;border-radius:999px;background:#77edb6;box-shadow:0 0 0 8px rgba(119,237,182,.12);margin-top:8px;flex:0 0 auto;}
+.catwin-slide .catwin-visual{position:relative;display:flex;align-items:center;justify-content:center;}
+.catwin-slide .catwin-stage{position:relative;width:100%;height:100%;min-height:760px;max-width:920px;}
+.catwin-slide .catwin-stage img{position:absolute;display:block;user-select:none;-webkit-user-drag:none;}
+.catwin-slide .catwin-battlefield{inset:-90px -120px -90px -60px;width:auto!important;height:auto!important;object-fit:cover;opacity:.82;filter:saturate(.92) brightness(.68) blur(.4px);}
+.catwin-slide .catwin-dragon{left:-120px;top:150px;width:610px;opacity:.42;transform:rotate(-9deg) scale(.95);filter:grayscale(.24) brightness(.6) blur(.2px);}
+.catwin-slide .catwin-kitty{right:-40px;top:74px;width:630px;z-index:2;filter:drop-shadow(0 20px 40px rgba(0,0,0,.45));}
+.catwin-slide .catwin-burst{position:absolute;right:88px;top:112px;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle, rgba(138,255,216,.28) 0%, rgba(87,211,170,.14) 38%, transparent 70%);filter:blur(6px);z-index:1;}
+.catwin-slide .catwin-ribbon{position:absolute;right:40px;bottom:74px;z-index:3;padding:18px 24px;border-radius:20px;background:rgba(255,255,255,.95);color:#0c1a17;box-shadow:0 24px 48px rgba(0,0,0,.24);}
+.catwin-slide .catwin-ribbon small{display:block;color:#3f6e62;font:700 14px/1.15 SB,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
+.catwin-slide .catwin-ribbon strong{display:block;font:800 34px/1.0 SB,Arial,sans-serif;letter-spacing:-.04em;}
+.catwin-slide .catwin-ribbon span{display:block;margin-top:8px;color:#507368;font:500 18px/1.25 SB,Arial,sans-serif;}
+.catwin-slide .catwin-ko{position:absolute;left:62px;bottom:106px;z-index:2;padding:18px 24px 16px;border-radius:20px;background:rgba(60,18,15,.88);border:1px solid rgba(255,146,118,.25);box-shadow:0 18px 38px rgba(0,0,0,.28);color:#ffd3c8;}
+.catwin-slide .catwin-ko small{display:block;font:700 14px/1.15 SB,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#ffb9a6;margin-bottom:8px;}
+.catwin-slide .catwin-ko strong{display:block;font:800 30px/1 SB,Arial,sans-serif;letter-spacing:-.04em;color:#fff2ee;}
+.catwin-slide .catwin-ko span{display:block;margin-top:8px;font:500 18px/1.25 SB,Arial,sans-serif;color:#f1c8bf;max-width:270px;}

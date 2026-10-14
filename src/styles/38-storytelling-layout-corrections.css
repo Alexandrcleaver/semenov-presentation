@@ -1,0 +1,82 @@
+
+/* Correct legacy 5-node pipeline grid assumptions after splitting */
+.pdfRestSlide.story-tech.story-flow .ee-pipe{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ grid-template-rows:none!important;grid-auto-rows:auto!important;
+ height:auto!important;min-height:0!important;max-height:none!important;
+ margin:24px 0 0!important;width:100%!important;max-width:100%!important;gap:30px!important;
+}
+.pdfRestSlide.story-tech.story-flow .ee-pipe .ee-pipe-node{
+ grid-column:auto!important;grid-row:auto!important;flex:none!important;
+ position:relative!important;min-height:360px!important;height:auto!important;max-height:420px!important;
+ margin:0!important;padding:42px 32px!important;transform:none;
+ border-radius:22px!important;
+}
+.pdfRestSlide.story-tech.story-flow .ee-pipe .ee-pipe-node .ee-pipe-label{
+ font-size:35px!important;line-height:1.12!important;margin-bottom:22px!important;
+}
+.pdfRestSlide.story-tech.story-flow .ee-pipe .ee-pipe-node .ee-pipe-copy{
+ font-size:27px!important;line-height:1.34!important;
+}
+.pdfRestSlide.story-tech.story-flow.story-new .ee-pipe{
+ grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:1320px!important;
+ margin:28px auto 0!important;
+}
+.pdfRestSlide.story-tech.story-flow.story-new .ee-pipe .ee-pipe-node{min-height:350px!important;}
+/* Remove row templates inherited from 5-layer infographic */
+.pdfRestSlide.story-tech.story-layers .ee-layers{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ grid-template-rows:none!important;grid-auto-flow:row!important;grid-auto-rows:auto!important;
+ height:auto!important;max-height:none!important;margin:32px 0 0!important;
+ gap:28px!important;align-content:start!important;
+}
+.pdfRestSlide.story-tech.story-layers .ee-layer{
+ display:flex!important;flex-direction:column!important;justify-content:space-between!important;
+ align-items:stretch!important;gap:20px!important;
+ grid-column:auto!important;grid-row:auto!important;
+ min-height:325px!important;height:auto!important;max-height:610px!important;
+ padding:35px!important;background:rgba(18,36,34,.72)!important;
+ border:1px solid rgba(118,218,168,.17)!important;border-radius:25px!important;
+}
+.pdfRestSlide.story-tech.story-layers .ee-layer-name{
+ font-size:43px!important;line-height:1.1!important;margin:0!important;
+}
+.pdfRestSlide.story-tech.story-layers .ee-layer-nodes{
+ display:flex!important;flex:1!important;align-items:stretch!important;justify-content:stretch!important;
+ gap:16px!important;min-width:0!important;font-size:25px!important;
+}
+.pdfRestSlide.story-tech.story-layers .ee-layer-node,
+.pdfRestSlide.story-tech.story-layers .ee-layer:nth-child(even) .ee-layer-node{
+ font-size:23px!important;line-height:1.2!important;flex:1!important;
+ min-width:0!important;min-height:130px!important;height:auto!important;
+ padding:18px 14px!important;border-radius:19px!important;
+ background:rgba(255,255,255,.045)!important;border:1px solid rgba(150,220,186,.15)!important;
+}
+.pdfRestSlide.story-tech.story-layers .ee-layer-node small{display:block!important;font-size:19px!important;line-height:1.26!important;margin-top:10px!important;}
+.pdfRestSlide.story-tech.story-layers.story-new:has(.ee-layer:only-child) .ee-layers{
+ grid-template-columns:minmax(0,1050px)!important;justify-content:center!important;
+}
+.pdfRestSlide.story-tech.story-layers.story-new:has(.ee-layer:only-child) .ee-layer{
+ min-height:470px!important;padding:55px!important;
+}
+/* Individual narratives should fill the available stage, not inherit dashboard widths */
+.pdfRestSlide.story-tech.story-speed .ee-discovery{
+ width:min(1580px,100%)!important;margin:14px auto 0!important;
+ padding:35px 46px!important;min-height:450px!important;
+}
+.pdfRestSlide.story-tech.story-speed .ee-speedometer{height:340px!important;}
+.pdfRestSlide.story-tech.story-speed .ee-speedo-card{grid-template-columns:1.25fr .75fr!important;gap:42px!important;}
+.pdfRestSlide.story-tech.story-speed .ee-speedo-center{top:64%!important;}
+/* focus layouts: avoid giant footer voids while preserving all text */
+.pdfRestSlide.story-tech.story-record.story-new .story-focus-adr{
+ margin:15px 0 0!important;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)!important;
+}
+.pdfRestSlide.story-tech.story-record.story-new .ee-adr-detail{height:auto!important;min-height:570px!important;}
+.pdfRestSlide.story-tech.story-record.story-new .ee-adr-bot{max-height:570px!important;}
+.pdfRestSlide.story-tech.story-record.story-new .ee-adr-bot >div{font-size:22px!important;line-height:1.3!important;}
+/* New editorial headlines: alternate left and compact right-aligned placements */
+.pdfRestSlide.story-tech.story-record .ee-header h2,
+.pdfRestSlide.story-tech.story-react .ee-header h2,
+.pdfRestSlide.story-tech.story-proof .ee-header h2{color:#85eac1!important;}
+.pdfRestSlide.story-tech.story-cta .ee-header h2{font-size:80px!important;}
+/* exact slide lengths and unique scene media preserved */

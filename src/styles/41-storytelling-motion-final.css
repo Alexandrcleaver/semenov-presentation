@@ -1,0 +1,95 @@
+
+/* Legacy slide CSS forces opacity/transform to the final state. Individual
+   translate and clip-path allow meaningful motion without bringing back blur/docking. */
+@keyframes storyTitleUp {
+  0%{clip-path:inset(100% 0 0 0);translate:0 45px}
+  100%{clip-path:inset(0 0 0 0);translate:0 0}
+}
+@keyframes storyTitleWipe {
+  0%{clip-path:inset(0 100% 0 0);translate:-12px 0}
+  100%{clip-path:inset(0);translate:0 0}
+}
+@keyframes storyTitleRight {
+  0%{clip-path:inset(0 0 0 100%);translate:54px 0}
+  100%{clip-path:inset(0);translate:0 0}
+}
+@keyframes storyTitleScan {
+  0%{clip-path:inset(0 100% 0 0)}
+  100%{clip-path:inset(0)}
+}
+@keyframes storyTitleReveal {
+  0%{clip-path:inset(0 0 100% 0);translate:0 -22px}
+  100%{clip-path:inset(0);translate:0 0}
+}
+@keyframes storyContentRise {
+  0%{clip-path:inset(100% 0 0 0);translate:0 54px}
+  100%{clip-path:inset(0);translate:0 0}
+}
+@keyframes storyContentFromLeft {
+  0%{clip-path:inset(0 100% 0 0);translate:-75px 0}
+  100%{clip-path:inset(0);translate:0 0}
+}
+@keyframes storyContentFromRight {
+  0%{clip-path:inset(0 0 0 100%);translate:75px 0}
+  100%{clip-path:inset(0);translate:0 0}
+}
+.pdfRestSlide.ee-slide.story-tech.show:is(.story-speed,.story-roi,.story-cta) .ee-header h2{
+ animation:storyTitleUp .75s cubic-bezier(.17,.9,.2,1) both!important;
+}
+.pdfRestSlide.ee-slide.story-tech.show:is(.story-pair,.story-record,.story-boundary) .ee-header h2{
+ animation:storyTitleWipe .85s cubic-bezier(.15,.86,.2,1) both!important;
+}
+.pdfRestSlide.ee-slide.story-tech.show:is(.story-cards,.story-prd,.story-proof) .ee-header h2{
+ animation:storyTitleReveal .74s cubic-bezier(.15,.86,.2,1) both!important;
+}
+.pdfRestSlide.ee-slide.story-tech.show:is(.story-layers,.story-flow,.story-stack) .ee-header h2{
+ animation:storyTitleRight .82s cubic-bezier(.15,.86,.2,1) both!important;
+}
+.pdfRestSlide.ee-slide.story-tech.show:is(.story-terminal,.story-code,.story-tools) .ee-header h2{
+ animation:storyTitleScan .8s steps(17,end) both!important;
+}
+.pdfRestSlide.ee-slide.story-tech.show:is(.story-security,.story-mirror,.story-react,.story-orchestration,.story-observability) .ee-header h2{
+ animation:storyTitleWipe .84s cubic-bezier(.15,.86,.2,1) both!important;
+}
+/* Sequential story beats, no repeated flying title */
+.pdfRestSlide.ee-slide.story-tech.show:is(.story-cards,.story-prd,.story-roi) .ee-card,
+.pdfRestSlide.ee-slide.story-tech.show.story-layers .ee-layer,
+.pdfRestSlide.ee-slide.story-tech.show.story-flow .ee-pipe-node,
+.pdfRestSlide.ee-slide.story-tech.show.story-tools .ee-block{
+ animation:storyContentRise .72s cubic-bezier(.12,.86,.2,1) both!important;
+}
+.pdfRestSlide.ee-slide.story-tech.show:is(.story-cards,.story-prd,.story-roi) .ee-card:nth-child(2),
+.pdfRestSlide.ee-slide.story-tech.show.story-layers .ee-layer:nth-child(2),
+.pdfRestSlide.ee-slide.story-tech.show.story-flow .ee-pipe-node:nth-child(2),
+.pdfRestSlide.ee-slide.story-tech.show.story-tools .ee-block:nth-child(2){animation-delay:.24s!important}
+.pdfRestSlide.ee-slide.story-tech.show:is(.story-cards,.story-prd,.story-roi) .ee-card:nth-child(3),
+.pdfRestSlide.ee-slide.story-tech.show.story-flow .ee-pipe-node:nth-child(3),
+.pdfRestSlide.ee-slide.story-tech.show.story-tools .ee-block:nth-child(3){animation-delay:.48s!important}
+.pdfRestSlide.ee-slide.story-tech.show.story-pair .ee-trap:first-child,
+.pdfRestSlide.ee-slide.story-tech.show.story-record .ee-adr-table,
+.pdfRestSlide.ee-slide.story-tech.show.story-terminal .ee-explorer{
+ animation:storyContentFromLeft .8s cubic-bezier(.13,.92,.2,1) both!important;
+}
+.pdfRestSlide.ee-slide.story-tech.show.story-pair .ee-trap:nth-child(2),
+.pdfRestSlide.ee-slide.story-tech.show.story-record .ee-adr-detail,
+.pdfRestSlide.ee-slide.story-tech.show.story-mirror .ee-content >div>div:nth-child(2){
+ animation:storyContentFromRight .8s .22s cubic-bezier(.13,.92,.2,1) both!important;
+}
+.pdfRestSlide.ee-slide.story-tech.show.story-proof .ee-ragui,
+.pdfRestSlide.ee-slide.story-tech.show.story-security .ee-pii-flow,
+.pdfRestSlide.ee-slide.story-tech.show.story-code .ee-isolation{
+ animation:storyTitleScan 1.1s steps(15,end) both!important;
+}
+.pdfRestSlide.ee-slide.story-tech.show.story-observability .ee-block,
+.pdfRestSlide.ee-slide.story-tech.show.story-react .ee-react,
+.pdfRestSlide.ee-slide.story-tech.show.story-orchestration .ee-orchestration{
+ animation:storyContentRise .85s cubic-bezier(.13,.92,.2,1) both!important;
+}
+@media(prefers-reduced-motion:reduce){
+ .pdfRestSlide.ee-slide.story-tech.show .ee-header h2,
+ .pdfRestSlide.ee-slide.story-tech.show .ee-content .ee-reveal,
+ .pdfRestSlide.ee-slide.story-tech.show .ee-content .ee-card,
+ .pdfRestSlide.ee-slide.story-tech.show .ee-content .ee-block{
+  animation:none!important;clip-path:none!important;translate:none!important;
+ }
+}

@@ -1,0 +1,1 @@
+.inactive-glow{position:absolute;left:0;bottom:0;width:100%;height:540px;opacity:.7;transition:opacity 1800ms ease-in-out;z-index:0}.glow-svg{position:relative;z-index:1}.glow.typing .inactive-glow,.glow.boost .inactive-glow{opacity:.12}.glow.fade .inactive-glow{opacity:0}

@@ -1,0 +1,17 @@
+{
+  "name": "semenov-presentation-modular",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "verify:reference": "node scripts/build.mjs --verify-reference",
+    "locate": "node scripts/locate.mjs",
+    "maps": "node scripts/generate-maps.mjs",
+    "test:locate": "node scripts/test-locate.mjs",
+    "regression:quick": "node scripts/regression/run.mjs",
+    "regression:full": "node scripts/regression/run.mjs --full",
+    "regression:approve": "node scripts/regression/approve-baselines.mjs",
+    "test:regression-tools": "node scripts/regression/test-tools.mjs"
+  }
+}

@@ -1,0 +1,1 @@
+document.querySelectorAll("#pdfSlide26 a[href]").forEach(a=>{["click","touchend"].forEach(t=>a.addEventListener(t,e=>e.stopPropagation()))});

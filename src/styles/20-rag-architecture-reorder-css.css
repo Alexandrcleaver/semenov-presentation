@@ -1,0 +1,11 @@
+
+#architectureRagSlide{position:absolute;inset:0;width:1920px;height:1080px;z-index:24;background:#0c1118;overflow:hidden;color:#fff;font-family:SB,Arial,sans-serif;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(24px) scale(.995);filter:blur(14px);transition:opacity 720ms ease,transform 920ms cubic-bezier(.22,1,.36,1),filter 760ms ease,visibility 0s linear 920ms}
+#architectureRagSlide.show{opacity:1;visibility:visible;pointer-events:auto;transform:none;filter:none;transition-delay:0s}
+#architectureRagSlide.out{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-28px) scale(.995);filter:blur(14px)}
+#architectureRagSlide .rag-arch-title{position:absolute;z-index:4;left:128px;top:260px;width:780px;display:flex;flex-direction:column;gap:0;font-size:112px;line-height:1.03;font-weight:400;letter-spacing:-3.2px;opacity:0;transform:translateY(40px);filter:blur(14px);transition:opacity 900ms ease 150ms,transform 1000ms cubic-bezier(.16,1,.3,1) 150ms,filter 1000ms ease 150ms}
+#architectureRagSlide.show .rag-arch-title{opacity:1;transform:none;filter:none}
+#architectureRagSlide .rag-arch-accent{font-weight:600;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);-webkit-background-clip:text;background-clip:text;color:transparent}
+#architectureRagSlide .scheme{left:965px;top:150px;opacity:0;transform:translateY(10px);transition:opacity 200ms ease .3s,transform 700ms cubic-bezier(.22,1,.36,1) .3s}
+#architectureRagSlide.show .scheme.show{opacity:1;transform:none}
+#architectureRagSlide .scheme-base{transition-delay:2.0s}
+@media(prefers-reduced-motion:reduce){#architectureRagSlide,#architectureRagSlide .rag-arch-title,#architectureRagSlide .scheme{transition:none!important}#architectureRagSlide .scheme-pieces{display:none}#architectureRagSlide .scheme-base{opacity:1!important;filter:none!important;transform:none!important}}

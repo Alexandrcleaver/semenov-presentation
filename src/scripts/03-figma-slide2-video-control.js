@@ -1,0 +1,2 @@
+
+(()=>{const slide=document.getElementById('figmaSlide2'),v=document.getElementById('figmaSlide2Exact');if(!slide||!v)return;const sync=()=>{if(slide.classList.contains('show')){if(!v.getAttribute('src') && v.dataset.src){v.setAttribute('src',v.dataset.src);v.load();}try{v.currentTime=0}catch(e){};const p=v.play();if(p&&p.catch)p.catch(()=>{});}else{v.pause();}};new MutationObserver(sync).observe(slide,{attributes:true,attributeFilter:['class']});sync();})();

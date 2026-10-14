@@ -1,0 +1,19 @@
+
+/* Media reliability / sharpness fix. Removing costly scene-level blur during navigation. */
+#aistEvolutionSlide .ev2-scene{
+  filter:none!important;
+  transform:translateY(15px) scale(1)!important;
+  transition: opacity .32s ease, transform .42s ease, visibility 0s linear .42s!important;
+}
+#aistEvolutionSlide.show .ev2-scene.is-active{
+  filter:none!important;
+  transform:none!important;
+  transition:opacity .38s ease, transform .45s ease, visibility 0s!important;
+}
+#aistEvolutionSlide .ev2-scene img{
+  filter:none!important;
+  image-rendering:auto!important;
+  backface-visibility:hidden;
+}
+/* Other HTML slides: reveal the content without a lingering blur filter. */
+.pdfRestSlide .ee-reveal{filter:none!important}

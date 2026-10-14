@@ -1,0 +1,38 @@
+
+/* Make new slide stages visible immediately; no persistent blur during or after opening. */
+.pdfRestSlide.ee-slide.show>.pdf-stage{
+  opacity:1!important;filter:none!important;transform:none!important;
+  animation:none!important;transition:none!important;
+}
+.pdfRestSlide.ee-slide.show{opacity:1!important;filter:none!important;}
+/* Closing composition rebuilt for the actual 1696px wide slide canvas. */
+#pdfSlide28.ee-slide .sv29-thanks{
+  position:absolute;left:130px;top:170px;z-index:6;max-width:780px;
+  color:#f8fffc;font:600 92px/1.03 SB,Arial,sans-serif;letter-spacing:-3.2px;
+}
+#pdfSlide28.ee-slide .sv29-thanks span{
+  display:block;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);
+  color:transparent;-webkit-background-clip:text;background-clip:text;
+}
+#pdfSlide28.ee-slide .sv29-speaker{left:130px!important;top:555px!important;max-width:780px!important;}
+#pdfSlide28.ee-slide .sv29-name{font-size:56px!important;line-height:1.04!important;}
+#pdfSlide28.ee-slide .sv29-role{font-size:25px!important;margin-top:13px!important;}
+#pdfSlide28.ee-slide .sv29-link{font-size:27px!important;margin-top:22px!important;padding:10px 0!important;}
+#pdfSlide28.ee-slide .sv29-photo{
+  left:975px!important;top:160px!important;width:340px!important;height:600px!important;
+  border-radius:25px!important;overflow:hidden!important;
+}
+#pdfSlide28.ee-slide .sv29-photo img{
+  display:block!important;width:100%!important;height:100%!important;
+  aspect-ratio:auto!important;object-fit:cover!important;object-position:50% 20%!important;
+}
+#pdfSlide28.ee-slide .sv29-qr-group{
+  position:absolute!important;left:auto!important;right:45px!important;top:540px!important;
+  width:250px!important;max-width:250px!important;gap:10px!important;
+}
+#pdfSlide28.ee-slide .sv29-qr-link{padding:12px!important;border-radius:20px!important;}
+#pdfSlide28.ee-slide .sv29-qr-link img{
+  width:208px!important;height:208px!important;max-width:none!important;
+  image-rendering:pixelated!important;
+}
+#pdfSlide28.ee-slide .sv29-qr-label{font-size:17px!important;white-space:normal!important;}

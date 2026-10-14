@@ -1,0 +1,33 @@
+/* Cover matches Figma frame 205:225 on the 1920x1080 canvas. */
+#cover{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;background:#000;z-index:20;opacity:1;visibility:visible;transition:opacity 650ms ease}
+#cover .cover-glow{position:absolute;pointer-events:none;}
+#cover .cover-glow img{position:absolute;left:50%;top:50%;max-width:none;transform:translate(-50%,-50%) rotate(90deg);}
+#cover .cover-glow-298{left:946.176px;top:422.928px;width:715.584px;height:714.0px;}
+#cover .cover-glow-301{left:1038.144px;top:119.556px;width:772.416px;height:772.416px;}
+#cover .cover-glow-302{left:588.288px;top:131.652px;width:715.584px;height:713.988px;}
+#cover .cover-title{position:absolute;left:128px;top:131.63px;width:1697.92px;margin:0;color:#fff;font-family:CoverSB,SB,Arial,sans-serif;font-size:100px;line-height:1.1;font-weight:300;letter-spacing:0;white-space:nowrap;}
+#cover .cover-title .cover-light{display:block;}
+#cover .cover-title strong{display:block;font-weight:600;}
+#cover .cover-author{position:absolute;left:128px;top:844px;display:flex;align-items:flex-start;gap:45px;color:#fff;font-family:CoverSB,SB,Arial,sans-serif;}
+#cover .cover-photo-frame{position:relative;width:96px;height:96px;border-radius:139.535px;overflow:hidden;flex:none;}
+#cover .cover-avatar-base{position:absolute;inset:0;max-width:none;}
+#cover .cover-photo-crop{position:absolute;width:169.265px;height:177.696px;left:-36.48px;top:0;overflow:hidden;}
+#cover .cover-photo{position:absolute;width:95.11%;height:136.01%;left:2.45%;top:-16.21%;max-width:none;}
+#cover .cover-author-text{display:flex;flex-direction:column;gap:16px;width:497.744px;font-size:24px;line-height:1.15;white-space:nowrap;}
+#cover .cover-author-text b{display:block;font-size:40px;font-weight:600;}
+#cover .cover-hero{position:absolute;left:1071.69px;top:116px;width:636px;height:848px;object-fit:cover;pointer-events:none;max-width:none;}
+.cover-off #cover{opacity:0;visibility:hidden;pointer-events:none}
+body:not(.cover-off) #glow,body:not(.cover-off) #debugGlow{visibility:hidden}
+/* Manual click-controlled timeline state */
+#figmaSlide6.manual .s6-head,#figmaSlide6.manual .s6-range,#figmaSlide6.manual .s6-start{opacity:1;transform:none;filter:none;transition:opacity .55s ease,transform .7s cubic-bezier(.16,1,.3,1),filter .55s ease}
+#figmaSlide6.manual .s6-era{opacity:.62;transition:opacity .45s ease}
+#figmaSlide6.manual .s6-era.active{opacity:1;color:#fff;text-shadow:0 0 18px rgba(66,227,180,.55)}
+#figmaSlide6.manual .s6-track{transform:translateX(var(--s6-pan,0px));transition:transform 1100ms cubic-bezier(.22,1,.36,1)}
+#figmaSlide6.manual .s6-line-fill{transform:scaleX(var(--s6-progress,0));transition:transform 950ms cubic-bezier(.22,1,.36,1)}
+#figmaSlide6.manual .s6-runner{opacity:1;transform:translateX(var(--s6-runner-x,0px));transition:transform 950ms cubic-bezier(.22,1,.36,1),opacity .45s ease}
+#figmaSlide6.manual .s6-node.revealed{opacity:1;transform:scale(1) translateY(0);filter:blur(0);transition:opacity .7s ease,transform .82s cubic-bezier(.16,1,.3,1),filter .7s ease}
+#figmaSlide6.manual .s6-node.active .s6-dot{background:#baffcc;box-shadow:0 0 0 10px rgba(0,217,0,.22),0 0 40px #42e3b4}
+#figmaSlide6.manual .s6-node.active .s6-card{background:rgba(255,255,255,.075);box-shadow:0 0 26px rgba(0,217,0,.13)}
+#figmaSlide6.manual .s6-final.visible{opacity:1;transform:none;transition:opacity .65s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+#figmaSlide6.manual .s6-range{min-width:220px;text-align:center}
+

@@ -1,0 +1,168 @@
+
+/* Slide 2 -> Slide 3 morph, based on Figma 145:175 */
+#figmaSlide2 .s2-card,#figmaSlide2 .s2-video-window{transition:opacity 620ms ease,filter 760ms ease,transform 980ms cubic-bezier(.22,1,.36,1),background 700ms ease,border-color 700ms ease,box-shadow 700ms ease}
+#figmaSlide2 .s2-docs{transform-origin:0 0;will-change:transform;transition:transform 1050ms cubic-bezier(.18,.86,.22,1),background 700ms ease,border-color 700ms ease,box-shadow 700ms ease,border-radius 850ms ease}
+#figmaSlide2 .s2-doc-img{transform-origin:0 0;transition:transform 1050ms cubic-bezier(.18,.86,.22,1)}
+#figmaSlide2.focus-docs .s2-card:not(.s2-docs),#figmaSlide2.focus-docs .s2-video-window{opacity:0;filter:blur(13px);transform:scale(.94);pointer-events:none}
+#figmaSlide2.focus-docs .s2-docs{transform:translate(-1190.5px,-455.35px) scale(2.057885);background:transparent;border-color:transparent;box-shadow:none;border-radius:0;overflow:visible}
+#figmaSlide2.focus-docs .s2-doc-img{transform:translateX(57.1px) scale(1.474)}
+#figmaSlide2.focus-docs .s2-blue-glow-wrap{opacity:.75}
+
+#figmaSlide3Extras{position:absolute;inset:0;width:1920px;height:1080px;z-index:21;pointer-events:none;opacity:0;visibility:hidden;transition:opacity 480ms ease,visibility 0s linear 520ms;overflow:hidden}
+#figmaSlide3Extras.show{opacity:1;visibility:visible;transition-delay:0s}
+#figmaSlide3Extras.out{opacity:0;visibility:hidden;transition-delay:0s}
+#figmaSlide3Extras .s3-file{position:absolute;width:191.646px;height:191.646px;max-width:none;opacity:0;filter:blur(7px);transform:translate(60px,-26px) scale(.72) rotate(5deg);transition:opacity 580ms ease,transform 900ms cubic-bezier(.18,.86,.22,1),filter 700ms ease}
+#figmaSlide3Extras.show .s3-file{opacity:1;filter:none;transform:none}
+#figmaSlide3Extras .s3-excel{left:1380.2px;top:164.5px;transition-delay:260ms}
+#figmaSlide3Extras .s3-word{left:1418.62px;top:513.29px;transition-delay:390ms}
+#figmaSlide3Extras .s3-pdf{left:1106.24px;top:768.56px;transition-delay:520ms}
+
+
+/* Slide 4 — Figma 145:391 */
+#figmaSlide4{position:absolute;inset:0;width:1920px;height:1080px;z-index:22;background:#0c1118;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(34px) scale(.992);filter:blur(14px);transition:opacity 680ms ease,transform 900ms cubic-bezier(.22,1,.36,1),filter 760ms ease,visibility 0s linear 900ms;overflow:hidden;font-family:SB,Arial,sans-serif}
+#figmaSlide4.show{opacity:1;visibility:visible;pointer-events:auto;transform:none;filter:none;transition-delay:0s}
+#figmaSlide4.out{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-34px) scale(.992);filter:blur(14px)}
+#figmaSlide4 .s4t-frame{position:absolute;left:101px;top:69px;width:1718px;height:941px;word-break:break-word;font-style:normal}
+#figmaSlide4 .s4t-percent{position:absolute;left:30.065px;top:114.049px;margin:0;color:#fff;font-weight:600;font-size:200px;line-height:.95;letter-spacing:-5px;white-space:nowrap}
+#figmaSlide4 .s4t-work{position:absolute;left:109.952px;top:301.026px;margin:0;font-size:167.211px;line-height:.95;font-weight:600;letter-spacing:-4.2px;white-space:nowrap;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none}
+#figmaSlide4 .s4t-search{position:absolute;left:236.053px;right:30.065px;top:472.006px;bottom:42.910px;color:#fff;font-weight:300;font-size:150px;line-height:.95;letter-spacing:-3px;text-align:center;white-space:pre-wrap;display:flex;align-items:flex-start;justify-content:center}
+
+/* Appearing text animation for slide 5 (Figma 145:391) */
+#figmaSlide4 .s4t-percent,
+#figmaSlide4 .s4t-work,
+#figmaSlide4 .s4t-search{opacity:0;will-change:opacity,transform,filter}
+#figmaSlide4 .s4t-percent{transform:translateX(-84px) scale(.965);filter:blur(16px)}
+#figmaSlide4 .s4t-work{transform:translateY(58px) scale(.982);filter:blur(20px);text-shadow:none}
+#figmaSlide4 .s4t-search{transform:translateY(72px);filter:blur(18px)}
+#figmaSlide4.show .s4t-percent{animation:s5TextPercentIn 1050ms cubic-bezier(.16,1,.3,1) 120ms forwards}
+#figmaSlide4.show .s4t-work{animation:s5TextWorkIn 1250ms cubic-bezier(.16,1,.3,1) 620ms forwards}
+#figmaSlide4.show .s4t-search{animation:s5TextSearchIn 1150ms cubic-bezier(.16,1,.3,1) 1280ms forwards}
+#figmaSlide4.out .s4t-percent,
+#figmaSlide4.out .s4t-work,
+#figmaSlide4.out .s4t-search{animation:none;opacity:0}
+@keyframes s5TextPercentIn{
+  0%{opacity:0;transform:translateX(-84px) scale(.965);filter:blur(16px)}
+  68%{opacity:1;filter:blur(1px)}
+  100%{opacity:1;transform:translateX(0) scale(1);filter:blur(0)}
+}
+@keyframes s5TextWorkIn{
+  0%{opacity:0;transform:translateY(58px) scale(.982);filter:blur(20px);text-shadow:none}
+  66%{opacity:1;filter:blur(1px);text-shadow:none}
+  100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0);text-shadow:none}
+}
+@keyframes s5TextSearchIn{
+  0%{opacity:0;transform:translateY(72px);filter:blur(18px)}
+  72%{opacity:1;filter:blur(1px)}
+  100%{opacity:1;transform:translateY(0);filter:blur(0)}
+}
+
+#figmaSlide5{z-index:23}
+/* Slide 5 — Figma 145:282 */
+#figmaSlide5{position:absolute;inset:0;width:1920px;height:1080px;z-index:22;background:#0c1118;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(34px) scale(.992);filter:blur(14px);transition:opacity 680ms ease,transform 900ms cubic-bezier(.22,1,.36,1),filter 760ms ease,visibility 0s linear 900ms;overflow:hidden;font-family:SB,Arial,sans-serif}
+#figmaSlide5.show{opacity:1;visibility:visible;pointer-events:auto;transform:none;filter:none;transition-delay:0s}
+#figmaSlide5.out{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-34px) scale(.992);filter:blur(14px)}
+#figmaSlide5 .s4-glow{position:absolute;left:1590.32px;top:168.96px;width:1154.436px;height:1154.436px;mix-blend-mode:color;opacity:.75;pointer-events:none}
+#figmaSlide5 .s4-glow img{position:absolute;left:-56.3%;top:-56.3%;width:212.6%;height:212.6%;max-width:none}
+#figmaSlide5 .s4-frame{position:absolute;left:101px;top:69px;width:1718px;height:941px}
+#figmaSlide5 .s4-num{position:absolute;left:65.85px;top:316.1px;width:952.799px;margin:0;font-size:197.557px;line-height:.95;font-weight:600;letter-spacing:-6px;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);-webkit-background-clip:text;background-clip:text;color:transparent}
+#figmaSlide5 .s4-label{position:absolute;left:65.85px;top:515.9px;color:#fff;font-weight:300;font-size:98.778px;line-height:1.1;white-space:nowrap;letter-spacing:-2px}
+#figmaSlide5 .s4-wiki{position:absolute;width:337px;height:754px;box-sizing:border-box;border:12px solid #00d900;border-radius:24px;overflow:hidden;box-shadow:0 0 19.574px #6eb840;background:#101820}
+#figmaSlide5 .s4-wiki img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;pointer-events:none}
+#figmaSlide5 .s4-wiki.w1{left:1042.37px;top:129.04px;z-index:3}
+#figmaSlide5 .s4-wiki.w2{left:1132.96px;top:158.32px;z-index:2}
+#figmaSlide5 .s4-wiki.w3{left:1210.87px;top:185.54px;z-index:1}
+/* Slide 4: the rear screen rises first, followed by the two foreground screens. */
+#figmaSlide5.show .s4-wiki{animation:wikiScreenRise 1.05s cubic-bezier(.22,1,.36,1) both;}
+#figmaSlide5.show .s4-wiki.w3{animation-delay:.2s;}
+#figmaSlide5.show .s4-wiki.w2{animation-delay:.65s;}
+#figmaSlide5.show .s4-wiki.w1{animation-delay:1.1s;}
+@keyframes wikiScreenRise{
+  from{transform:translateY(1000px);}
+  to{transform:translateY(0);}
+}
+@media (prefers-reduced-motion:reduce){
+  #figmaSlide5.show .s4-wiki{animation:none;transform:none;}
+}
+
+
+/* Slide 6 — animated AI-agent timeline, based on Figma 150:460 */
+#figmaSlide6{position:absolute;inset:0;width:1920px;height:1080px;z-index:24;background:#0c1118;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(30px) scale(.994);filter:blur(14px);transition:opacity 680ms ease,transform 900ms cubic-bezier(.22,1,.36,1),filter 760ms ease,visibility 0s linear 900ms;overflow:hidden;font-family:SB,Arial,sans-serif;color:#fff}
+#figmaSlide6.show{opacity:1;visibility:visible;pointer-events:auto;transform:none;filter:none;transition-delay:0s}
+#figmaSlide6.out{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-32px) scale(.992);filter:blur(14px)}
+#figmaSlide6 .s6-head{position:absolute;left:112px;top:78px;z-index:5;opacity:0;transform:translateY(24px);filter:blur(8px)}
+#figmaSlide6 .s6-kicker{font-size:28px;line-height:1.1;font-weight:300;letter-spacing:.8px;color:rgba(255,255,255,.62);text-transform:uppercase}
+#figmaSlide6 .s6-title{margin-top:13px;font-size:72px;line-height:.98;font-weight:600;letter-spacing:-2.6px}
+#figmaSlide6 .s6-title span{background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 20px rgba(110,184,64,.24)}
+#figmaSlide6 .s6-range{position:absolute;right:116px;top:98px;z-index:5;padding:12px 18px;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:rgba(255,255,255,.035);font-size:28px;font-weight:300;opacity:0;transform:translateY(18px)}
+#figmaSlide6 .s6-viewport{position:absolute;left:72px;right:72px;top:245px;height:700px;overflow:hidden;mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%)}
+#figmaSlide6 .s6-track{position:absolute;left:0;top:0;width:3780px;height:700px;transform:translateX(0);will-change:transform}
+#figmaSlide6 .s6-line-base{position:absolute;left:98px;top:350px;width:3450px;height:5px;border-radius:8px;background:rgba(255,255,255,.10)}
+#figmaSlide6 .s6-line-fill{position:absolute;left:98px;top:345px;width:3450px;height:15px;border-radius:12px;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);box-shadow:0 0 24px rgba(110,184,64,.75);transform-origin:left center;transform:scaleX(0)}
+#figmaSlide6 .s6-runner{position:absolute;left:88px;top:331px;width:42px;height:42px;border-radius:50%;background:#baffcc;box-shadow:0 0 0 8px rgba(0,217,0,.16),0 0 34px #42e3b4;opacity:0;will-change:transform}
+#figmaSlide6 .s6-era{display:none}
+#figmaSlide6 .s6-era.spring{left:120px} #figmaSlide6 .s6-era.summer{left:1420px} #figmaSlide6 .s6-era.autumn{left:2720px}
+#figmaSlide6 .s6-node{position:absolute;left:var(--x);top:350px;width:0;height:0;opacity:0;will-change:opacity,transform,filter;transform:scale(.82);filter:blur(7px)}
+#figmaSlide6 .s6-dot{position:absolute;left:-18px;top:-18px;width:36px;height:36px;border-radius:50%;background:#0c1118;border:8px solid #00d900;box-sizing:border-box;box-shadow:0 0 24px rgba(0,217,0,.7)}
+#figmaSlide6 .s6-stem{position:absolute;left:-2px;width:4px;height:96px;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);box-shadow:0 0 12px rgba(0,217,0,.35)}
+#figmaSlide6 .s6-node.up .s6-stem{bottom:18px} #figmaSlide6 .s6-node.down .s6-stem{top:18px}
+#figmaSlide6 .s6-date{position:absolute;left:-94px;width:188px;padding:9px 10px;border-radius:8px;text-align:center;font-size:23px;line-height:1;font-weight:300;color:#fff;background:rgba(12,17,24,.86);box-shadow:0 0 4px rgba(255,255,255,.25);white-space:nowrap}
+#figmaSlide6 .s6-node.up .s6-date{top:39px} #figmaSlide6 .s6-node.down .s6-date{bottom:38px}
+#figmaSlide6 .s6-card{position:absolute;width:360px;min-height:132px;padding:24px 26px;box-sizing:border-box;background:rgba(255,255,255,.05);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+#figmaSlide6 .s6-node.up .s6-card{left:-180px;bottom:114px;border-bottom:4px solid #00d900}
+#figmaSlide6 .s6-node.down .s6-card{left:-180px;top:114px;border-top:4px solid #00d900}
+#figmaSlide6 .s6-card.wide{width:410px}.s6-node.up .s6-card.wide,.s6-node.down .s6-card.wide{left:-205px}
+#figmaSlide6 .s6-card-title{font-size:32px;line-height:1.0;font-weight:600;letter-spacing:-.7px;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);-webkit-background-clip:text;background-clip:text;color:transparent}
+#figmaSlide6 .s6-card-text{margin-top:11px;font-size:22px;line-height:1.16;font-weight:300;color:rgba(255,255,255,.88)}
+#figmaSlide6 .s6-start{position:absolute;left:90px;top:388px;width:280px;font-size:21px;line-height:1.2;color:rgba(255,255,255,.55);opacity:0}
+#figmaSlide6 .s6-start strong{display:block;margin-bottom:5px;font-size:31px;color:#fff;font-weight:600}
+#figmaSlide6 .s6-final{position:absolute;right:120px;bottom:74px;z-index:5;font-size:22px;color:rgba(255,255,255,.48);opacity:0;transform:translateY(12px)}
+#figmaSlide6.show.play .s6-head{animation:s6FadeUp .85s cubic-bezier(.16,1,.3,1) .08s forwards}
+#figmaSlide6.show.play .s6-range{animation:s6FadeUp .75s cubic-bezier(.16,1,.3,1) .25s forwards}
+#figmaSlide6.show.play .s6-era{animation:s6SoftIn .7s ease forwards}.s6-era.spring{animation-delay:.55s!important}.s6-era.summer{animation-delay:4.3s!important}.s6-era.autumn{animation-delay:8.2s!important}
+#figmaSlide6.show.play .s6-line-fill{animation:s6Draw 11.8s cubic-bezier(.12,.82,.18,1) .65s forwards}
+#figmaSlide6.show.play .s6-runner{animation:s6Runner 11.8s cubic-bezier(.12,.82,.18,1) .65s forwards}
+#figmaSlide6.show.play .s6-track{animation:s6Pan 12.6s cubic-bezier(.25,.72,.2,1) .5s forwards}
+#figmaSlide6.show.play .s6-start{animation:s6SoftIn .8s ease .85s forwards}
+#figmaSlide6.show.play .s6-node{animation:s6NodeIn .72s cubic-bezier(.16,1,.3,1) var(--delay) forwards}
+#figmaSlide6.show.play .s6-final{animation:s6FadeUp .8s cubic-bezier(.16,1,.3,1) 11.4s forwards}
+@keyframes s6FadeUp{to{opacity:1;transform:none;filter:none}}
+@keyframes s6SoftIn{to{opacity:1}}
+@keyframes s6NodeIn{0%{opacity:0;transform:scale(.82) translateY(12px);filter:blur(7px)}68%{opacity:1;filter:blur(1px)}100%{opacity:1;transform:scale(1) translateY(0);filter:blur(0)}}
+@keyframes s6Draw{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+@keyframes s6Runner{0%{opacity:0;transform:translateX(0)}4%{opacity:1}100%{opacity:1;transform:translateX(3450px)}}
+@keyframes s6Pan{0%,19%{transform:translateX(0)}48%{transform:translateX(-780px)}72%{transform:translateX(-1510px)}100%{transform:translateX(-2050px)}}
+@media (prefers-reduced-motion:reduce){#figmaSlide6.show .s6-head,#figmaSlide6.show .s6-range,#figmaSlide6.show .s6-era,#figmaSlide6.show .s6-start,#figmaSlide6.show .s6-node,#figmaSlide6.show .s6-final{opacity:1!important;transform:none!important;filter:none!important}#figmaSlide6.show .s6-line-fill{transform:scaleX(1)!important}#figmaSlide6.show .s6-track{transform:translateX(-1080px)!important}}
+
+/* Manual click-controlled timeline state */
+#figmaSlide6.manual .s6-head,#figmaSlide6.manual .s6-range,#figmaSlide6.manual .s6-start{opacity:1;transform:none;filter:none;transition:opacity .55s ease,transform .7s cubic-bezier(.16,1,.3,1),filter .55s ease}
+#figmaSlide6.manual .s6-era{opacity:.62;transition:opacity .45s ease}
+#figmaSlide6.manual .s6-era.active{opacity:1;color:#fff;text-shadow:0 0 18px rgba(66,227,180,.55)}
+#figmaSlide6.manual .s6-track{transform:translateX(var(--s6-pan,0px));transition:transform 1100ms cubic-bezier(.22,1,.36,1)}
+#figmaSlide6.manual .s6-line-fill{transform:scaleX(var(--s6-progress,0));transition:transform 950ms cubic-bezier(.22,1,.36,1)}
+#figmaSlide6.manual .s6-runner{opacity:1;transform:translateX(var(--s6-runner-x,0px));transition:transform 950ms cubic-bezier(.22,1,.36,1),opacity .45s ease}
+#figmaSlide6.manual .s6-node.revealed{opacity:1;transform:scale(1) translateY(0);filter:blur(0);transition:opacity .7s ease,transform .82s cubic-bezier(.16,1,.3,1),filter .7s ease}
+#figmaSlide6.manual .s6-node.active .s6-dot{background:#baffcc;box-shadow:0 0 0 10px rgba(0,217,0,.22),0 0 40px #42e3b4}
+#figmaSlide6.manual .s6-node.active .s6-card{background:rgba(255,255,255,.075);box-shadow:0 0 26px rgba(0,217,0,.13)}
+#figmaSlide6.manual .s6-final.visible{opacity:1;transform:none;transition:opacity .65s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+#figmaSlide6.manual .s6-range{min-width:220px;text-align:center}
+
+
+/* Figma 206:333 — inserted after presentation slide 5. */
+#agentsIntroSlide{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;background:#0c1118;font-family:SB,Arial,sans-serif;z-index:24;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(34px) scale(.992);filter:blur(14px);transition:opacity 680ms ease,transform 900ms cubic-bezier(.22,1,.36,1),filter 760ms ease,visibility 0s linear 900ms;}
+#agentsIntroSlide.show{opacity:1;visibility:visible;pointer-events:auto;transform:none;filter:none;transition-delay:0s;}
+#agentsIntroSlide.out{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-34px) scale(.992);filter:blur(14px);}
+#agentsIntroSlide .agents-glow{position:absolute;pointer-events:none;}
+#agentsIntroSlide .agents-glow img{position:absolute;left:50%;top:50%;max-width:none;transform:translate(-50%,-50%) rotate(180deg) scaleY(-1);}
+#agentsIntroSlide .agents-glow-298{left:1247.86px;top:-249.09px;width:715.666px;height:714.057px;}
+#agentsIntroSlide .agents-glow-298 img{transform:translate(-50%,-50%) rotate(90deg);}
+#agentsIntroSlide .agents-glow-309{left:1590.32px;top:168.96px;width:1154.436px;height:1154.436px;mix-blend-mode:color;}
+#agentsIntroSlide .agents-glow-310{left:1448.5px;top:591.27px;width:1200px;height:1200px;}
+#agentsIntroSlide .agents-glow-312{left:1631.67px;top:-112.25px;width:1154.436px;height:1154.436px;mix-blend-mode:color;}
+#agentsIntroSlide .agents-help{position:absolute;left:114.432px;top:270px;margin:0;font-size:150px;font-weight:600;line-height:normal;color:#fff;white-space:nowrap;}
+#agentsIntroSlide .agents-title{position:absolute;left:176.45px;top:445px;margin:0;font-size:200px;line-height:.95;font-weight:600;white-space:nowrap;color:transparent;background:linear-gradient(-40.76536503307179deg,#48ffff 54.42%,#42e3b4 87.884%);background-clip:text;-webkit-background-clip:text;text-shadow:none;}
+#agentsIntroSlide .agents-hero{position:absolute;left:1094.35px;top:10px;width:890.162px;height:1080px;object-fit:cover;max-width:none;pointer-events:none;}
+
+/* Give gradient glyphs room above/below their tight line boxes. */
+#figmaSlide4 .s4t-work,
+#agentsIntroSlide .agents-title{padding:.2em .06em;margin:-.2em 0 0 -.06em;overflow:visible;text-shadow:none;}
+#agentsIntroSlide .agents-title{z-index:1;}

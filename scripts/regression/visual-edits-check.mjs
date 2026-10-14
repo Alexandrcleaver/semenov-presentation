@@ -1,0 +1,24 @@
+import fs from 'node:fs';import path from 'node:path';import {pathToFileURL} from 'node:url';import assert from 'node:assert/strict';
+import {dependency,browserPath} from './runtime.mjs';import {root} from '../source-index.mjs';import {prepareCapture,restoreCapture} from './visual.mjs';
+process.chdir(root);const dir=path.join(root,'regression/visual-edits-oct13');fs.mkdirSync(dir,{recursive:true});
+const browser=await dependency('playwright').chromium.launch({headless:true,executablePath:browserPath()}),context=await browser.newContext({viewport:{width:1920,height:1080},deviceScaleFactor:1,locale:'ru-RU',timezoneId:'Europe/Moscow',offline:true});
+const page=await context.newPage(),errors=[],external=[],checks=[];page.on('pageerror',e=>errors.push(e.message));context.on('request',r=>{if(!/^(file:|data:|blob:|about:)/.test(r.url()))external.push(r.url());});
+await page.clock.install({time:new Date('2026-10-13T09:00:00Z')});await page.clock.pauseAt(new Date('2026-10-13T09:00:01Z'));
+await page.goto(pathToFileURL(path.join(root,'dist/presentation.html')).href);await page.evaluate(()=>document.fonts.ready);
+const jump=async n=>{await page.evaluate(n=>window.__deckJump(n),n);await page.clock.fastForward(8000);};
+async function shot(name){await prepareCapture(page,'settled');try{await page.screenshot({path:path.join(dir,name+'.png'),animations:'disabled'});}finally{await restoreCapture(page);}}
+try{
+for(const n of [8,11,12,38,39]){await jump(n);await shot('slide-'+n);checks.push({slide:n,stage:await page.evaluate(()=>window.__presentationStage)});}
+await jump(8);assert.equal(await page.locator('#aistEvolutionSlide .ev2-lead').count(),0);for(let k=0;k<6;k++){await page.keyboard.press('Enter');await page.clock.fastForward(400);assert.equal(await page.evaluate(()=>window.aistEvolutionStep),k+1);}checks.push({name:'evolution-all-steps',pass:true});
+await jump(11);assert.equal(await page.locator('#pdfSlide27 .catwin-ko,#pdfSlide27 .catwin-ribbon,#pdfSlide27 .catwin-kicker').count(),0);assert.ok(await page.locator('#pdfSlide27 .catwin-note').textContent());
+await jump(12);await page.evaluate(()=>{const e=document.querySelector('#pdfSlide9 .ee-speedo-needle');const a=e.getAnimations().find(a=>a.animationName==='semenovNeedleSweep');a.pause();globalThis.__needleTest=a;});
+const samples=[];for(const elapsed of [0,950,1900,2850,3800]){await page.evaluate(t=>{globalThis.__needleTest.currentTime=3050+t;},elapsed);const sample=await page.evaluate(()=>{const e=document.querySelector('#pdfSlide9 .ee-speedo-needle'),s=getComputedStyle(e),m=new DOMMatrix(s.transform);return {angle:Math.atan2(m.b,m.a)*180/Math.PI,matrix:s.transform};});samples.push({elapsed,...sample});await page.screenshot({path:path.join(dir,'slide-12-needle-'+elapsed+'.png'),animations:'allow'});}
+assert.ok(Math.abs(Math.abs(samples[0].angle)-180)<1);assert.ok(Math.abs(samples[2].angle+90)<1);assert.ok(Math.abs(samples[4].angle)<1);checks.push({name:'needle-start-mid-end',samples});
+checks.push(await page.evaluate(()=>{const svg=document.querySelector('#pdfSlide9 .ee-speedometer svg'),label=document.querySelector('#pdfSlide9 .ee-speedo-center'),line=document.querySelector('#pdfSlide9 .ee-speedo-needle line');const radius=Number(line.getAttribute('x2'))-300,ticks=[...svg.querySelectorAll('.ee-gauge-tick')].map(t=>Math.min(Math.hypot(t.x1.baseVal.value-300,t.y1.baseVal.value-250),Math.hypot(t.x2.baseVal.value-300,t.y2.baseVal.value-250)));const m=svg.getScreenCTM(),pivot=new DOMPoint(300,250).matrixTransform(m);return {name:'needle-clearance',radius,tickRadius:Math.min(...ticks),gap:Math.min(...ticks)-radius,pivotY:pivot.y,labelTop:label.getBoundingClientRect().top,viewBox:svg.getAttribute('viewBox')};}));
+assert.ok(checks.find(c=>c.name==='needle-clearance').gap>8,'needle must clear every tick');
+await jump(39);await page.evaluate(()=>{const e=document.querySelector('#pdfSlide28 .qr-scan-corners'),a=e.getAnimations()[0];a.pause();globalThis.__qrTest=a;});
+const qr=[];for(const t of [0,1200,2400,3600]){await page.evaluate(t=>{globalThis.__qrTest.currentTime=t;},t);qr.push(await page.evaluate(()=>{const image=document.querySelector('#pdfSlide28 .sv30-qr-link img').getBoundingClientRect(),corners=document.querySelector('#pdfSlide28 .qr-scan-corners').getBoundingClientRect();return {image:{x:image.x,y:image.y,w:image.width,h:image.height},corners:{x:corners.x,y:corners.y,w:corners.width,h:corners.height}};}));await page.screenshot({path:path.join(dir,'slide-39-corners-'+t+'.png'),animations:'allow'});}
+assert.deepEqual(qr[0].image,qr[2].image);assert.ok(Math.abs(qr[0].corners.y-qr[2].corners.y-(-8))<.1);checks.push({name:'QR-fixed-corners-float',samples:qr});
+assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
+}finally{fs.writeFileSync(path.join(dir,'report.json'),JSON.stringify({checks,errors,external},null,2));await browser.close();}
+console.log('Visual edit controls saved:',dir);
