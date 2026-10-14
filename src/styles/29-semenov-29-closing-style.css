@@ -13,7 +13,7 @@
 #pdfSlide28.ee-slide .sv29-link{display:inline-flex;align-items:center;gap:14px;margin-top:38px;text-decoration:none!important;color:#97ecc5;font:500 30px SB,Arial,sans-serif;position:relative;z-index:7;pointer-events:auto}
 #pdfSlide28.ee-slide .sv29-link:hover{text-decoration:underline!important;color:#c7ffe3}
 #pdfSlide28.ee-slide .sv29-link svg{width:32px;height:32px;fill:currentColor}
-#pdfSlide28.ee-slide .sv29-photo{position:absolute;top:136px;left:1060px;width:490px;height:750px;border-radius:28px;overflow:hidden;background:#141d23;border:1px solid rgba(195,252,229,.22);box-shadow:0 25px 85px rgba(0,0,0,.4),0 0 55px rgba(66,227,180,.05)}
+#pdfSlide28.ee-slide .sv29-photo{position:absolute;top:136px;left:1060px;width:490px;height:750px;border-radius:28px;overflow:hidden;background:#141d23;border:0;box-shadow:0 25px 85px rgba(0,0,0,.4),0 0 55px rgba(66,227,180,.05)}
 #pdfSlide28.ee-slide .sv29-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
 #pdfSlide28.ee-slide .sv29-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 64%,rgba(12,17,24,.28));pointer-events:none}
 #pdfSlide28.ee-slide .sv29-qr-group{position:absolute;left:1504px;top:552px;z-index:8;display:flex;flex-direction:column;align-items:center;width:296px;gap:16px}
