@@ -49,3 +49,5 @@ body.presenter-debug-open #debugGlow { display:block!important;visibility:visibl
 :fullscreen #presenterBar,
 :fullscreen #prev.nav,
 :fullscreen #forward.nav{display:none!important;}
+
+#presenterCopyPng:disabled{opacity:.6;cursor:wait;}

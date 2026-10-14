@@ -47,6 +47,55 @@
   window.addEventListener('deck-slide-jump',refresh);
 
   // Presenter footer controls: do not trigger the global click-to-advance handler.
+
+  const copyPng=document.getElementById('presenterCopyPng');
+  async function captureSlidePng(){
+    let stream;
+    const hidden=[];
+    try {
+      stream=await navigator.mediaDevices.getDisplayMedia({video:{displaySurface:'browser',width:{ideal:1920},height:{ideal:1080}},audio:false,preferCurrentTab:true,selfBrowserSurface:'include',surfaceSwitching:'exclude',monitorTypeSurfaces:'exclude'});
+      if(stream.getVideoTracks()[0].getSettings().displaySurface!=='browser')throw new Error('Выберите вкладку презентации, а не окно или весь экран.');
+      for(const id of ['presenterBar','presenterDrawer','debugGlow','prev','forward']){
+        const element=document.getElementById(id);if(!element)continue;
+        hidden.push([element,element.style.getPropertyValue('visibility'),element.style.getPropertyPriority('visibility')]);
+        element.style.setProperty('visibility','hidden','important');
+      }
+      const video=document.createElement('video');video.muted=true;video.playsInline=true;video.srcObject=stream;
+      await video.play();
+      // Allow the captured tab to repaint after hiding the controls.
+      await new Promise(resolve=>setTimeout(resolve,250));
+      if(video.requestVideoFrameCallback)await new Promise((resolve,reject)=>{
+        const timeout=setTimeout(()=>reject(new Error('Не получен кадр вкладки.')),4000);
+        video.requestVideoFrameCallback(()=>{clearTimeout(timeout);resolve();});
+      });
+      const rect=document.body.getBoundingClientRect();
+      if(!video.videoWidth||!video.videoHeight||!rect.width||!rect.height)throw new Error('Не удалось получить изображение слайда.');
+      const sx=video.videoWidth/innerWidth,sy=video.videoHeight/innerHeight;
+      const canvas=document.createElement('canvas');canvas.width=1920;canvas.height=1080;
+      canvas.getContext('2d').drawImage(video,rect.left*sx,rect.top*sy,rect.width*sx,rect.height*sy,0,0,1920,1080);
+      return await new Promise((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('Не удалось создать PNG.')),'image/png'));
+    } finally {
+      stream?.getTracks().forEach(track=>track.stop());
+      for(const [element,value,priority] of hidden){if(value)element.style.setProperty('visibility',value,priority);else element.style.removeProperty('visibility');}
+    }
+  }
+  copyPng.addEventListener('click',async event=>{
+    event.preventDefault();event.stopPropagation();
+    if(copyPng.disabled)return;
+    if(!navigator.clipboard?.write||!window.ClipboardItem||!navigator.mediaDevices?.getDisplayMedia){alert('Копирование PNG требует Chrome или Edge с доступом к буферу обмена и захвату вкладки.');return;}
+    copyPng.disabled=true;const label=copyPng.querySelector('span');label.textContent='Выберите эту вкладку…';
+    try {
+      const png=captureSlidePng();png.catch(()=>{});
+      // Start clipboard writing during the click's user activation.
+      await navigator.clipboard.write([new ClipboardItem({'image/png':png})]);
+      label.textContent='PNG скопирован';
+    } catch(error){
+      label.textContent='Копировать PNG';
+      if(error.name!=='NotAllowedError'&&error.name!=='AbortError')alert(error.message);
+      else alert('Копирование отменено или запрещено браузером. Разрешите захват этой вкладки и запись в буфер обмена.');
+    } finally {copyPng.disabled=false;setTimeout(()=>{label.textContent='Копировать PNG';},2000);}
+  });
+
   const debugToggle=document.getElementById('presenterDebugToggle');
   const fullscreenToggle=document.getElementById('presenterFullscreen');
   const fsLabel=document.getElementById('presenterFullscreenLabel');
@@ -77,7 +126,7 @@
       fullscreenToggle.title='Браузер запретил полноэкранный режим. Попробуйте F11';
     } finally {fullscreenBusy=false;updateFullscreen();}
   }
-  for(const button of [debugToggle,fullscreenToggle]){
+  for(const button of [debugToggle,fullscreenToggle,copyPng]){
     button.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();});
     button.addEventListener('touchend',e=>e.stopPropagation(),{passive:true});
     button.addEventListener('pointerdown',e=>e.stopPropagation());
