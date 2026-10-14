@@ -3,8 +3,8 @@
 #pdfSlide9 .ee-speedo-center{top:calc(100% + 8px)!important;transform:translateX(-50%)!important;}
 #pdfSlide9 .ee-speedo-needle line{stroke-width:6;filter:drop-shadow(0 0 2px rgba(66,227,180,.3));}
 /* Both sweeps share progress p: arc offset=100*(1-p), needle angle=-180+180*p. */
-#pdfSlide9{--gauge-duration:3.8s;--gauge-easing:cubic-bezier(.45,0,.55,1);--gauge-delay:3.05s;}
-#pdfSlide9 .ee-gauge-active{stroke-linecap:butt;}
+#pdfSlide9{--gauge-duration:3.8s;--gauge-easing:linear(0, .012 6%, .07 12%, .24 20%, .46 30%, .505 35%, .495 37%, .61 43%, .603 45%, .755 54%, .747 56%, .865 65%, .861 67%, .943 77%, .98 86%, .995 94%, 1);--gauge-delay:3.05s;}
+#pdfSlide9 .ee-gauge-active{fill:none;stroke:url(#eeGaugeGrad);stroke-linecap:butt;filter:none;}
 #pdfSlide9.show .ee-gauge-active{animation:eeGaugeSweep var(--gauge-duration) var(--gauge-easing) var(--gauge-delay) both!important;}
 #pdfSlide9.show .ee-speedo-needle{animation:semenovNeedleSweep var(--gauge-duration) var(--gauge-easing) var(--gauge-delay) both!important;}
 @keyframes semenovNeedleSweep{from{transform:rotate(-180deg)}to{transform:rotate(0deg)}}
