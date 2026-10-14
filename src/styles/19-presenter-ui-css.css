@@ -44,3 +44,8 @@ body.presenter-debug-open #debugGlow { display:block!important;visibility:visibl
 #presenterBar .presenterKeys.lastKey { gap:8px; }
 @media (max-width:1400px) { #presenterBar { gap:12px; padding:0 12px; } #presenterBar .presenterKeys { font-size:15px;gap:6px; } #presenterBar .presenterIconBtn { font-size:16px;padding:9px 12px;gap:7px; } #presenterCounter { min-width:75px;font-size:17px; } }
 @media (max-width:1000px) { #presenterBar .presenterKeys { display:none; } #presenterBar .presenterRule { display:none; } #presenterBar { height:56px;max-width:calc(100vw - 26px);gap:8px; } #presenterBar .presenterIconBtn { padding:9px; } }
+
+/* Fullscreen presentation: keep the canvas free of navigation controls. */
+:fullscreen #presenterBar,
+:fullscreen #prev.nav,
+:fullscreen #forward.nav{display:none!important;}
