@@ -582,10 +582,10 @@
   },
   {
     "token": "@@EMBED_ASSET_0087@@",
-    "path": "src/assets/cover-205-225-hero.png",
-    "mime": "image/png",
-    "sha256": "49434dd6b4853bf5062e9c012eff58eca801ae2e3b901d0d13c6ce6a9337ff5f",
-    "bytes": 2587103
+    "path": "src/assets/cover-205-225-hero.webp",
+    "mime": "image/webp",
+    "sha256": "9d553bd74639d20c96d3cbb0bffb7910bd1eb5d6b4e70d871de5853ff37e5873",
+    "bytes": 382150
   },
   {
     "token": "@@EMBED_ASSET_0088@@",
@@ -624,10 +624,10 @@
   },
   {
     "token": "@@EMBED_ASSET_0093@@",
-    "path": "src/assets/agents-206-333.png",
-    "mime": "image/png",
-    "sha256": "45938b10bc4499c44a14a7e2e5060345ea0a0c395ade09ce154b8f41668f697d",
-    "bytes": 2634560
+    "path": "src/assets/agents-206-333.webp",
+    "mime": "image/webp",
+    "sha256": "8426f9e6371b72395980c48988d87baef612ade6627ab83f1f18f1674175d61a",
+    "bytes": 466384
   },
   {
     "token": "@@EMBED_ASSET_0094@@",
