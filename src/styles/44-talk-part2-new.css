@@ -1,1 +1,100 @@
-/* 44-talk-part2-new.css: доклад 21.10 */
+/* 44-talk-part2-new.css: доклад 21.10 — новые слайды 12 (#pdfSlide41) и 18 (#pdfSlide42).
+   Визуальная система story-tech (заголовок/зона контента из 37-*), анимации — одноразовые, только transform/opacity. */
+
+/* ===== общее для двух слайдов ===== */
+#pdfSlide41 .ee-header h2 span,#pdfSlide42 .ee-header h2 span{color:#42e3b4}
+#pdfSlide41.show .ee-header h2{animation:storyTitleUp .75s cubic-bezier(.17,.9,.2,1) both!important}
+#pdfSlide42.show .ee-header h2{animation:storyTitleRight .82s cubic-bezier(.15,.86,.2,1) both!important}
+#pdfSlide41 sup,#pdfSlide42 sup{font-size:.6em;line-height:0;vertical-align:.62em;margin-left:1px}
+#pdfSlide41 .hn-in,#pdfSlide42 .pm-in{opacity:0;transform:translateY(22px)}
+#pdfSlide41.show .hn-in,#pdfSlide42.show .pm-in{animation:p2In .8s cubic-bezier(.16,1,.3,1) var(--d,0ms) both}
+#pdfSlide41.out .hn-in,#pdfSlide42.out .pm-in{opacity:1;transform:none}
+@keyframes p2In{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes p2Fade{from{opacity:0}to{opacity:1}}
+@keyframes p2GrowY{from{transform:scaleY(0)}to{transform:none}}
+@keyframes p2GrowX{from{transform:scaleX(0)}to{transform:none}}
+
+/* ===== слайд 12: лестница девяток ===== */
+#pdfSlide41.pdfRestSlide.ee-slide.story-tech .ee-content{top:212px!important;bottom:54px!important}
+#pdfSlide41 .hn-layout{position:relative;width:1468px;height:682px}
+#pdfSlide41 .hn-chart{position:absolute;left:0;top:0;width:910px;height:682px}
+#pdfSlide41 .hn-cap{position:absolute;left:0;top:0;font:300 27px/1.3 SB,Arial,sans-serif;color:rgba(255,255,255,.78);white-space:nowrap}
+#pdfSlide41 .hn-cap b{font-weight:600;color:#fff}
+#pdfSlide41 .hn-cap i{font-style:italic}
+#pdfSlide41 .hn-grid{position:absolute;inset:0;pointer-events:none}
+#pdfSlide41 .hn-gl{position:absolute;left:96px;right:0;height:0;border-top:1px solid rgba(255,255,255,.09)}
+#pdfSlide41 .hn-gl span{position:absolute;right:calc(100% + 14px);top:-14px;font:400 22px/1 SB,Arial,sans-serif;color:#7f9c94;white-space:nowrap}
+#pdfSlide41 .hn-gl-100{top:148px;right:auto;width:0;border-top:0}
+#pdfSlide41 .hn-gl-50{top:348px;border-top:2px dashed rgba(255,255,255,.2)}
+#pdfSlide41 .hn-gl-0{top:548px;border-top:2px solid rgba(255,255,255,.26)}
+#pdfSlide41 .hn-coin{position:absolute;right:10px;top:310px;font:400 22px/1.2 SB,Arial,sans-serif;color:#d89c96;white-space:nowrap}
+#pdfSlide41 .hn-col{position:absolute;left:var(--x);top:0;width:126px;height:682px}
+#pdfSlide41 .hn-track{position:absolute;left:0;right:0;bottom:134px;height:400px;border:1.5px dashed rgba(255,255,255,.13);border-bottom:0;border-radius:14px 14px 0 0;background:rgba(255,255,255,.014)}
+#pdfSlide41 .hn-bar{position:absolute;left:0;right:0;bottom:134px;height:var(--h);border-radius:14px 14px 0 0;background:linear-gradient(180deg,var(--c1),var(--c2));transform-origin:50% 100%;transform:scaleY(0)}
+#pdfSlide41 .hn-val{position:absolute;left:-30px;right:-30px;bottom:calc(134px + var(--h) + 10px);text-align:center;font:600 40px/1 SB,Arial,sans-serif;letter-spacing:-.8px;color:var(--c1);opacity:0}
+#pdfSlide41 .hn-n{position:absolute;left:-30px;right:-30px;top:566px;text-align:center;font:500 26px/1.1 SB,Arial,sans-serif;color:#e6f2ee;white-space:nowrap;opacity:0}
+#pdfSlide41 .hn-f{position:absolute;left:-30px;right:-30px;top:606px;text-align:center;font:400 24px/1 SB,Arial,sans-serif;color:#7f9c94;opacity:0}
+#pdfSlide41 .hn-key::before{content:"";position:absolute;left:-14px;right:-14px;top:340px;bottom:24px;border-radius:20px;border:1.5px solid rgba(239,143,106,.42);background:rgba(239,143,106,.06);opacity:0}
+#pdfSlide41 .hn-key .hn-track{border-color:rgba(239,143,106,.3)}
+#pdfSlide41 .hn-key .hn-val{font-size:50px}
+#pdfSlide41 .hn-key .hn-n{color:#ffd2bd;font-weight:600}
+#pdfSlide41.show .hn-track{animation:p2Fade .6s ease var(--d) both}
+#pdfSlide41.show .hn-bar{animation:p2GrowY .95s cubic-bezier(.2,.85,.25,1) var(--d) both}
+#pdfSlide41.show :is(.hn-val,.hn-n,.hn-f){animation:p2Fade .55s ease calc(var(--d) + 420ms) both}
+#pdfSlide41.show .hn-key::before{animation:p2Fade .7s ease 1.3s both}
+#pdfSlide41.out :is(.hn-track,.hn-val,.hn-n,.hn-f){opacity:1}
+#pdfSlide41.out .hn-key::before{opacity:1}
+#pdfSlide41.out .hn-bar{transform:none}
+/* правая колонка: контраст 35 % → 90 % */
+#pdfSlide41 .hn-side{position:absolute;left:970px;top:0;width:498px;height:682px;box-sizing:border-box;padding:30px 36px 30px;border:1px solid rgba(255,255,255,.1);border-radius:26px;background:rgba(20,42,39,.34);display:flex;flex-direction:column}
+#pdfSlide41 .hn-kick{font:500 23px/1.25 SB,Arial,sans-serif;color:#d89c96}
+#pdfSlide41 .hn-stat-good .hn-kick{color:#7acfad}
+#pdfSlide41 .hn-big{font:600 124px/.98 SB,Arial,sans-serif;letter-spacing:-4px;margin:8px 0 6px;white-space:nowrap}
+#pdfSlide41 .hn-stat-bad .hn-big{color:#f2a072}
+#pdfSlide41 .hn-stat-good .hn-big{background:linear-gradient(-40deg,#48ffff 30%,#42e3b4 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+#pdfSlide41 .hn-note{font:400 23px/1.32 SB,Arial,sans-serif;color:rgba(255,255,255,.78)}
+#pdfSlide41 .hn-divider{position:relative;height:30px;margin:20px 0 18px;display:flex;align-items:center;justify-content:center}
+#pdfSlide41 .hn-divider::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:linear-gradient(90deg,rgba(239,143,106,.45),rgba(66,227,180,.6))}
+#pdfSlide41 .hn-divider span{position:relative;padding:5px 18px;border-radius:100px;background:#10221f;border:1.5px solid rgba(66,227,180,.6);font:600 22px/1.1 SB,Arial,sans-serif;color:#a5f2d0}
+#pdfSlide41 .hn-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+#pdfSlide41 .hn-pills span{padding:6px 15px;border-radius:100px;background:rgba(66,227,180,.11);border:1px solid rgba(66,227,180,.3);font:500 22px/1.15 SB,Arial,sans-serif;color:#a5f2d0}
+
+/* ===== слайд 18: карта паттернов 16 из 35 ===== */
+#pdfSlide42.pdfRestSlide.ee-slide.story-tech .ee-content{top:206px!important;bottom:42px!important}
+#pdfSlide42 .pm-badge{position:absolute;right:0;top:-156px;display:flex;align-items:center;gap:24px;padding:14px 26px 14px 22px;border:1.5px solid rgba(66,227,180,.38);border-radius:22px;background:rgba(16,40,35,.62)}
+#pdfSlide42 .pm-dots{display:grid;grid-template-columns:repeat(7,13px);gap:6px}
+#pdfSlide42 .pm-dots i{display:block;width:13px;height:13px;border-radius:50%;background:rgba(255,255,255,.13)}
+#pdfSlide42 .pm-dots i.on{background:#42e3b4;box-shadow:0 0 8px rgba(66,227,180,.55)}
+#pdfSlide42.show .pm-dots i.on{animation:p2Dot .5s cubic-bezier(.2,.9,.3,1) var(--d) both}
+@keyframes p2Dot{from{opacity:.15;transform:scale(.55)}to{opacity:1;transform:none}}
+#pdfSlide42 .pm-badge-num{display:flex;align-items:baseline;gap:12px;white-space:nowrap}
+#pdfSlide42 .pm-badge-num b{font:600 92px/.9 SB,Arial,sans-serif;letter-spacing:-3px;background:linear-gradient(-40deg,#48ffff 30%,#42e3b4 80%);-webkit-background-clip:text;background-clip:text;color:transparent}
+#pdfSlide42 .pm-badge-num span{font:500 36px/1 SB,Arial,sans-serif;color:#cfe9df}
+#pdfSlide42 .pm-map{position:absolute;left:0;top:0;width:1468px;height:700px}
+#pdfSlide42 .pm-band{position:absolute;left:0;width:1468px;height:100px;box-sizing:border-box;border:1px solid rgba(66,227,180,.15);border-radius:20px;background:rgba(255,255,255,.026)}
+#pdfSlide42 .pm-layer{position:absolute;left:24px;top:0;width:196px;height:100%;display:flex;flex-direction:column;justify-content:center}
+#pdfSlide42 .pm-layer b{font:600 25px/1.08 SB,Arial,sans-serif;color:#8eeac4}
+#pdfSlide42 .pm-layer span{margin-top:5px;font:400 22px/1.1 SB,Arial,sans-serif;color:#7f9c94}
+#pdfSlide42 .pm-sub{position:absolute;height:88px;box-sizing:border-box;border:1.5px dashed rgba(66,227,180,.42);border-radius:18px;background:rgba(66,227,180,.05)}
+#pdfSlide42 .pm-wires{position:absolute;left:0;top:0;overflow:visible;pointer-events:none}
+#pdfSlide42 .pm-w{fill:none;stroke-linecap:round;transform-box:fill-box}
+#pdfSlide42 .pm-spine .pm-w{stroke:#5ff0c4;stroke-width:4;marker-end:url(#pmArrow)}
+#pdfSlide42 .pm-aux .pm-w{stroke:#9fd9c6;stroke-width:3;stroke-dasharray:7 7;marker-end:url(#pmArrowDim)}
+#pdfSlide42 .pm-up{transform-origin:50% 100%}
+#pdfSlide42 .pm-right{transform-origin:0 50%}
+#pdfSlide42 .pm-left{transform-origin:100% 50%}
+#pdfSlide42 .pm-w{opacity:0}
+#pdfSlide42.show .pm-up{animation:p2GrowY .5s cubic-bezier(.3,.8,.3,1) var(--d) both,p2Fade .2s linear var(--d) both}
+#pdfSlide42.show :is(.pm-right,.pm-left){animation:p2GrowX .5s cubic-bezier(.3,.8,.3,1) var(--d) both,p2Fade .2s linear var(--d) both}
+#pdfSlide42.out .pm-w{opacity:1}
+#pdfSlide42 .pm-chip{position:absolute;height:76px;box-sizing:border-box;padding:0 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid rgba(167,223,210,.2);border-radius:14px;background:#131d23;font:500 23px/1.14 SB,Arial,sans-serif;color:#eef8f4}
+#pdfSlide42 .pm-chip small{display:block;margin-top:3px;font:400 22px/1.1 SB,Arial,sans-serif;letter-spacing:-.3px;white-space:nowrap;color:#8fc9b6}
+#pdfSlide42 .pm-chip em{font:500 20px/1 monospace;font-style:normal;color:#abf5d3;padding:2px 8px;margin-left:6px;border-radius:8px;background:rgba(66,227,180,.12);vertical-align:2px}
+#pdfSlide42 .pm-key{border-color:rgba(66,227,180,.62);background:#12302b;box-shadow:0 0 22px rgba(66,227,180,.13);color:#fff;font-weight:600}
+#pdfSlide42 .pm-io{position:absolute;width:150px;height:60px;box-sizing:border-box;display:flex;align-items:center;justify-content:center;border-radius:30px;border:2px solid #42e3b4;background:rgba(66,227,180,.08);font:600 25px/1 SB,Arial,sans-serif;color:#aaf7d6}
+#pdfSlide42 .pm-io-out{background:linear-gradient(-40deg,#48ffff,#42e3b4);border-color:transparent;color:#05261d}
+
+@media(prefers-reduced-motion:reduce){
+ #pdfSlide41.show :is(.hn-in,.hn-bar,.hn-track,.hn-val,.hn-n,.hn-f),#pdfSlide41.show .hn-key::before,
+ #pdfSlide42.show :is(.pm-in,.pm-w,.pm-dots i){animation:none!important;opacity:1!important;transform:none!important}
+}
