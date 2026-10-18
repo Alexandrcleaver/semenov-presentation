@@ -1,7 +1,13 @@
-<section aria-label="Решения важнее, чем история чата" class="pdfRestSlide ee-slide story-tech story-record" data-slide-number="17" data-source-pdf-page="6" id="pdfSlide12"><div class="pdf-stage"><div class="ee-canvas"><header class="ee-header ee-reveal" style="--d:60ms"><div class="ee-eyebrow">ENGINEERING · AGENTIC RAG</div><h2>Решения важнее, чем история чата</h2></header><div class="ee-content"><div class="ee-adr-sub">Реестр решений как долгосрочный контекст для агентов</div>
-<div class="ee-adr-layout"><div class="ee-adr-table ee-reveal" style="--d:240ms"><div class="ee-table-header"><span>ID</span><span>Статус</span><span>Дата</span><span>Тема</span></div>
-<div><span>0001</span><span>APPROVED</span><span>2024-01-15</span><span>Переход на микросервисы</span></div>
-<div><span>0002</span><span>REJECTED</span><span>2024-02-10</span><span>Использование NoSQL DB</span></div>
-<div class="active"><span>0003</span><span>APPROVED</span><span>2024-03-05</span><span>Выбор Event-Driven архитектуры для системы логистики</span></div></div>
-</div>
+<section aria-label="Решения важнее, чем история чата" class="pdfRestSlide ee-slide story-tech story-record" data-slide-number="17" data-source-pdf-page="6" id="pdfSlide12"><div class="pdf-stage"><div class="ee-canvas"><header class="ee-header ee-reveal" style="--d:60ms"><div class="ee-eyebrow">ENGINEERING · AGENTIC RAG</div><h2>Решения важнее, чем история чата</h2></header><div class="ee-content"><div class="ee-adr-sub">Реестр решений продукта — долгосрочный контекст для агентов</div>
+<div class="p2e-adr"><div class="p2e-adr-table"><div class="p2e-adr-row p2e-adr-head"><span>ADR</span><span>Статус</span><span>Дата</span><span>Решение</span></div>
+<div class="p2e-adr-row is-active"><span>001</span><span><i class="p2e-st">accepted</i></span><span>2026-09-29</span><span>OCR сканов — через модель на прокси; локальный OCR — запасной путь</span></div>
+<div class="p2e-adr-row"><span>002</span><span><i class="p2e-st">accepted</i></span><span>2026-09-28</span><span>Согласия и квоты — на сервере; регистрация по инвайт-коду</span></div>
+<div class="p2e-adr-row"><span>003</span><span><i class="p2e-st">accepted</i></span><span>2026-09-28</span><span>Модели — закрытый allowlist; рассуждение по умолчанию выключено</span></div>
+<div class="p2e-adr-row"><span>004</span><span><i class="p2e-st">accepted</i></span><span>2026-09-29</span><span>В общие папки пишет только администратор; RLS — вторая линия</span></div>
+<div class="p2e-adr-row"><span>005</span><span><i class="p2e-st">accepted</i></span><span>2026-09-29</span><span>Текст документов не пишется в трейсы Langfuse; маски ПД</span></div></div>
+<div class="p2e-adr-card"><div class="p2e-adr-card-title"><small>Что агент узнаёт из ADR</small>ADR-001 · OCR сканов</div>
+<div class="p2e-adr-field f-why"><b>Почему так</b><span>Внешняя модель точнее на русском, в таблицах и формулах — ценой отправки скана за пределы стенда</span></div>
+<div class="p2e-adr-field f-no"><b>Что отвергли</b><span>Локальный OCR: хуже на русских сканах, тяжелее образ, грузит CPU. Оставлен планом Б</span></div>
+<div class="p2e-adr-field f-check"><b>Как проверить</b><span>Тестовый скан распознан; в трейсе — модель и стоимость, без текста скана</span></div></div></div>
+<div class="p2e-adr-foot"><span><b>15 ADR</b> в двух проектах</span><i aria-hidden="true">·</i><span>принятый ADR не переписывается — только Дополнение <b>(13 дополнений)</b></span></div>
 </div></div></div></section>

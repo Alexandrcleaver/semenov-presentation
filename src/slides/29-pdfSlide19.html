@@ -1,2 +1,16 @@
-<section aria-label="Код агента — только внутри песочницы" class="pdfRestSlide ee-slide story-tech story-code" data-slide-number="30" data-source-pdf-page="13" id="pdfSlide19"><div class="pdf-stage"><div class="ee-canvas"><header class="ee-header ee-reveal" style="--d:60ms"><div class="ee-eyebrow">ENGINEERING · AGENTIC RAG</div><h2>Код агента — только внутри песочницы</h2></header><div class="ee-content"><div class="ee-sandbox"><div class="ee-isolation ee-reveal" style="--d:160ms"><div class="ee-isol-level l1"><label>Сервер</label><div class="ee-isol-level l2"><label>Docker</label><div class="ee-isol-level l3"><label>gVisor (изоляция ядра)</label><div class="ee-isol-level l4"><label>Исполняемый код</label></div></div></div></div><div class="ee-bridge">Tool Bridge<br/><small>(Unix Socket)</small><span>→</span></div></div>
+<section aria-label="Код агента — только внутри песочницы" class="pdfRestSlide ee-slide story-tech story-code" data-slide-number="30" data-source-pdf-page="13" id="pdfSlide19"><div class="pdf-stage"><div class="ee-canvas"><header class="ee-header ee-reveal" style="--d:60ms"><div class="ee-eyebrow">ENGINEERING · AGENTIC RAG</div><h2>Код агента — только внутри песочницы</h2></header><div class="ee-content"><div class="p2e-sb">
+<svg aria-hidden="true" class="p2e-sb-wires" viewBox="0 0 1480 600" preserveAspectRatio="none"><path class="w-cut" d="M600 120 H760"></path><path class="w-cut" d="M842 120 H1000"></path><path class="w-ok" d="M600 400 H676"></path><path class="w-ok" d="M924 400 H1000"></path></svg>
+<div class="p2e-sb-box"><div class="p2e-sb-box-head"><b>Песочница</b><span>Docker-контейнер</span></div>
+<pre class="p2e-sb-code"><span class="c"># код, который написал агент</span>
+res = tool_client.call(
+    "search_documents",
+    query=q)</pre>
+<div class="p2e-sb-policy"><b>Политика: запрещено</b><div class="p2e-sb-nope"><span>subprocess</span><span>os.system</span><span>eval / exec</span><span>ctypes</span><span>importlib</span></div></div>
+<div class="p2e-sb-limits"><b>Лимиты</b><span>⏱ 60 с</span><span>▣ 512 МБ</span></div></div>
+<div class="p2e-sb-cut"><i aria-hidden="true">✕</i><span>прямой путь закрыт<br/>граница — сеть Docker</span></div>
+<div class="p2e-sb-net"><b>Сеть и данные напрямую</b><span>нет доступа</span></div>
+<div class="p2e-sb-bridge"><b>Tool Bridge</b><span>HTTP · токен сессии</span><span>белый список</span></div>
+<div class="p2e-sb-packet" aria-hidden="true"></div>
+<div class="p2e-sb-tools"><b>Инструменты · только чтение</b><ul><li>search_documents</li><li>analyze_document</li><li>web_search</li><li>read_file · grep</li></ul></div>
+<div class="p2e-sb-deny">запись, запуск кода, субагенты<br/>→ <b>403</b></div>
 </div></div></div></div></section>
