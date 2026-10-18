@@ -34,3 +34,6 @@
 #pdfSlide28 .scan-br{bottom:0;right:0;border-bottom-width:5px!important;border-right-width:5px!important;border-radius:0 0 13px 0;}
 @keyframes semenovQrScanFloat{0%,100%{transform:translateY(-4px)}50%{transform:translateY(4px)}}
 @media(prefers-reduced-motion:reduce){#pdfSlide9.show .ee-gauge-active{animation:none!important;stroke-dashoffset:0;}#pdfSlide9.show .ee-speedo-needle{animation:none!important;transform:rotate(0deg);}#pdfSlide28 .qr-scan-corners{animation:none;}}
+
+/* 18.10 стабилизация: скрытые PDF-слайды не крутят бесконечные анимации (вход/выход не затронуты — у них .show/.out) */
+.pdfRestSlide.ee-slide:not(.show):not(.out),.pdfRestSlide.ee-slide:not(.show):not(.out) *{animation-play-state:paused!important}

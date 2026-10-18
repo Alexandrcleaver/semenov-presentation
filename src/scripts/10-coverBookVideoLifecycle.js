@@ -16,3 +16,14 @@
  document.addEventListener('visibilitychange',sync);
  sync();
 })();
+
+/* 18.10 стабилизация показа с пульта */
+(()=>{
+ // Прогрев: заранее декодировать все картинки в простое, чтобы первый вход на тяжёлый слайд не дёргался.
+ const imgs=()=>[...document.querySelectorAll('img')].filter(i=>i.src&&!i.dataset.warmed);
+ const idle=window.requestIdleCallback||(f=>setTimeout(()=>f({timeRemaining:()=>8}),60));
+ function warm(list){if(!list.length)return;idle(d=>{while(list.length&&d.timeRemaining()>4){const i=list.shift();i.dataset.warmed='1';i.decode&&i.decode().catch(()=>{})}warm(list)})}
+ addEventListener('load',()=>setTimeout(()=>warm(imgs()),2500));
+ // Пульт шлёт клавиши в окно с фокусом: если фокус ушёл во встроенный iframe, вернуть его презентации.
+ addEventListener('blur',()=>setTimeout(()=>{const a=document.activeElement;if(a&&a.tagName==='IFRAME'){a.blur();window.focus()}},0));
+})();

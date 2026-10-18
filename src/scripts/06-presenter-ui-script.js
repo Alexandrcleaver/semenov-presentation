@@ -37,10 +37,10 @@
     if(t.matches('input,textarea,[contenteditable="true"]'))return;
     if(drawer.classList.contains('open')) {
       if(e.key==='Escape'||e.key.toLowerCase()==='g'){e.preventDefault();e.stopImmediatePropagation();toggle(false);return;}
-      if(['ArrowRight','ArrowLeft',' ','Enter','Backspace'].includes(e.key)){e.preventDefault();e.stopImmediatePropagation();return;}
+      if(['ArrowRight','ArrowLeft',' ','Enter','Backspace','PageDown','PageUp','ArrowDown','ArrowUp'].includes(e.key)){e.preventDefault();e.stopImmediatePropagation();return;}
     }
     if(e.key.toLowerCase()==='g'){e.preventDefault();e.stopImmediatePropagation();toggle(true);return;}
-    if(e.key==='ArrowLeft'||e.key==='Backspace'){
+    if(e.key==='ArrowLeft'||e.key==='Backspace'||e.key==='PageUp'||e.key==='ArrowUp'){
       e.preventDefault();e.stopImmediatePropagation();document.getElementById('prev').click();return;
     }
   },true);
