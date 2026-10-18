@@ -37,3 +37,7 @@
 
 /* 18.10 стабилизация: скрытые PDF-слайды не крутят бесконечные анимации (вход/выход не затронуты — у них .show/.out) */
 .pdfRestSlide.ee-slide:not(.show):not(.out),.pdfRestSlide.ee-slide:not(.show):not(.out) *{animation-play-state:paused!important}
+
+/* 18.10 доклад: место n8n в пути (слайд 9) */
+#aistEvolutionSlide .ev2-n8n{margin-top:30px;max-width:565px;font-size:27px;line-height:1.35;color:#b4c7bd}
+#aistEvolutionSlide .ev2-n8n b{font-weight:600;color:#e9f2ec}
