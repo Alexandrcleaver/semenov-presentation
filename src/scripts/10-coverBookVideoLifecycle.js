@@ -27,3 +27,23 @@
  // Пульт шлёт клавиши в окно с фокусом: если фокус ушёл во встроенный iframe, вернуть его презентации.
  addEventListener('blur',()=>setTimeout(()=>{const a=document.activeElement;if(a&&a.tagName==='IFRAME'){a.blur();window.focus()}},0));
 })();
+
+/* 18.10 слайд 34 (#pdfSlide44): демо Конспектуса играет только на показанном слайде */
+(function(){
+ const slide=document.getElementById('pdfSlide44');
+ const video=document.getElementById('konspektusDemoVideo');
+ if(!slide||!video)return;
+ let showing=false;
+ const sync=()=>{
+   const visible=slide.classList.contains('show');
+   if(!visible){if(!video.paused)video.pause();showing=false;return;}
+   if(!showing){try{video.currentTime=0;}catch(e){}}
+   showing=true;
+   if(document.hidden){if(!video.paused)video.pause();return;}
+   if(video.paused){const p=video.play();if(p&&p.catch)p.catch(()=>{});}
+ };
+ new MutationObserver(sync).observe(slide,{attributes:true,attributeFilter:['class']});
+ window.addEventListener('pageshow',sync);
+ document.addEventListener('visibilitychange',sync);
+ sync();
+})();

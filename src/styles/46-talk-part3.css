@@ -1,1 +1,131 @@
-/* 46-talk-part3.css: доклад 21.10 */
+/* 46-talk-part3.css: доклад 21.10 — финал (слайды 32 #pdfSlide43, 33 #pdfSlide22, 34 #pdfSlide44, 38 #pdfSlide26) */
+
+/* ---------- общая геометрия трёх слайдов финала: как у соседних 35–38 ---------- */
+:is(#pdfSlide43,#pdfSlide22,#pdfSlide44).pdfRestSlide.ee-slide{background:radial-gradient(ellipse 1100px 360px at 47% 117%,rgba(25,168,99,.16),transparent 72%),#0c1118!important;}
+:is(#pdfSlide43,#pdfSlide22,#pdfSlide44).pdfRestSlide.ee-slide .pdf-stage{left:112px!important;top:64px!important;width:1696px!important;height:948px!important;}
+:is(#pdfSlide43,#pdfSlide22,#pdfSlide44).pdfRestSlide.ee-slide.story-tech .ee-content{bottom:52px!important;}
+.p3-slide{--p3-teal:#42e3b4;--p3-mint:#96e9c2;--p3-white:#f6fffb;--p3-muted:#a7b9b3;--p3-amber:#ffad5c;--p3-blue:#8cc4ff;}
+
+/* вход: только transform/opacity, конечные анимации */
+@keyframes p3Rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes p3FromLeft{from{opacity:0;transform:translateX(-46px)}to{opacity:1;transform:none}}
+@keyframes p3FromRight{from{opacity:0;transform:translateX(46px)}to{opacity:1;transform:none}}
+@keyframes p3Pop{0%{opacity:0;transform:scale(.6)}70%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:none}}
+.p3-slide.show .p3-in{animation:p3Rise .7s cubic-bezier(.16,1,.3,1) both;animation-delay:var(--d,0ms);}
+.p3-slide.show .p3-in-left{animation:p3FromLeft .74s cubic-bezier(.16,1,.3,1) both;animation-delay:var(--d,0ms);}
+.p3-slide.show .p3-in-right{animation:p3FromRight .74s cubic-bezier(.16,1,.3,1) both;animation-delay:var(--d,0ms);}
+
+/* ================= Слайд 32 · Мои паттерны работы с ИИ ================= */
+#pdfSlide43 .p3m{display:flex;flex-direction:column;height:100%;gap:22px;}
+#pdfSlide43 .p3m-flow{padding:0 0 4px;}
+#pdfSlide43 .p3m-flow-head{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:20px;}
+#pdfSlide43 .p3m-kicker{font:600 26px/1.1 SB,Arial,sans-serif;color:var(--p3-mint);letter-spacing:-.3px;}
+#pdfSlide43 .p3m-legend{display:flex;align-items:center;gap:10px;font:500 22px/1 SB,Arial,sans-serif;color:var(--p3-muted);}
+#pdfSlide43 .p3m-legend i{display:inline-block;width:16px;height:16px;border-radius:50%;margin-left:16px;}
+#pdfSlide43 .p3m-legend i.lg-check{background:var(--p3-amber);box-shadow:0 0 0 4px rgba(255,173,92,.18);}
+#pdfSlide43 .p3m-legend i.lg-human{background:var(--p3-blue);border-radius:3px;transform:rotate(45deg) scale(.86);box-shadow:0 0 0 4px rgba(140,196,255,.16);}
+#pdfSlide43 .p3m-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(10,1fr);}
+#pdfSlide43 .p3m-steps li{position:relative;padding-top:38px;text-align:center;}
+#pdfSlide43 .p3m-steps li::before{content:"";position:absolute;top:6px;left:50%;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:#0c1118;border:3px solid var(--p3-teal);z-index:2;box-sizing:border-box;}
+#pdfSlide43 .p3m-steps li::after{content:"";position:absolute;top:14px;left:50%;width:100%;height:2px;background:linear-gradient(90deg,rgba(66,227,180,.65),rgba(66,227,180,.28));z-index:1;}
+#pdfSlide43 .p3m-steps li:last-child::after{display:none;}
+#pdfSlide43 .p3m-steps li b{display:block;font:600 23px/1.18 SB,Arial,sans-serif;color:var(--p3-white);letter-spacing:-.3px;padding:0 4px;}
+#pdfSlide43 .p3m-steps li.is-check::before{background:var(--p3-amber);border-color:var(--p3-amber);box-shadow:0 0 0 6px rgba(255,173,92,.16);}
+#pdfSlide43 .p3m-steps li.is-check b{color:#ffd2a3;}
+#pdfSlide43 .p3m-steps li.is-human::before{background:var(--p3-blue);border-color:var(--p3-blue);border-radius:4px;transform:rotate(45deg);box-shadow:0 0 0 6px rgba(140,196,255,.15);}
+#pdfSlide43 .p3m-steps li.is-human b{color:#cfe6ff;}
+#pdfSlide43 .p3m-steps li.is-final::before{width:24px;height:24px;margin-left:-12px;top:3px;background:var(--p3-teal);box-shadow:0 0 0 7px rgba(66,227,180,.18);}
+#pdfSlide43 .p3m-steps li.is-final b{color:var(--p3-teal);}
+#pdfSlide43.show .p3m-steps li{animation:p3Rise .55s cubic-bezier(.16,1,.3,1) both;animation-delay:calc(180ms + var(--i)*70ms);}
+#pdfSlide43 .p3m-grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;gap:16px;}
+#pdfSlide43 .p3m-card{display:flex;flex-direction:column;justify-content:flex-start;padding:24px 24px 18px;border-radius:20px;background:linear-gradient(142deg,rgba(255,255,255,.05),rgba(255,255,255,.018));border:1px solid rgba(194,240,220,.11);}
+#pdfSlide43 .p3m-num{font:700 50px/1 SB,Arial,sans-serif;letter-spacing:-1.6px;color:var(--p3-teal);}
+#pdfSlide43 .p3m-num small{font-size:34px;font-weight:600;color:var(--p3-mint);letter-spacing:-.6px;}
+#pdfSlide43 .p3m-name{margin-top:9px;font:600 25px/1.15 SB,Arial,sans-serif;color:var(--p3-white);letter-spacing:-.3px;}
+#pdfSlide43 .p3m-note{margin-top:5px;font:400 22px/1.22 SB,Arial,sans-serif;color:var(--p3-muted);}
+#pdfSlide43 .p3m-thesis{text-align:center;font:600 36px/1.15 SB,Arial,sans-serif;letter-spacing:-.6px;color:var(--p3-mint);padding:4px 0 0;}
+#pdfSlide43 .p3m-thesis b{color:var(--p3-white);font-weight:700;}
+
+/* ================= Слайд 33 · Один архитектор + ИИ-агенты ================= */
+#pdfSlide22.pdfRestSlide.ee-slide.story-tech .ee-header h2{font-size:62px!important;letter-spacing:-2px!important;}
+#pdfSlide22 .p3s{display:flex;flex-direction:column;height:100%;}
+#pdfSlide22 .p3s-compare{display:grid;grid-template-columns:1fr 92px 1fr;align-items:stretch;}
+#pdfSlide22 .p3s-side{position:relative;padding:24px 34px 26px;border-radius:24px;}
+#pdfSlide22 .p3s-classic{background:rgba(255,255,255,.025);border:2px dashed rgba(167,185,179,.32);}
+#pdfSlide22 .p3s-fact{background:linear-gradient(142deg,rgba(66,227,180,.13),rgba(66,227,180,.035));border:2px solid rgba(66,227,180,.55);box-shadow:0 0 46px rgba(66,227,180,.13);}
+#pdfSlide22 .p3s-kicker{display:flex;align-items:center;gap:14px;font:600 26px/1.1 SB,Arial,sans-serif;color:var(--p3-mint);letter-spacing:-.3px;}
+#pdfSlide22 .p3s-classic .p3s-kicker{color:#c3d0cb;}
+#pdfSlide22 .p3s-tag{font:600 22px/1 SB,Arial,sans-serif;color:#ffd2a3;padding:6px 12px;border-radius:999px;border:1px solid rgba(255,173,92,.5);background:rgba(255,173,92,.1);}
+#pdfSlide22 .p3s-big{margin-top:14px;font:700 72px/1 SB,Arial,sans-serif;letter-spacing:-2.4px;color:var(--p3-white);}
+#pdfSlide22 .p3s-classic .p3s-big{color:#d5dfdb;}
+#pdfSlide22 .p3s-fact .p3s-big{color:var(--p3-teal);}
+#pdfSlide22 .p3s-big small{font-size:34px;font-weight:600;letter-spacing:-.6px;color:var(--p3-muted);}
+#pdfSlide22 .p3s-fact .p3s-big small{color:var(--p3-mint);}
+#pdfSlide22 .p3s-sub{margin-top:14px;font:600 28px/1.2 SB,Arial,sans-serif;color:var(--p3-white);}
+#pdfSlide22 .p3s-meta{display:flex;align-items:center;gap:12px;margin-top:8px;font:400 25px/1.25 SB,Arial,sans-serif;color:var(--p3-muted);}
+#pdfSlide22 .p3s-fact .p3s-meta{color:#cdeee0;}
+#pdfSlide22 .p3s-live{display:inline-block;width:14px;height:14px;border-radius:50%;background:var(--p3-teal);box-shadow:0 0 0 5px rgba(66,227,180,.2);}
+#pdfSlide22 .p3s-vs{display:flex;align-items:center;justify-content:center;}
+#pdfSlide22 .p3s-vs span{display:flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;font:700 34px/1 SB,Arial,sans-serif;color:#0c1118;background:var(--p3-teal);box-shadow:0 0 30px rgba(66,227,180,.3);}
+#pdfSlide22 .p3s-scale-head{margin:26px 0 14px;font:600 24px/1 SB,Arial,sans-serif;letter-spacing:2.6px;text-transform:uppercase;color:var(--p3-mint);}
+#pdfSlide22 .p3s-tiles{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:1fr 1fr;gap:14px;}
+#pdfSlide22 .p3s-tile{display:flex;flex-direction:column;justify-content:flex-start;padding:22px 24px 14px;border-radius:18px;background:linear-gradient(142deg,rgba(255,255,255,.045),rgba(255,255,255,.016));border:1px solid rgba(194,240,220,.1);}
+#pdfSlide22 .p3s-n{font:700 50px/1 SB,Arial,sans-serif;letter-spacing:-1.6px;color:var(--p3-white);}
+#pdfSlide22 .p3s-n small{font-size:30px;font-weight:600;color:var(--p3-mint);letter-spacing:-.4px;}
+#pdfSlide22 .p3s-l{margin-top:7px;font:400 22px/1.22 SB,Arial,sans-serif;color:#c4d4ce;}
+
+/* ================= Слайд 34 · Sber500 × Disrupt ================= */
+#pdfSlide44 .ee-header .p3k-x{color:var(--p3-teal);font-weight:400;}
+#pdfSlide44 .ee-header .p3k-lead{margin:14px 0 0;font:500 28px/1.25 SB,Arial,sans-serif;color:#cdeee0;letter-spacing:-.2px;}
+#pdfSlide44.pdfRestSlide.ee-slide.story-tech .ee-content{top:262px!important;}
+#pdfSlide44 .p3k{display:grid;grid-template-columns:584px 1fr;grid-template-rows:1fr auto;column-gap:44px;row-gap:18px;height:100%;}
+#pdfSlide44 .p3k-left{display:flex;flex-direction:column;gap:18px;min-height:0;}
+#pdfSlide44 .p3k-funnel{display:flex;flex-direction:column;gap:8px;}
+#pdfSlide44 .p3k-bar{position:relative;display:flex;align-items:baseline;gap:14px;height:54px;padding:0 22px;border-radius:14px;box-sizing:border-box;align-items:center;}
+#pdfSlide44 .p3k-bar b{font:700 36px/1 SB,Arial,sans-serif;letter-spacing:-1px;color:var(--p3-white);}
+#pdfSlide44 .p3k-bar span{font:500 23px/1 SB,Arial,sans-serif;color:#c4d4ce;white-space:nowrap;}
+#pdfSlide44 .p3k-bar.b1{width:100%;background:rgba(255,255,255,.055);border:1px solid rgba(194,240,220,.12);}
+#pdfSlide44 .p3k-bar.b2{width:76%;background:linear-gradient(90deg,rgba(66,227,180,.24),rgba(66,227,180,.1));border:2px solid rgba(66,227,180,.7);}
+#pdfSlide44 .p3k-bar.b2 b{color:var(--p3-teal);}
+#pdfSlide44 .p3k-bar.b2 span{color:#e3fff4;}
+#pdfSlide44 .p3k-bar.b2 em{position:absolute;left:calc(100% + 14px);top:50%;transform:translateY(-50%);font:700 22px/1 SB,Arial,sans-serif;font-style:normal;color:#0c1118;background:var(--p3-teal);padding:8px 12px;border-radius:999px;white-space:nowrap;}
+#pdfSlide44 .p3k-bar.b3{width:50%;border:2px dashed rgba(167,185,179,.45);background:transparent;}
+#pdfSlide44 .p3k-bar.b3 b{color:#d5dfdb;}
+#pdfSlide44 .p3k-res{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:12px;}
+#pdfSlide44 .p3k-r{display:flex;flex-direction:column;justify-content:center;padding:6px 20px;border-radius:16px;background:linear-gradient(142deg,rgba(255,255,255,.05),rgba(255,255,255,.018));border:1px solid rgba(194,240,220,.11);}
+#pdfSlide44 .p3k-r b{font:700 38px/1 SB,Arial,sans-serif;letter-spacing:-1.2px;color:var(--p3-teal);}
+#pdfSlide44 .p3k-r span{margin-top:5px;font:500 23px/1.15 SB,Arial,sans-serif;color:var(--p3-white);}
+#pdfSlide44 .p3k-r span i{display:block;font-style:normal;font-weight:400;font-size:22px;color:var(--p3-muted);margin-top:2px;}
+#pdfSlide44 .p3k-right{display:flex;flex-direction:column;gap:12px;min-width:0;}
+#pdfSlide44 .p3k-window{border-radius:18px;overflow:hidden;background:#151c24;border:1px solid rgba(194,240,220,.22);box-shadow:0 26px 60px rgba(0,0,0,.45),0 0 0 1px rgba(0,0,0,.4);}
+#pdfSlide44 .p3k-bar-top{display:flex;align-items:center;gap:9px;height:42px;padding:0 18px;background:#1b232c;border-bottom:1px solid rgba(255,255,255,.07);}
+#pdfSlide44 .p3k-bar-top i{width:13px;height:13px;border-radius:50%;background:#3a444e;}
+#pdfSlide44 .p3k-bar-top i:nth-child(1){background:#ff6058;}#pdfSlide44 .p3k-bar-top i:nth-child(2){background:#ffbd2e;}#pdfSlide44 .p3k-bar-top i:nth-child(3){background:#28c941;}
+#pdfSlide44 .p3k-url{margin:0 auto;transform:translateX(-30px);padding:5px 26px;border-radius:8px;background:#0f151b;font:500 20px/1 SB,Arial,sans-serif;color:#b8c8c2;}
+#pdfSlide44 .p3k-screen{position:relative;aspect-ratio:16/9;background:#f7f8fa;}
+#pdfSlide44 .p3k-screen video{display:block;width:100%;height:100%;object-fit:cover;}
+#pdfSlide44 .p3k-speed{position:absolute;top:7px;right:7px;min-width:122px;height:38px;display:flex;align-items:center;justify-content:center;padding:0 14px;border-radius:10px;background:#0c1118;border:1px solid rgba(66,227,180,.6);font:700 21px/1 SB,Arial,sans-serif;color:var(--p3-teal);box-sizing:border-box;}
+#pdfSlide44 .p3k-cap{font:500 22px/1.2 SB,Arial,sans-serif;color:var(--p3-muted);}
+#pdfSlide44 .p3k-final{grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:16px;height:70px;border-radius:18px;background:linear-gradient(90deg,rgba(66,227,180,.2),rgba(66,227,180,.07));border:2px solid rgba(66,227,180,.6);font:500 32px/1 SB,Arial,sans-serif;color:#d9f7ea;letter-spacing:-.4px;}
+#pdfSlide44 .p3k-final b{font-weight:700;color:var(--p3-white);}
+#pdfSlide44 .p3k-dot{color:var(--p3-teal);font-weight:700;}
+#pdfSlide44 .p3k-check{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--p3-teal);color:#0c1118;font:700 26px/1 SB,Arial,sans-serif;}
+#pdfSlide44.show .p3k-check{animation:p3Pop .6s cubic-bezier(.2,.9,.2,1) both;animation-delay:1.45s;}
+
+/* ================= Слайд 38 · QR Конспектуса (стиль как у QR Telegram на 39) ================= */
+#pdfSlide26 .p3q-wrap{align-items:flex-start!important;gap:22px!important;margin-top:8px;}
+#pdfSlide26 .kx-qr-link.p3q-link{position:relative;display:block;padding:18px!important;border-radius:20px!important;background:#fff;box-shadow:0 0 0 2px rgba(66,227,180,.4),0 0 50px rgba(66,227,180,.14);}
+#pdfSlide26 .p3q-link .kx-qr-svg{display:block;width:250px;height:250px;}
+#pdfSlide26 .p3q-corners{position:absolute;inset:-14px;pointer-events:none;}
+#pdfSlide26 .p3q-corners i{position:absolute;width:46px;height:46px;border:0 solid #ff9b40;}
+#pdfSlide26 .p3q-corners .c-tl{left:0;top:0;border-left-width:5px;border-top-width:5px;border-top-left-radius:14px;}
+#pdfSlide26 .p3q-corners .c-tr{right:0;top:0;border-right-width:5px;border-top-width:5px;border-top-right-radius:14px;}
+#pdfSlide26 .p3q-corners .c-bl{left:0;bottom:0;border-left-width:5px;border-bottom-width:5px;border-bottom-left-radius:14px;}
+#pdfSlide26 .p3q-corners .c-br{right:0;bottom:0;border-right-width:5px;border-bottom-width:5px;border-bottom-right-radius:14px;}
+#pdfSlide26 .kx-qr-under.p3q-under{font-size:23px!important;letter-spacing:.03em;color:#99d8be;margin-top:4px;}
+@keyframes p3QrIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+#pdfSlide26.show .p3q-wrap{animation:p3QrIn .6s cubic-bezier(.16,1,.3,1) .35s both;}
+
+@media(prefers-reduced-motion:reduce){
+ .p3-slide.show :is(.p3-in,.p3-in-left,.p3-in-right,.p3m-steps li,.p3k-check),#pdfSlide26.show .p3q-wrap{animation:none!important;}
+}

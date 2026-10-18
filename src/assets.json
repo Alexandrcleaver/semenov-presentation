@@ -266,13 +266,6 @@
     "bytes": 258146
   },
   {
-    "token": "@@EMBED_ASSET_0042@@",
-    "path": "src/assets/82ae04ca1bc68604880e15d2.png",
-    "mime": "image/png",
-    "sha256": "82ae04ca1bc68604880e15d21ad106a6c12d62f40ae28c588d6b26e9b6286156",
-    "bytes": 3022
-  },
-  {
     "token": "@@EMBED_ASSET_0043@@",
     "path": "src/assets/01045651a18b7305919f0c8a.webp",
     "mime": "image/webp",
@@ -663,5 +656,12 @@
     "mime": "image/webp",
     "sha256": "3ea6fab9a309b96ace083c66f86aea41cc8141280c0af3122f2d04d0f70ca498",
     "bytes": 21278
+  },
+  {
+    "token": "@@EMBED_ASSET_0099@@",
+    "path": "src/assets/konspektus-demo-x3.mp4",
+    "mime": "video/mp4",
+    "sha256": "37541fdc71b17e32f8d83e03f856d919be40910c8be00f0113909ea22709b57b",
+    "bytes": 1094302
   }
 ]
