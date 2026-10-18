@@ -213,5 +213,20 @@
     "number": 43,
     "id": "slide-visual-polish",
     "path": "src/styles/43-slide-visual-polish.css"
+  },
+  {
+    "number": 44,
+    "id": "talk-part2-new",
+    "path": "src/styles/44-talk-part2-new.css"
+  },
+  {
+    "number": 45,
+    "id": "talk-part2-edits",
+    "path": "src/styles/45-talk-part2-edits.css"
+  },
+  {
+    "number": 46,
+    "id": "talk-part3",
+    "path": "src/styles/46-talk-part3.css"
   }
 ]

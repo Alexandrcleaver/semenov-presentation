@@ -17,8 +17,8 @@
     return 24; // Earlier post-ROI scenes have been removed.
   };
   function refresh(){
-    const n=getCurrent();counter.textContent=String(n).padStart(2,'0')+' / 40';
-    document.getElementById('presenterDebugMeta').textContent='Слайд '+n+'/40'+(n===9?' · экран '+Number(window.aistEvolutionStep||0)+'/6':n===11?' · шаг '+Number(window.__v8ClickStep||0)+'/10':'');
+    const n=getCurrent();const total=window.__deckTotal||40;counter.textContent=String(n).padStart(2,'0')+' / '+total;
+    document.getElementById('presenterDebugMeta').textContent='Слайд '+n+'/'+total+(n===9?' · экран '+Number(window.aistEvolutionStep||0)+'/6':n===11?' · шаг '+Number(window.__v8ClickStep||0)+'/10':'');
     if(drawer.classList.contains('open')) drawer.querySelectorAll('.deckThumb').forEach(card=>card.classList.toggle('active',Number(card.dataset.slide)===n));
   }
   function toggle(open){drawer.classList.toggle('open',Boolean(open));drawer.setAttribute('aria-hidden',open?'false':'true');refresh();}

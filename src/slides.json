@@ -198,5 +198,25 @@
     "number": 40,
     "id": "pdfSlide28",
     "path": "src/slides/39-pdfSlide28.html"
+  },
+  {
+    "number": 41,
+    "id": "pdfSlide41",
+    "path": "src/slides/40-pdfSlide41.html"
+  },
+  {
+    "number": 42,
+    "id": "pdfSlide42",
+    "path": "src/slides/41-pdfSlide42.html"
+  },
+  {
+    "number": 43,
+    "id": "pdfSlide43",
+    "path": "src/slides/42-pdfSlide43.html"
+  },
+  {
+    "number": 44,
+    "id": "pdfSlide44",
+    "path": "src/slides/43-pdfSlide44.html"
   }
 ]

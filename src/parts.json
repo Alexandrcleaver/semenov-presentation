@@ -653,5 +653,54 @@
     "closing": "</script>",
     "id": "coverBookVideoLifecycle",
     "token": "@@CODE_PART_0091@@"
+  },
+  {
+    "kind": "slide",
+    "path": "src/slides/40-pdfSlide41.html",
+    "opening": "",
+    "closing": "",
+    "token": "@@CODE_PART_0094@@"
+  },
+  {
+    "kind": "slide",
+    "path": "src/slides/41-pdfSlide42.html",
+    "opening": "",
+    "closing": "",
+    "token": "@@CODE_PART_0095@@"
+  },
+  {
+    "kind": "slide",
+    "path": "src/slides/42-pdfSlide43.html",
+    "opening": "",
+    "closing": "",
+    "token": "@@CODE_PART_0096@@"
+  },
+  {
+    "kind": "slide",
+    "path": "src/slides/43-pdfSlide44.html",
+    "opening": "",
+    "closing": "",
+    "token": "@@CODE_PART_0097@@"
+  },
+  {
+    "kind": "style",
+    "path": "src/styles/44-talk-part2-new.css",
+    "opening": "<style>",
+    "closing": "</style>",
+    "token": "@@CODE_PART_0098@@"
+  },
+  {
+    "kind": "style",
+    "path": "src/styles/45-talk-part2-edits.css",
+    "opening": "<style>",
+    "closing": "</style>",
+    "token": "@@CODE_PART_0099@@"
+  },
+  {
+    "kind": "style",
+    "path": "src/styles/46-talk-part3.css",
+    "opening": "<style>",
+    "closing": "</style>",
+    "token": "@@CODE_PART_0100@@"
   }
 ]
