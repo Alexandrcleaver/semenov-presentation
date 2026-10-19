@@ -228,5 +228,15 @@
     "number": 46,
     "id": "talk-part3",
     "path": "src/styles/46-talk-part3.css"
+  },
+  {
+    "number": 47,
+    "id": "pravki-19-10-slides",
+    "path": "src/styles/47-pravki-19-10-slides.css"
+  },
+  {
+    "number": 48,
+    "id": "pravki-19-10-perf",
+    "path": "src/styles/48-pravki-19-10-perf.css"
   }
 ]

@@ -702,5 +702,19 @@
     "opening": "<style>",
     "closing": "</style>",
     "token": "@@CODE_PART_0100@@"
+  },
+  {
+    "kind": "style",
+    "path": "src/styles/47-pravki-19-10-slides.css",
+    "opening": "<style>",
+    "closing": "</style>",
+    "token": "@@CODE_PART_0101@@"
+  },
+  {
+    "kind": "style",
+    "path": "src/styles/48-pravki-19-10-perf.css",
+    "opening": "<style>",
+    "closing": "</style>",
+    "token": "@@CODE_PART_0102@@"
   }
 ]
