@@ -41,3 +41,9 @@
 /* 18.10 доклад: место n8n в пути (слайд 9) */
 #aistEvolutionSlide .ev2-n8n{margin-top:30px;max-width:565px;font-size:27px;line-height:1.35;color:#b4c7bd}
 #aistEvolutionSlide .ev2-n8n b{font-weight:600;color:#e9f2ec}
+
+/* 19.10: подпись источника цифр на слайде 32 */
+#pdfSlide43 .p3m-scope{display:block;margin-top:8px;font-size:22px;font-weight:400;color:#8fa6a0}
+
+/* 19.10: QR на финальном слайде выше, на уровне фото */
+#pdfSlide28 .sv30-qr-wrap{top:-30px}

@@ -1,1 +1,7 @@
 /* 48-pravki-19-10-perf.css: правки 19.10 */
+/* Ссылки и QR скрытых слайдов не перехватывают мышь (раньше подсказка «Telegram…» и клик протекали на слайд 3) */
+.pdfRestSlide.ee-slide:not(.show),.pdfRestSlide.ee-slide:not(.show) *{pointer-events:none!important}
+
+/* Скрытые PDF-слайды не отрисовываются (было ~690 слоёв на каждом кадре). Уходящий (.out) и показанный (.show) рисуются как раньше.
+   Слайд 11 (#pdfSlide8, два iframe) включён: проверен пошагово 19.10. */
+.pdfRestSlide.ee-slide:not(.show):not(.out){content-visibility:hidden}
