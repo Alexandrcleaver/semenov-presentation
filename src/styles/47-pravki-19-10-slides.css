@@ -1,1 +1,100 @@
 /* 47-pravki-19-10-slides.css: правки 19.10 */
+
+/* ── Слайд 4 (#figmaSlide5): плавный вход стопки WIKI ──
+   Было: карточки въезжали с translateY(1000px) с задержками .2/.65/1.1 с,
+   а вся секция одновременно размывалась blur(14px) — рывки и «каша».
+   Стало: секция входит только opacity+transform (без blur), карточки —
+   одна кривая, opacity+translate+scale, по очереди от задней к передней. */
+#figmaSlide5{filter:none;transition:opacity 680ms ease,transform 900ms cubic-bezier(.22,1,.36,1),visibility 0s linear 900ms}
+#figmaSlide5.out{filter:none}
+#figmaSlide5 .s4-wiki{transform-origin:50% 100%;will-change:transform,opacity;backface-visibility:hidden}
+#figmaSlide5.show .s4-wiki{animation:s4WikiIn 820ms cubic-bezier(.16,1,.3,1) both}
+#figmaSlide5.show .s4-wiki.w3{animation-delay:140ms}
+#figmaSlide5.show .s4-wiki.w2{animation-delay:280ms}
+#figmaSlide5.show .s4-wiki.w1{animation-delay:420ms}
+@keyframes s4WikiIn{
+  0%{opacity:0;transform:translate3d(0,72px,0) scale(.965)}
+  55%{opacity:1}
+  100%{opacity:1;transform:translate3d(0,0,0) scale(1)}
+}
+@media (prefers-reduced-motion:reduce){
+  #figmaSlide5.show .s4-wiki{animation:none;opacity:1;transform:none}
+}
+
+/* ── Слайд 25 (#pdfSlide35): дерево Orchestrator → 3 воркера ──
+   Холст 1340px: воркеры 3×420 с шагом 40 → центры 210/670/1130;
+   оркестратор 440px по центру (670). SVG 1340×120 стоит вплотную
+   между низом оркестратора (y=0) и верхом воркеров (y=120). */
+#pdfSlide35 .ee-orchestrator-main{margin:0;flex:none}
+#pdfSlide35 .orch-links{display:block;flex:none;width:1340px;height:120px;margin:0;overflow:visible}
+#pdfSlide35 .orch-links-g{opacity:.78}
+#pdfSlide35 .orch-links path:first-child{stroke:#42e3b4}
+#pdfSlide35 .orch-links path:last-child{fill:#42e3b4}
+#pdfSlide35 .ee-workers{display:grid;grid-template-columns:repeat(3,420px);gap:40px;width:1340px;margin-top:0;justify-content:space-between}
+#pdfSlide35 .ee-workers>div{flex:none;min-width:0}
+#pdfSlide35.show .orch-links{animation:orchLinksIn .5s ease-out .62s both}
+@keyframes orchLinksIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){#pdfSlide35.show .orch-links{animation:none;opacity:1}}
+
+/* ── Слайд 26 (#pdfSlide18): цепочка PII по-русски, блоки равной ширины ── */
+#pdfSlide18 .ee-pii-flow{display:grid;grid-template-columns:minmax(0,1fr) 30px minmax(0,1fr) 30px minmax(0,1fr) 30px minmax(0,1fr) 30px minmax(0,1fr) 30px minmax(0,1fr);column-gap:8px;align-items:stretch}
+#pdfSlide18 .ee-pii-item{min-width:0;padding:22px 14px;gap:6px;justify-content:center;overflow-wrap:break-word;hyphens:manual}
+#pdfSlide18 .ee-pii-item b{display:block;max-width:100%;font-size:26px;line-height:1.2}
+#pdfSlide18 .ee-pii-item small{display:block;max-width:100%;margin-top:0;font-size:22px;line-height:1.25}
+#pdfSlide18 .ee-pii-item em{display:block;max-width:100%;margin-top:4px;font-style:normal;font-size:22px;line-height:1.2;color:rgba(173,213,193,.6)}
+#pdfSlide18 .ee-pii-cloud small{color:#8ff0cc}
+#pdfSlide18 .ee-connector{align-self:center;width:30px;font-size:36px;text-align:center;line-height:1}
+#pdfSlide18 .ee-pii-descriptions{grid-template-rows:auto auto;row-gap:0}
+#pdfSlide18 .ee-pii-descriptions .ee-card{grid-row:span 2;display:grid;grid-template-rows:subgrid;row-gap:12px;align-content:start}
+#pdfSlide18 .ee-pii-descriptions .ee-kicker{margin:0;line-height:1.2}
+#pdfSlide18 .ee-pii-descriptions .ee-copy{margin:0}
+
+/* ── Слайд 29 (#pdfSlide20): чат с цитатой [1] → страница PDF с рамкой ──
+   Сцена 1484×520 (ширина .ee-content), подпись ниже. Координаты стрелки
+   в SVG совпадают с координатами сцены. */
+#pdfSlide20 .proof{position:relative;width:1484px;height:100%;margin:0 auto}
+#pdfSlide20 .proof-visual{position:relative;width:1484px;height:520px}
+#pdfSlide20 .proof-chat{position:absolute;left:30px;top:25px;width:820px;height:470px;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(84,200,167,.33);border-radius:26px;background:linear-gradient(150deg,rgba(20,48,49,.86),rgba(19,33,43,.62))}
+#pdfSlide20 .proof-chat-bar{flex:none;height:58px;display:flex;align-items:center;gap:10px;padding:0 24px;background:rgba(92,154,204,.12);border-bottom:1px solid rgba(255,255,255,.07)}
+#pdfSlide20 .proof-chat-bar i{width:12px;height:12px;border-radius:50%;background:rgba(173,213,193,.42)}
+#pdfSlide20 .proof-chat-bar span{margin-left:12px;font-size:22px;color:#9fcbbd}
+#pdfSlide20 .proof-chat-body{flex:1;display:flex;flex-direction:column;gap:22px;padding:28px 32px 26px}
+#pdfSlide20 .proof-q{align-self:flex-end;max-width:540px;padding:14px 22px;border-radius:20px 20px 6px 20px;background:rgba(66,227,180,.15);color:#dff7ee;font-size:26px;line-height:1.3}
+#pdfSlide20 .proof-a{align-self:flex-start;max-width:720px;padding:20px 26px;border-radius:20px 20px 20px 6px;background:rgba(0,0,0,.24);color:#fff;font-size:30px;line-height:1.42}
+#pdfSlide20 .proof-a mark{background:rgba(66,227,180,.17);color:#b3ffe1;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+#pdfSlide20 .proof-chip,#pdfSlide20 .proof-hit-chip{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:36px;height:36px;padding:0 10px;border-radius:18px;background:#42e3b4;color:#0c1118;font-size:22px;font-weight:700;line-height:1}
+#pdfSlide20 .proof-chip{margin-left:10px;vertical-align:4px;box-shadow:0 0 0 5px rgba(66,227,180,.18)}
+#pdfSlide20 .proof-input{margin-top:auto;flex:none;height:60px;display:flex;align-items:center;padding:0 22px;border:1px solid rgba(255,255,255,.12);border-radius:16px;font-size:22px;color:rgba(255,255,255,.4)}
+#pdfSlide20 .proof-pdf{position:absolute;left:1082px;top:0;width:372px;height:520px;display:flex;flex-direction:column;gap:22px;padding:38px 34px;border-radius:10px;background:#e7ebe9;box-shadow:0 22px 44px rgba(0,0,0,.42)}
+#pdfSlide20 .proof-pdf-head{display:flex;align-items:center;justify-content:space-between;gap:16px}
+#pdfSlide20 .proof-pdf-head .t1{display:block;width:64%;height:18px;border-radius:4px;background:#3e4e58}
+#pdfSlide20 .proof-pdf-head b{padding:3px 8px;border-radius:5px;background:#c8433a;color:#fff;font-size:18px;font-weight:700;letter-spacing:.5px;line-height:1.1}
+#pdfSlide20 .proof-l{display:block;width:100%;height:10px;border-radius:5px;background:#b6c2c7}
+#pdfSlide20 .proof-l.t2{width:42%;height:12px;margin-top:-8px;background:#8e9ca4}
+#pdfSlide20 .proof-l.w80{width:80%}
+#pdfSlide20 .proof-l.w70{width:70%}
+#pdfSlide20 .proof-l.w60{width:60%}
+#pdfSlide20 .proof-l.w50{width:50%}
+#pdfSlide20 .proof-par{display:flex;flex-direction:column;gap:12px}
+#pdfSlide20 .proof-hit{position:relative;margin:0 -14px;padding:14px}
+#pdfSlide20 .proof-hit::before{content:"";position:absolute;inset:0;border:3px solid #17b889;border-radius:8px;background:rgba(66,227,180,.2)}
+#pdfSlide20 .proof-hit .proof-l{background:#86a99c}
+#pdfSlide20 .proof-hit-chip{position:absolute;right:-16px;top:-18px;z-index:1}
+#pdfSlide20 .proof-link{position:absolute;left:0;top:0;width:1484px;height:520px;overflow:visible;pointer-events:none;z-index:2}
+#pdfSlide20 .proof-link-line{stroke:#42e3b4}
+#pdfSlide20 .proof-link-head{fill:#42e3b4}
+#pdfSlide20 .proof-caption{position:absolute;left:0;right:0;top:546px;margin:0;font-size:26px;line-height:1.42;text-align:center;color:#bbdcd4}
+#pdfSlide20 .proof-caption b{color:#85eac1;font-weight:600}
+#pdfSlide20.show .proof-chat{animation:proofInL .8s cubic-bezier(.16,1,.3,1) .15s both}
+#pdfSlide20.show .proof-pdf{animation:proofInR .8s cubic-bezier(.16,1,.3,1) .3s both}
+#pdfSlide20.show .proof-hit::before,#pdfSlide20.show .proof-hit-chip{animation:proofPop .6s cubic-bezier(.16,1,.3,1) .85s both}
+#pdfSlide20.show .proof-link{animation:proofLink .6s cubic-bezier(.16,1,.3,1) 1s both}
+#pdfSlide20.show .proof-caption{animation:proofUp .7s cubic-bezier(.16,1,.3,1) 1.1s both}
+@keyframes proofInL{from{opacity:0;transform:translate3d(-48px,0,0)}to{opacity:1;transform:none}}
+@keyframes proofInR{from{opacity:0;transform:translate3d(48px,0,0)}to{opacity:1;transform:none}}
+@keyframes proofPop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:none}}
+@keyframes proofLink{from{opacity:0;transform:translate3d(-16px,0,0)}to{opacity:1;transform:none}}
+@keyframes proofUp{from{opacity:0;transform:translate3d(0,18px,0)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  #pdfSlide20.show :is(.proof-chat,.proof-pdf,.proof-link,.proof-caption,.proof-hit-chip),#pdfSlide20.show .proof-hit::before{animation:none;opacity:1;transform:none}
+}
