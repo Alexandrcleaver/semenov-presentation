@@ -218,5 +218,20 @@
     "number": 44,
     "id": "pdfSlide44",
     "path": "src/slides/43-pdfSlide44.html"
+  },
+  {
+    "number": 45,
+    "id": "pdfSlide45",
+    "path": "src/slides/44-pdfSlide45.html"
+  },
+  {
+    "number": 46,
+    "id": "pdfSlide46",
+    "path": "src/slides/45-pdfSlide46.html"
+  },
+  {
+    "number": 47,
+    "id": "pdfSlide47",
+    "path": "src/slides/46-pdfSlide47.html"
   }
 ]

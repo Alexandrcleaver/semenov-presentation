@@ -716,5 +716,26 @@
     "opening": "<style>",
     "closing": "</style>",
     "token": "@@CODE_PART_0102@@"
+  },
+  {
+    "kind": "slide",
+    "path": "src/slides/44-pdfSlide45.html",
+    "opening": "",
+    "closing": "",
+    "token": "@@CODE_PART_0103@@"
+  },
+  {
+    "kind": "slide",
+    "path": "src/slides/45-pdfSlide46.html",
+    "opening": "",
+    "closing": "",
+    "token": "@@CODE_PART_0104@@"
+  },
+  {
+    "kind": "slide",
+    "path": "src/slides/46-pdfSlide47.html",
+    "opening": "",
+    "closing": "",
+    "token": "@@CODE_PART_0105@@"
   }
 ]

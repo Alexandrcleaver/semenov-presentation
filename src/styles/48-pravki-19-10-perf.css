@@ -5,3 +5,13 @@
 /* Скрытые PDF-слайды не отрисовываются (было ~690 слоёв на каждом кадре). Уходящий (.out) и показанный (.show) рисуются как раньше.
    Слайд 11 (#pdfSlide8, два iframe) включён: проверен пошагово 19.10. */
 .pdfRestSlide.ee-slide:not(.show):not(.out){content-visibility:hidden}
+
+/* 20.10: полоска блоков доклада вверху слайда (как «ЗАЧЕМ? · ЧТО? · КАК?») */
+#sectionNav{position:absolute;top:22px;right:64px;z-index:60;display:flex;gap:6px;font:500 20px/1 SB,Arial,sans-serif;letter-spacing:.02em;pointer-events:none;opacity:0;transform:translateY(-6px);transition:opacity .45s ease,transform .45s ease}
+#sectionNav.on{opacity:1;transform:none}
+#sectionNav span{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;color:rgba(214,232,226,.42);border:1px solid transparent;transition:color .35s ease,background-color .35s ease,border-color .35s ease}
+#sectionNav span i{font-style:normal;font-size:16px;opacity:.7}
+#sectionNav span.done{color:rgba(150,232,200,.62)}
+#sectionNav span.cur{color:#0b1a17;background:linear-gradient(90deg,#48ffff,#42e3b4);border-color:transparent}
+#sectionNav span.cur i{opacity:.85}
+body:not(.cover-off) #sectionNav{opacity:0!important}
