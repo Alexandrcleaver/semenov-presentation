@@ -47,3 +47,8 @@
  document.addEventListener('visibilitychange',sync);
  sync();
 })();
+
+/* 20.10: курсор мыши прячется через 2 с без движения (не попадает в кадр на показе) */
+(()=>{let t=0;const root=document.documentElement;
+ const wake=()=>{root.classList.remove('mouse-idle');clearTimeout(t);t=setTimeout(()=>root.classList.add('mouse-idle'),2000)};
+ addEventListener('mousemove',wake,{passive:true});addEventListener('mousedown',wake,{passive:true});wake();})();

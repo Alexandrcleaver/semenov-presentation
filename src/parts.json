@@ -737,5 +737,12 @@
     "opening": "",
     "closing": "",
     "token": "@@CODE_PART_0105@@"
+  },
+  {
+    "kind": "slide",
+    "path": "src/slides/47-pdfSlide48.html",
+    "opening": "",
+    "closing": "",
+    "token": "@@CODE_PART_0106@@"
   }
 ]

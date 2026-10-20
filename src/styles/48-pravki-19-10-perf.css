@@ -15,3 +15,6 @@
 #sectionNav span.cur{color:#0b1a17;background:linear-gradient(90deg,#48ffff,#42e3b4);border-color:transparent}
 #sectionNav span.cur i{opacity:.85}
 body:not(.cover-off) #sectionNav{opacity:0!important}
+
+/* 20.10: скрытый курсор в простое */
+html.mouse-idle,html.mouse-idle *{cursor:none!important}

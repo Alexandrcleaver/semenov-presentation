@@ -10,15 +10,15 @@
   }
   const getCurrent=()=>{
     const s=Number(window.__presentationStage ?? 0);
-    if(s===0)return 1;
-    if(s===.5)return 2;if(s===.75)return 3;if(s===.85)return 4;
-    if(s===.9)return 5;if(s===.925)return 6;if(s===.95)return 7;if(s===.96)return 8;if(s===.965)return 9;if(s===.97)return 10;
-    if(s===.98)return 11+Number(window.pdfDeckIndex||0);
+    if(s===0)return 1;if(s===.3)return 2;
+    if(s===.5)return 3;if(s===.75)return 4;if(s===.85)return 5;
+    if(s===.9)return 6;if(s===.925)return 7;if(s===.95)return 8;if(s===.96)return 9;if(s===.965)return 10;if(s===.97)return 11;
+    if(s===.98)return 12+Number(window.pdfDeckIndex||0);
     return 24; // Earlier post-ROI scenes have been removed.
   };
   function refresh(){
     const n=getCurrent();const total=window.__deckTotal||40;const sec=window.__deckSectionOf?window.__deckSectionOf(n):-1;const nav=document.getElementById('sectionNav');if(nav&&nav.dataset.cur!==String(sec)){nav.dataset.cur=String(sec);nav.classList.toggle('on',sec>=0);nav.querySelectorAll('span').forEach(el=>{const k=Number(el.dataset.s);el.classList.toggle('cur',k===sec);el.classList.toggle('done',k<sec);});}counter.textContent=String(n).padStart(2,'0')+' / '+total;
-    document.getElementById('presenterDebugMeta').textContent='Слайд '+n+'/'+total+(n===9?' · экран '+Number(window.aistEvolutionStep||0)+'/6':n===11?' · шаг '+Number(window.__v8ClickStep||0)+'/10':'');
+    document.getElementById('presenterDebugMeta').textContent='Слайд '+n+'/'+total+(n===10?' · экран '+Number(window.aistEvolutionStep||0)+'/6':n===13?' · шаг '+Number(window.__v8ClickStep||0)+'/10':'');
     if(drawer.classList.contains('open')) drawer.querySelectorAll('.deckThumb').forEach(card=>card.classList.toggle('active',Number(card.dataset.slide)===n));
   }
   function toggle(open){drawer.classList.toggle('open',Boolean(open));drawer.setAttribute('aria-hidden',open?'false':'true');refresh();}
