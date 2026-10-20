@@ -53,3 +53,9 @@
 (()=>{let t=0;const root=document.documentElement;
  const wake=e=>{if(e&&e.type==='mousemove'&&!e.movementX&&!e.movementY)return;root.classList.add('mouse-active');clearTimeout(t);t=setTimeout(()=>root.classList.remove('mouse-active'),2000)};
  addEventListener('mousemove',wake,{passive:true});addEventListener('mousedown',wake,{passive:true});})();
+
+/* 20.10: при показе слайда «Vibe vs SDD» встроенным окнам заново сообщается размер (страховка от «сжатой» картинки) */
+(()=>{const sl=document.getElementById('pdfSlide8');if(!sl)return;
+ const nudge=()=>sl.querySelectorAll('iframe').forEach(f=>{try{f.contentWindow.dispatchEvent(new Event('resize'))}catch(e){}});
+ new MutationObserver(()=>{if(sl.classList.contains('show')){nudge();requestAnimationFrame(nudge);setTimeout(nudge,300)}}).observe(sl,{attributes:true,attributeFilter:['class']});
+ addEventListener('resize',()=>{if(sl.classList.contains('show'))nudge()});})();
