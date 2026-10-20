@@ -16,5 +16,5 @@
 #sectionNav span.cur i{opacity:.85}
 body:not(.cover-off) #sectionNav{opacity:0!important}
 
-/* 20.10: скрытый курсор в простое */
-html.mouse-idle,html.mouse-idle *{cursor:none!important}
+/* 20.10: курсор скрыт, пока мышь не двигали последние 2 с */
+html:not(.mouse-active),html:not(.mouse-active) *{cursor:none!important}

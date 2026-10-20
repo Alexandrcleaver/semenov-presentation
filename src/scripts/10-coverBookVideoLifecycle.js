@@ -48,7 +48,8 @@
  sync();
 })();
 
-/* 20.10: курсор мыши прячется через 2 с без движения (не попадает в кадр на показе) */
+/* 20.10: курсор мыши виден только при настоящем движении мыши (2 с), иначе скрыт — и в полном экране тоже.
+   Chrome при смене слайда шлёт «пустые» mousemove без смещения — их не считаем движением. */
 (()=>{let t=0;const root=document.documentElement;
- const wake=()=>{root.classList.remove('mouse-idle');clearTimeout(t);t=setTimeout(()=>root.classList.add('mouse-idle'),2000)};
- addEventListener('mousemove',wake,{passive:true});addEventListener('mousedown',wake,{passive:true});wake();})();
+ const wake=e=>{if(e&&e.type==='mousemove'&&!e.movementX&&!e.movementY)return;root.classList.add('mouse-active');clearTimeout(t);t=setTimeout(()=>root.classList.remove('mouse-active'),2000)};
+ addEventListener('mousemove',wake,{passive:true});addEventListener('mousedown',wake,{passive:true});})();
